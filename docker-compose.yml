@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  app:
+    image: dylanckawalec/attestation-dashboard:latest
+    container_name: tee-trust-validator
+    ports:
+      - "3000:3000" # NextJS Dashboard
+      - "8000:8000" # Python API
+      - "8001:8001" # Bun Server (optional)
+    volumes:
+      - /var/run/tappd.sock:/var/run/tappd.sock  # TEE attestation socket
+      - /var/run/dstack.sock:/var/run/dstack.sock # dStack socket
+      - ./logs:/app/logs
+    # Environment variables loaded from .env file in container
+    env_file:
+      - .env
+      
+    restart: always
+    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    
+    # Security options for TEE
+    security_opt:
+      - no-new-privileges:true
+    
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2048M
+        reservations:
+          cpus: '1'
+          memory: 1024M

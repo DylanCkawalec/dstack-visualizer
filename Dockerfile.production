@@ -1,0 +1,133 @@
+# Multi-stage production Dockerfile for Algorithm Visualizer + dStack
+# Optimized for Phala Cloud TEE deployment
+
+# ============================================
+# Stage 1: Base dependencies
+# ============================================
+FROM node:20-alpine AS base
+RUN apk add --no-cache libc6-compat python3 py3-pip make g++ git
+# Add platform compatibility for TailwindCSS v4
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV SKIP_ENV_VALIDATION=1
+WORKDIR /app
+
+# ============================================
+# Stage 2: Dependencies installation
+# ============================================
+FROM base AS deps
+
+# Copy template package files only (skip main app dependencies)
+COPY templates/remote-attestation-template/package*.json ./templates/remote-attestation-template/
+
+# Install template dependencies (including dev for build)
+WORKDIR /app/templates/remote-attestation-template
+RUN npm ci
+
+# ============================================
+# Stage 3: Python dependencies
+# ============================================
+FROM python:3.11-alpine AS python-deps
+RUN apk add --no-cache gcc musl-dev libffi-dev openssl-dev
+WORKDIR /app
+
+# Copy Python requirements
+COPY templates/remote-attestation-template/api/requirements.txt ./api/
+RUN pip install --no-cache-dir --user -r api/requirements.txt
+
+# ============================================
+# Stage 4: Next.js build
+# ============================================
+FROM base AS builder
+WORKDIR /app
+
+# Copy dependencies from deps stage
+COPY --from=deps /app/templates/remote-attestation-template/node_modules ./templates/remote-attestation-template/node_modules
+
+# Copy source code
+COPY . .
+
+# Build Next.js application
+WORKDIR /app/templates/remote-attestation-template
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV NODE_ENV=production
+
+# Build the application
+RUN npm run build
+
+# ============================================
+# Stage 5: Bun runtime (optional)
+# ============================================
+FROM oven/bun:1-alpine AS bun-runtime
+WORKDIR /app
+
+# Copy Bun server files
+COPY templates/remote-attestation-template/bun-server ./bun-server
+WORKDIR /app/bun-server
+RUN bun install --production
+
+# ============================================
+# Stage 6: Production image
+# ============================================
+FROM node:20-alpine AS runner
+RUN apk add --no-cache python3 py3-pip supervisor curl wget
+
+# Create app user for security
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+
+WORKDIR /app
+
+# Copy Python dependencies
+COPY --from=python-deps /root/.local /home/nextjs/.local
+
+# Copy built application
+COPY --from=builder /app/templates/remote-attestation-template/.next ./templates/remote-attestation-template/.next
+COPY --from=builder /app/templates/remote-attestation-template/public ./templates/remote-attestation-template/public
+COPY --from=builder /app/templates/remote-attestation-template/node_modules ./templates/remote-attestation-template/node_modules
+COPY --from=builder /app/templates/remote-attestation-template/package.json ./templates/remote-attestation-template/
+
+# Copy Python API
+COPY templates/remote-attestation-template/api ./templates/remote-attestation-template/api
+
+# Copy Bun server (if available)
+COPY --from=bun-runtime /app/bun-server ./templates/remote-attestation-template/bun-server
+
+# Copy configuration files
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY docker-entrypoint.sh /usr/local/bin/
+COPY startup-services.sh /usr/local/bin/
+COPY .env /app/.env
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh /usr/local/bin/startup-services.sh
+
+# Copy health check script
+COPY health-check.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/health-check.sh
+
+# Set ownership
+RUN chown -R nextjs:nodejs /app
+
+# Run as root for supervisor (services will drop privileges)
+
+# Environment variables with secure defaults
+ENV NODE_ENV=production \
+    NEXT_TELEMETRY_DISABLED=1 \
+    PORT=3000 \
+    API_PORT=8000 \
+    BUN_PORT=8001 \
+    ENABLE_MOCK_MODE=false \
+    REQUIRE_ATTESTATION=true \
+    TEE_ENVIRONMENT=production \
+    PATH="/home/nextjs/.local/bin:$PATH"
+
+# Expose ports
+EXPOSE 3000 8000 8001
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+  CMD /usr/local/bin/health-check.sh || exit 1
+
+# Entry point
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+
+# Default command - use startup script to manage all services
+CMD ["/usr/local/bin/startup-services.sh"]

@@ -1,0 +1,265 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: algorithm-visualizer
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: algorithm-visualizer
+data:
+  NODE_ENV: "production"
+  TEE_ENVIRONMENT: "production"
+  ENABLE_MOCK_MODE: "false"
+  REQUIRE_ATTESTATION: "true"
+  PHALA_ENDPOINT: "https://poc6.phala.network/tee-api"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: app-secrets
+  namespace: algorithm-visualizer
+type: Opaque
+stringData:
+  DSTACK_API_KEY: "${DSTACK_API_KEY}"
+  PHALA_CLUSTER_ID: "${PHALA_CLUSTER_ID}"
+  PHALA_CONTRACT_ID: "${PHALA_CONTRACT_ID}"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: algorithm-visualizer
+  namespace: algorithm-visualizer
+  labels:
+    app: algorithm-visualizer
+    tee: phala
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: algorithm-visualizer
+  template:
+    metadata:
+      labels:
+        app: algorithm-visualizer
+        tee: phala
+      annotations:
+        tee.phala.network/enabled: "true"
+        tee.phala.network/attestation: "required"
+    spec:
+      serviceAccountName: algorithm-visualizer-sa
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        fsGroup: 1000
+      containers:
+      - name: algorithm-visualizer
+        image: registry.phala.network/${PHALA_CLUSTER_ID}/algorithm-visualizer:latest
+        imagePullPolicy: Always
+        ports:
+        - name: dashboard
+          containerPort: 3000
+          protocol: TCP
+        - name: api
+          containerPort: 8000
+          protocol: TCP
+        - name: bun
+          containerPort: 8001
+          protocol: TCP
+        envFrom:
+        - configMapRef:
+            name: app-config
+        - secretRef:
+            name: app-secrets
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: "1000m"
+          limits:
+            memory: "4Gi"
+            cpu: "2000m"
+        livenessProbe:
+          httpGet:
+            path: /api/health
+            port: 8000
+          initialDelaySeconds: 60
+          periodSeconds: 30
+          timeoutSeconds: 10
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /api/health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        volumeMounts:
+        - name: logs
+          mountPath: /app/logs
+        - name: tee-attestation
+          mountPath: /etc/tee
+          readOnly: true
+      volumes:
+      - name: logs
+        emptyDir: {}
+      - name: tee-attestation
+        secret:
+          secretName: tee-attestation-cert
+          optional: true
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: algorithm-visualizer-service
+  namespace: algorithm-visualizer
+  labels:
+    app: algorithm-visualizer
+spec:
+  selector:
+    app: algorithm-visualizer
+  type: LoadBalancer
+  ports:
+  - name: dashboard
+    port: 3000
+    targetPort: 3000
+    protocol: TCP
+  - name: api
+    port: 8000
+    targetPort: 8000
+    protocol: TCP
+  - name: bun
+    port: 8001
+    targetPort: 8001
+    protocol: TCP
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: algorithm-visualizer-sa
+  namespace: algorithm-visualizer
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: algorithm-visualizer-ingress
+  namespace: algorithm-visualizer
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: "10m"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+spec:
+  tls:
+  - hosts:
+    - algorithm-visualizer.phala.network
+    secretName: algorithm-visualizer-tls
+  rules:
+  - host: algorithm-visualizer.phala.network
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: algorithm-visualizer-service
+            port:
+              number: 3000
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: algorithm-visualizer-service
+            port:
+              number: 8000
+      - path: /bun
+        pathType: Prefix
+        backend:
+          service:
+            name: algorithm-visualizer-service
+            port:
+              number: 8001
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: algorithm-visualizer-hpa
+  namespace: algorithm-visualizer
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: algorithm-visualizer
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 80
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: algorithm-visualizer-pdb
+  namespace: algorithm-visualizer
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: algorithm-visualizer
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tee-attestation-init
+  namespace: algorithm-visualizer
+spec:
+  template:
+    spec:
+      serviceAccountName: algorithm-visualizer-sa
+      restartPolicy: OnFailure
+      containers:
+      - name: attestation-init
+        image: registry.phala.network/${PHALA_CLUSTER_ID}/algorithm-visualizer:latest
+        command: ["/bin/sh"]
+        args:
+        - -c
+        - |
+          echo "Initializing TEE attestation..."
+          curl -X POST \
+            -H "Authorization: Bearer $DSTACK_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{"cluster_id":"'$PHALA_CLUSTER_ID'","contract_id":"'$PHALA_CONTRACT_ID'"}' \
+            $PHALA_ENDPOINT/attestation/init
+          echo "TEE attestation initialized"
+        env:
+        - name: DSTACK_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: app-secrets
+              key: DSTACK_API_KEY
+        - name: PHALA_CLUSTER_ID
+          valueFrom:
+            secretKeyRef:
+              name: app-secrets
+              key: PHALA_CLUSTER_ID
+        - name: PHALA_CONTRACT_ID
+          valueFrom:
+            secretKeyRef:
+              name: app-secrets
+              key: PHALA_CONTRACT_ID
+        - name: PHALA_ENDPOINT
+          value: "https://poc6.phala.network/tee-api"
