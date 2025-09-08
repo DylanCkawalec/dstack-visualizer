@@ -3,6 +3,9 @@
 **A developer-friendly template for building verifiable applications with hardware attestation on Phala Network's Trusted Execution Environment**
 **Author:** Dylan Kawalec - Developer Relations at Phala Network
 
+> Branch note: This branch is the deploy-to-phala version (focused on deployment to Phala).
+> For deployment details, see notes/deploy-phala.md and ./deploy-tee.sh.
+
 ## 📝 Author's Note
 
 This repository provides a practical, hands-on approach to understanding and implementing Zero Trust architecture using hardware-backed security. Instead of just talking about "never trust, always verify," this template shows you exactly how to build applications that can cryptographically prove their own integrity.
