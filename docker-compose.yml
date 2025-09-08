@@ -12,9 +12,10 @@ services:
       - /var/run/tappd.sock:/var/run/tappd.sock  # TEE attestation socket
       - /var/run/dstack.sock:/var/run/dstack.sock # dStack socket
       - ./logs:/app/logs
-    # Environment variables loaded from .env file in container
-    env_file:
-      - .env
+    environment:
+      # Environment variables will be loaded by docker-entrypoint.sh from /app/.env
+      NODE_ENV: production
+      TEE_ENVIRONMENT: production
       
     restart: always
     
