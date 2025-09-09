@@ -1,40 +1,33 @@
 version: '3.8'
 
 services:
-  app:
-    image: dylanckawalec/attestation-dashboard:latest
+  tee-trust-validator:
+    image: dylanckawalec/tee-trust-validator:latest
     container_name: tee-trust-validator
     ports:
-      - "3000:3000" # NextJS Dashboard
-      - "8000:8000" # Python API
-      - "8001:8001" # Bun Server (optional)
+      - "3000:3000"  # Frontend Dashboard
+      - "8000:8000"  # Backend API
+    environment:
+      - NODE_ENV=production
+      - PORT=8000
+      - PHALA_API_KEY=${PHALA_API_KEY}
+      - DSTACK_API_KEY=${DSTACK_API_KEY}
+      - DEVELOPER_NAME=${DEVELOPER_NAME:-TEE Developer}
+      - ORGANIZATION=${ORGANIZATION:-Phala Network}
     volumes:
-      - /var/run/tappd.sock:/var/run/tappd.sock  # TEE attestation socket
-      - /var/run/dstack.sock:/var/run/dstack.sock # dStack socket
-      - ./logs:/app/logs
-    # Environment variables loaded from .env file in container
-    env_file:
-      - .env
-      
-    restart: always
-    
+      # TEE Socket mounts (read-only for security)
+      - /var/run/dstack.sock:/var/run/dstack.sock:ro
+      - /var/run/tappd.sock:/var/run/tappd.sock:ro
+    networks:
+      - tee-network
+    restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
       interval: 30s
       timeout: 10s
       retries: 3
-      start_period: 60s
-    
-    # Security options for TEE
-    security_opt:
-      - no-new-privileges:true
-    
-    # Resource limits
-    deploy:
-      resources:
-        limits:
-          cpus: '2'
-          memory: 2048M
-        reservations:
-          cpus: '1'
-          memory: 1024M
+      start_period: 40s
+
+networks:
+  tee-network:
+    driver: bridge

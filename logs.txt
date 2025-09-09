@@ -1,0 +1,504 @@
+[   81.956216] app-compose.sh[756]:  41db9356bf37 Downloading [=================================>                 ]  140.7MB/209.5MB
+[   82.059492] app-compose.sh[756]:  41db9356bf37 Downloading [==================================>                ]  143.3MB/209.5MB
+[   82.161999] app-compose.sh[756]:  41db9356bf37 Downloading [==================================>                ]  145.5MB/209.5MB
+[   82.274599] app-compose.sh[756]:  41db9356bf37 Downloading [==================================>                ]  146.5MB/209.5MB
+[   82.387433] app-compose.sh[756]:  41db9356bf37 Downloading [===================================>               ]  148.7MB/209.5MB
+[   82.419561] app-compose.sh[756]:  760dbd97e5f9 Downloading [==================================================>]     530B/530B
+[   82.435042] app-compose.sh[756]:  760dbd97e5f9 Verifying Checksum
+[   82.444158] app-compose.sh[756]:  760dbd97e5f9 Download complete
+[   82.493197] app-compose.sh[756]:  41db9356bf37 Downloading [===================================>               ]  150.2MB/209.5MB
+[   82.640680] app-compose.sh[756]:  41db9356bf37 Downloading [====================================>              ]  151.8MB/209.5MB
+[   82.765877] app-compose.sh[756]:  41db9356bf37 Downloading [====================================>              ]  153.4MB/209.5MB
+[   82.889058] app-compose.sh[756]:  41db9356bf37 Downloading [====================================>              ]    154MB/209.5MB
+[   82.999277] app-compose.sh[756]:  41db9356bf37 Downloading [====================================>              ]    155MB/209.5MB
+[   83.110915] app-compose.sh[756]:  41db9356bf37 Downloading [=====================================>             ]  156.1MB/209.5MB
+[   83.218411] app-compose.sh[756]:  41db9356bf37 Downloading [=====================================>             ]  157.2MB/209.5MB
+[   83.319826] app-compose.sh[756]:  ce21914aeb0a Downloading [==================================================>]     546B/546B
+[   83.332614] app-compose.sh[756]:  ce21914aeb0a Download complete
+[   83.340473] app-compose.sh[756]:  41db9356bf37 Downloading [======================================>            ]  159.3MB/209.5MB
+[   83.523053] app-compose.sh[756]:  41db9356bf37 Downloading [======================================>            ]  161.4MB/209.5MB
+[   83.691183] app-compose.sh[756]:  41db9356bf37 Downloading [=======================================>           ]  164.1MB/209.5MB
+[   83.845018] app-compose.sh[756]:  41db9356bf37 Downloading [=======================================>           ]  165.7MB/209.5MB
+[   83.952274] app-compose.sh[756]:  41db9356bf37 Downloading [========================================>          ]  167.8MB/209.5MB
+[   84.200652] app-compose.sh[756]:  41db9356bf37 Downloading [========================================>          ]  168.8MB/209.5MB
+[   84.314579] app-compose.sh[756]:  41db9356bf37 Downloading [=========================================>         ]  173.1MB/209.5MB
+[   84.428456] app-compose.sh[756]:  41db9356bf37 Downloading [=========================================>         ]  175.8MB/209.5MB
+[   84.561171] app-compose.sh[756]:  41db9356bf37 Downloading [==========================================>        ]  177.3MB/209.5MB
+[   84.679648] app-compose.sh[756]:  41db9356bf37 Downloading [==========================================>        ]    180MB/209.5MB
+[   84.794601] app-compose.sh[756]:  41db9356bf37 Downloading [===========================================>       ]  182.7MB/209.5MB
+[   84.816457] app-compose.sh[756]:  907ab427d28b Downloading [>                                                  ]    533kB/258.8MB
+[   84.901064] app-compose.sh[756]:  41db9356bf37 Downloading [============================================>      ]  184.8MB/209.5MB
+[   84.928864] app-compose.sh[756]:  907ab427d28b Downloading [>                                                  ]  2.136MB/258.8MB
+[   85.009794] app-compose.sh[756]:  41db9356bf37 Downloading [============================================>      ]  186.4MB/209.5MB
+[   85.114323] app-compose.sh[756]:  907ab427d28b Downloading [>                                                  ]  4.257MB/258.8MB
+[   85.132156] app-compose.sh[756]:  41db9356bf37 Downloading [============================================>      ]    188MB/209.5MB
+[   85.231763] app-compose.sh[756]:  907ab427d28b Downloading [=>                                                 ]  6.403MB/258.8MB
+[   85.249219] app-compose.sh[756]:  41db9356bf37 Downloading [=============================================>     ]  190.1MB/209.5MB
+[   85.331462] app-compose.sh[756]:  907ab427d28b Downloading [=>                                                 ]  9.054MB/258.8MB
+[   85.358571] app-compose.sh[756]:  41db9356bf37 Downloading [==============================================>    ]  193.8MB/209.5MB
+[   85.431969] app-compose.sh[756]:  907ab427d28b Downloading [==>                                                ]  12.24MB/258.8MB
+[   85.463916] app-compose.sh[756]:  41db9356bf37 Downloading [==============================================>    ]    196MB/209.5MB
+[   85.553452] app-compose.sh[756]:  907ab427d28b Downloading [==>                                                ]  15.43MB/258.8MB
+[   85.570433] app-compose.sh[756]:  41db9356bf37 Downloading [===============================================>   ]  198.1MB/209.5MB
+[   85.668645] app-compose.sh[756]:  907ab427d28b Downloading [===>                                               ]  18.62MB/258.8MB
+[   85.687136] app-compose.sh[756]:  41db9356bf37 Downloading [===============================================>   ]  200.8MB/209.5MB
+[   85.800080] app-compose.sh[756]:  907ab427d28b Downloading [====>                                              ]   21.8MB/258.8MB
+[   85.806612] app-compose.sh[756]:  41db9356bf37 Downloading [================================================>  ]  203.4MB/209.5MB
+[   85.916337] app-compose.sh[756]:  907ab427d28b Downloading [====>                                              ]  24.97MB/258.8MB
+[   85.932140] app-compose.sh[756]:  41db9356bf37 Downloading [================================================>  ]    205MB/209.5MB
+[   86.018519] app-compose.sh[756]:  907ab427d28b Downloading [=====>                                             ]  27.13MB/258.8MB
+[   86.037044] app-compose.sh[756]:  41db9356bf37 Downloading [=================================================> ]  207.7MB/209.5MB
+[   86.108223] app-compose.sh[756]:  41db9356bf37 Verifying Checksum
+[   86.112139] app-compose.sh[756]:  41db9356bf37 Download complete
+[   86.132365] app-compose.sh[756]:  907ab427d28b Downloading [=====>                                             ]  30.85MB/258.8MB
+[   86.245207] app-compose.sh[756]:  907ab427d28b Downloading [======>                                            ]  31.91MB/258.8MB
+[   86.385869] app-compose.sh[756]:  907ab427d28b Downloading [======>                                            ]  34.04MB/258.8MB
+[   86.496038] app-compose.sh[756]:  907ab427d28b Downloading [=======>                                           ]  37.22MB/258.8MB
+[   86.525448] app-compose.sh[756]:  41db9356bf37 Extracting [>                                                  ]  557.1kB/209.5MB
+[   86.640783] app-compose.sh[756]:  41db9356bf37 Extracting [>                                                  ]  2.228MB/209.5MB
+[   86.660103] app-compose.sh[756]:  907ab427d28b Downloading [=======>                                           ]  40.41MB/258.8MB
+[   86.744009] app-compose.sh[756]:  41db9356bf37 Extracting [=>                                                 ]  4.456MB/209.5MB
+[   86.771454] app-compose.sh[756]:  907ab427d28b Downloading [========>                                          ]  43.08MB/258.8MB
+[   86.908857] app-compose.sh[756]:  907ab427d28b Downloading [========>                                          ]  45.22MB/258.8MB
+[   86.917127] app-compose.sh[756]:  41db9356bf37 Extracting [=>                                                 ]  6.128MB/209.5MB
+[   86.985159] app-compose.sh[756]:  907ab427d28b Downloading [=========>                                         ]  47.34MB/258.8MB
+[   87.010979] app-compose.sh[756]:  41db9356bf37 Extracting [=>                                                 ]  8.356MB/209.5MB
+[   87.089136] app-compose.sh[756]:  907ab427d28b Downloading [=========>                                         ]  49.47MB/258.8MB
+[   87.128090] app-compose.sh[756]:  41db9356bf37 Extracting [==>                                                ]  8.913MB/209.5MB
+[   87.218124] app-compose.sh[756]:  907ab427d28b Downloading [=========>                                         ]   51.6MB/258.8MB
+[   87.245483] app-compose.sh[756]:  41db9356bf37 Extracting [==>                                                ]  11.14MB/209.5MB
+[   87.333275] app-compose.sh[756]:  907ab427d28b Downloading [==========>                                        ]  54.27MB/258.8MB
+[   87.353221] app-compose.sh[756]:  41db9356bf37 Extracting [===>                                               ]  13.37MB/209.5MB
+[   87.450974] app-compose.sh[756]:  907ab427d28b Downloading [===========>                                       ]  57.46MB/258.8MB
+[   87.491626] app-compose.sh[756]:  41db9356bf37 Extracting [===>                                               ]  15.04MB/209.5MB
+[   87.566270] app-compose.sh[756]:  907ab427d28b Downloading [===========>                                       ]  60.14MB/258.8MB
+[   87.591975] app-compose.sh[756]:  41db9356bf37 Extracting [===>                                               ]  16.71MB/209.5MB
+[   87.695072] app-compose.sh[756]:  907ab427d28b Downloading [============>                                      ]   62.8MB/258.8MB
+[   87.701532] app-compose.sh[756]:  41db9356bf37 Extracting [====>                                              ]  18.94MB/209.5MB
+[   87.810046] app-compose.sh[756]:  907ab427d28b Downloading [============>                                      ]  65.98MB/258.8MB
+[   87.816386] app-compose.sh[756]:  41db9356bf37 Extracting [=====>                                             ]  21.17MB/209.5MB
+[   87.922986] app-compose.sh[756]:  41db9356bf37 Extracting [=====>                                             ]   23.4MB/209.5MB
+[   87.967825] app-compose.sh[756]:  907ab427d28b Downloading [=============>                                     ]  68.64MB/258.8MB
+[   88.081181] app-compose.sh[756]:  41db9356bf37 Extracting [======>                                            ]  25.62MB/209.5MB
+[   88.086576] app-compose.sh[756]:  907ab427d28b Downloading [=============>                                     ]  70.77MB/258.8MB
+[   88.180262] app-compose.sh[756]:  41db9356bf37 Extracting [======>                                            ]  27.85MB/209.5MB
+[   88.186608] app-compose.sh[756]:  907ab427d28b Downloading [==============>                                    ]  75.55MB/258.8MB
+[   88.305463] app-compose.sh[756]:  41db9356bf37 Extracting [=======>                                           ]  30.08MB/209.5MB
+[   88.311889] app-compose.sh[756]:  907ab427d28b Downloading [===============>                                   ]  78.74MB/258.8MB
+[   88.422116] app-compose.sh[756]:  907ab427d28b Downloading [===============>                                   ]  80.88MB/258.8MB
+[   88.438015] app-compose.sh[756]:  41db9356bf37 Extracting [=======>                                           ]  32.31MB/209.5MB
+[   88.515727] app-compose.sh[756]:  41db9356bf37 Extracting [=======>                                           ]  33.42MB/209.5MB
+[   88.543618] app-compose.sh[756]:  907ab427d28b Downloading [================>                                  ]  83.01MB/258.8MB
+[   88.619276] app-compose.sh[756]:  41db9356bf37 Extracting [========>                                          ]  35.09MB/209.5MB
+[   88.643932] app-compose.sh[756]:  907ab427d28b Downloading [================>                                  ]  85.15MB/258.8MB
+[   88.731451] app-compose.sh[756]:  41db9356bf37 Extracting [========>                                          ]  37.32MB/209.5MB
+[   88.752799] app-compose.sh[756]:  907ab427d28b Downloading [=================>                                 ]  88.32MB/258.8MB
+[   88.863035] app-compose.sh[756]:  41db9356bf37 Extracting [=========>                                         ]  38.99MB/209.5MB
+[   88.885985] app-compose.sh[756]:  907ab427d28b Downloading [=================>                                 ]  90.98MB/258.8MB
+[   88.966190] app-compose.sh[756]:  41db9356bf37 Extracting [=========>                                         ]  40.67MB/209.5MB
+[   88.999015] app-compose.sh[756]:  907ab427d28b Downloading [=================>                                 ]  92.04MB/258.8MB
+[   89.100550] app-compose.sh[756]:  41db9356bf37 Extracting [==========>                                        ]  42.89MB/209.5MB
+[   89.116155] app-compose.sh[756]:  907ab427d28b Downloading [==================>                                ]  94.16MB/258.8MB
+[   89.201023] app-compose.sh[756]:  41db9356bf37 Extracting [==========>                                        ]  44.01MB/209.5MB
+[   89.284107] app-compose.sh[756]:  907ab427d28b Downloading [==================>                                ]  97.37MB/258.8MB
+[   89.331988] app-compose.sh[756]:  41db9356bf37 Extracting [===========>                                       ]  46.79MB/209.5MB
+[   89.404156] app-compose.sh[756]:  907ab427d28b Downloading [===================>                               ]    100MB/258.8MB
+[   89.476116] app-compose.sh[756]:  41db9356bf37 Extracting [===========>                                       ]  48.46MB/209.5MB
+[   89.522294] app-compose.sh[756]:  907ab427d28b Downloading [===================>                               ]  102.7MB/258.8MB
+[   89.607228] app-compose.sh[756]:  41db9356bf37 Extracting [===========>                                       ]  49.58MB/209.5MB
+[   89.645011] app-compose.sh[756]:  907ab427d28b Downloading [====================>                              ]  104.8MB/258.8MB
+[   89.710277] app-compose.sh[756]:  41db9356bf37 Extracting [============>                                      ]  51.81MB/209.5MB
+[   89.726573] app-compose.sh[756]:  907ab427d28b Downloading [====================>                              ]  106.9MB/258.8MB
+[   89.814982] app-compose.sh[756]:  41db9356bf37 Extracting [============>                                      ]  54.03MB/209.5MB
+[   89.830277] app-compose.sh[756]:  907ab427d28b Downloading [=====================>                             ]  109.6MB/258.8MB
+[   89.939832] app-compose.sh[756]:  41db9356bf37 Extracting [=============>                                     ]  56.26MB/209.5MB
+[   89.987043] app-compose.sh[756]:  907ab427d28b Downloading [=====================>                             ]  113.8MB/258.8MB
+[   90.047216] app-compose.sh[756]:  41db9356bf37 Extracting [=============>                                     ]  57.93MB/209.5MB
+[   90.103726] app-compose.sh[756]:  907ab427d28b Downloading [======================>                            ]    117MB/258.8MB
+[   90.149947] app-compose.sh[756]:  41db9356bf37 Extracting [==============>                                    ]  60.72MB/209.5MB
+[   90.205649] app-compose.sh[756]:  907ab427d28b Downloading [=======================>                           ]  120.2MB/258.8MB
+[   90.256883] app-compose.sh[756]:  41db9356bf37 Extracting [===============>                                   ]   63.5MB/209.5MB
+[   90.313056] app-compose.sh[756]:  907ab427d28b Downloading [=======================>                           ]  123.4MB/258.8MB
+[   90.388107] app-compose.sh[756]:  41db9356bf37 Extracting [===============>                                   ]  66.29MB/209.5MB
+[   90.414529] app-compose.sh[756]:  907ab427d28b Downloading [========================>                          ]    125MB/258.8MB
+[   90.495969] app-compose.sh[756]:  41db9356bf37 Extracting [================>                                  ]  68.52MB/209.5MB
+[   90.514223] app-compose.sh[756]:  907ab427d28b Downloading [========================>                          ]  126.6MB/258.8MB
+[   90.601946] app-compose.sh[756]:  41db9356bf37 Extracting [=================>                                 ]   71.3MB/209.5MB
+[   90.624303] app-compose.sh[756]:  907ab427d28b Downloading [=========================>                         ]  130.3MB/258.8MB
+[   90.719451] app-compose.sh[756]:  41db9356bf37 Extracting [=================>                                 ]  74.09MB/209.5MB
+[   90.750607] app-compose.sh[756]:  907ab427d28b Downloading [=========================>                         ]  133.5MB/258.8MB
+[   90.822360] app-compose.sh[756]:  41db9356bf37 Extracting [==================>                                ]  76.32MB/209.5MB
+[   90.865765] app-compose.sh[756]:  907ab427d28b Downloading [==========================>                        ]  135.1MB/258.8MB
+[   90.931025] app-compose.sh[756]:  41db9356bf37 Extracting [==================>                                ]  78.54MB/209.5MB
+[   90.972619] app-compose.sh[756]:  907ab427d28b Downloading [==========================>                        ]  138.9MB/258.8MB
+[   91.038618] app-compose.sh[756]:  41db9356bf37 Extracting [===================>                               ]  80.77MB/209.5MB
+[   91.090483] app-compose.sh[756]:  907ab427d28b Downloading [===========================>                       ]  142.6MB/258.8MB
+[   91.154930] app-compose.sh[756]:  41db9356bf37 Extracting [===================>                               ]  83.56MB/209.5MB
+[   91.249217] app-compose.sh[756]:  907ab427d28b Downloading [===========================>                       ]  144.2MB/258.8MB
+[   91.290348] app-compose.sh[756]:  41db9356bf37 Extracting [====================>                              ]  86.34MB/209.5MB
+[   91.351021] app-compose.sh[756]:  907ab427d28b Downloading [============================>                      ]  146.8MB/258.8MB
+[   91.402171] app-compose.sh[756]:  41db9356bf37 Extracting [=====================>                             ]  88.01MB/209.5MB
+[   91.457336] app-compose.sh[756]:  907ab427d28b Downloading [============================>                      ]    150MB/258.8MB
+[   91.517935] app-compose.sh[756]:  41db9356bf37 Extracting [=====================>                             ]  91.36MB/209.5MB
+[   91.567323] app-compose.sh[756]:  907ab427d28b Downloading [=============================>                     ]  153.2MB/258.8MB
+[   91.629142] app-compose.sh[756]:  41db9356bf37 Extracting [======================>                            ]  94.14MB/209.5MB
+[   91.766793] app-compose.sh[756]:  907ab427d28b Downloading [==============================>                    ]  155.4MB/258.8MB
+[   91.781214] app-compose.sh[756]:  41db9356bf37 Extracting [======================>                            ]  95.81MB/209.5MB
+[   91.830656] app-compose.sh[756]:  907ab427d28b Downloading [==============================>                    ]  158.6MB/258.8MB
+[   91.847932] app-compose.sh[756]:  41db9356bf37 Extracting [=======================>                           ]  98.04MB/209.5MB
+[   91.933028] app-compose.sh[756]:  907ab427d28b Downloading [===============================>                   ]  162.8MB/258.8MB
+[   91.966848] app-compose.sh[756]:  41db9356bf37 Extracting [=======================>                           ]  100.3MB/209.5MB
+[   92.064794] app-compose.sh[756]:  907ab427d28b Downloading [===============================>                   ]  164.4MB/258.8MB
+[   92.082495] app-compose.sh[756]:  41db9356bf37 Extracting [========================>                          ]  103.6MB/209.5MB
+[   92.176159] app-compose.sh[756]:  907ab427d28b Downloading [================================>                  ]  168.2MB/258.8MB
+[   92.213981] app-compose.sh[756]:  41db9356bf37 Extracting [=========================>                         ]  106.4MB/209.5MB
+[   92.278193] app-compose.sh[756]:  907ab427d28b Downloading [=================================>                 ]  171.9MB/258.8MB
+[   92.317960] app-compose.sh[756]:  41db9356bf37 Extracting [=========================>                         ]  108.6MB/209.5MB
+[   92.389069] app-compose.sh[756]:  907ab427d28b Downloading [=================================>                 ]  174.5MB/258.8MB
+[   92.447100] app-compose.sh[756]:  41db9356bf37 Extracting [==========================>                        ]    112MB/209.5MB
+[   92.523900] app-compose.sh[756]:  907ab427d28b Downloading [==================================>                ]  176.6MB/258.8MB
+[   92.566950] app-compose.sh[756]:  41db9356bf37 Extracting [===========================>                       ]  115.3MB/209.5MB
+[   92.625052] app-compose.sh[756]:  907ab427d28b Downloading [==================================>                ]  179.8MB/258.8MB
+[   92.671974] app-compose.sh[756]:  41db9356bf37 Extracting [============================>                      ]  118.1MB/209.5MB
+[   92.757181] app-compose.sh[756]:  907ab427d28b Downloading [===================================>               ]    183MB/258.8MB
+[   92.790587] app-compose.sh[756]:  41db9356bf37 Extracting [============================>                      ]  120.9MB/209.5MB
+[   92.862112] app-compose.sh[756]:  907ab427d28b Downloading [===================================>               ]  185.7MB/258.8MB
+[   92.893765] app-compose.sh[756]:  41db9356bf37 Extracting [=============================>                     ]  123.1MB/209.5MB
+[   92.970198] app-compose.sh[756]:  907ab427d28b Downloading [====================================>              ]  189.4MB/258.8MB
+[   92.996844] app-compose.sh[756]:  41db9356bf37 Extracting [==============================>                    ]  125.9MB/209.5MB
+[   93.096678] app-compose.sh[756]:  41db9356bf37 Extracting [==============================>                    ]  129.2MB/209.5MB
+[   93.104349] app-compose.sh[756]:  907ab427d28b Downloading [====================================>              ]    191MB/258.8MB
+[   93.211301] app-compose.sh[756]:  907ab427d28b Downloading [=====================================>             ]  193.1MB/258.8MB
+[   93.220032] app-compose.sh[756]:  41db9356bf37 Extracting [===============================>                   ]    132MB/209.5MB
+[   93.331070] app-compose.sh[756]:  907ab427d28b Downloading [=====================================>             ]  195.2MB/258.8MB
+[   93.336759] app-compose.sh[756]:  41db9356bf37 Extracting [================================>                  ]  134.8MB/209.5MB
+[   93.431922] app-compose.sh[756]:  41db9356bf37 Extracting [================================>                  ]  138.1MB/209.5MB
+[   93.441344] app-compose.sh[756]:  907ab427d28b Downloading [======================================>            ]    199MB/258.8MB
+[   93.547110] app-compose.sh[756]:  907ab427d28b Downloading [======================================>            ]  201.6MB/258.8MB
+[   93.559127] app-compose.sh[756]:  41db9356bf37 Extracting [=================================>                 ]  140.9MB/209.5MB
+[   93.657359] app-compose.sh[756]:  907ab427d28b Downloading [=======================================>           ]  204.8MB/258.8MB
+[   93.673297] app-compose.sh[756]:  41db9356bf37 Extracting [==================================>                ]  143.2MB/209.5MB
+[   93.768010] app-compose.sh[756]:  907ab427d28b Downloading [========================================>          ]  208.6MB/258.8MB
+[   93.787750] app-compose.sh[756]:  41db9356bf37 Extracting [==================================>                ]  145.9MB/209.5MB
+[   93.874293] app-compose.sh[756]:  907ab427d28b Downloading [========================================>          ]  210.7MB/258.8MB
+[   93.969797] app-compose.sh[756]:  41db9356bf37 Extracting [===================================>               ]  147.1MB/209.5MB
+[   94.020096] app-compose.sh[756]:  907ab427d28b Downloading [=========================================>         ]  213.3MB/258.8MB
+[   94.131512] app-compose.sh[756]:  907ab427d28b Downloading [=========================================>         ]  214.4MB/258.8MB
+[   94.170703] app-compose.sh[756]:  41db9356bf37 Extracting [===================================>               ]  147.6MB/209.5MB
+[   94.234329] app-compose.sh[756]:  907ab427d28b Downloading [==========================================>        ]  217.6MB/258.8MB
+[   94.364880] app-compose.sh[756]:  907ab427d28b Downloading [==========================================>        ]  219.2MB/258.8MB
+[   94.429141] app-compose.sh[756]:  41db9356bf37 Extracting [===================================>               ]  148.2MB/209.5MB
+[   94.465075] app-compose.sh[756]:  907ab427d28b Downloading [==========================================>        ]  221.3MB/258.8MB
+[   94.576346] app-compose.sh[756]:  41db9356bf37 Extracting [===================================>               ]  148.7MB/209.5MB
+[   94.584161] app-compose.sh[756]:  907ab427d28b Downloading [===========================================>       ]  222.9MB/258.8MB
+[   94.699310] app-compose.sh[756]:  907ab427d28b Downloading [===========================================>       ]  226.1MB/258.8MB
+[   94.706221] app-compose.sh[756]:  41db9356bf37 Extracting [===================================>               ]  149.3MB/209.5MB
+[   94.829251] app-compose.sh[756]:  907ab427d28b Downloading [============================================>      ]  228.3MB/258.8MB
+[   94.944080] app-compose.sh[756]:  907ab427d28b Downloading [============================================>      ]  230.9MB/258.8MB
+[   95.077177] app-compose.sh[756]:  41db9356bf37 Extracting [====================================>              ]  151.5MB/209.5MB
+[   95.167596] app-compose.sh[756]:  907ab427d28b Downloading [============================================>      ]    232MB/258.8MB
+[   95.275859] app-compose.sh[756]:  907ab427d28b Downloading [=============================================>     ]  235.7MB/258.8MB
+[   95.388738] app-compose.sh[756]:  907ab427d28b Downloading [=============================================>     ]  237.8MB/258.8MB
+[   95.499857] app-compose.sh[756]:  907ab427d28b Downloading [==============================================>    ]  240.5MB/258.8MB
+[   95.617802] app-compose.sh[756]:  907ab427d28b Downloading [===============================================>   ]  243.7MB/258.8MB
+[   95.723551] app-compose.sh[756]:  907ab427d28b Downloading [===============================================>   ]  247.4MB/258.8MB
+[   95.738192] app-compose.sh[756]:  41db9356bf37 Extracting [====================================>              ]  152.6MB/209.5MB
+[   95.823598] app-compose.sh[756]:  907ab427d28b Downloading [================================================>  ]    249MB/258.8MB
+[   95.874040] app-compose.sh[756]:  41db9356bf37 Extracting [====================================>              ]  153.2MB/209.5MB
+[   95.938168] app-compose.sh[756]:  907ab427d28b Downloading [================================================>  ]  251.1MB/258.8MB
+[   96.073217] app-compose.sh[756]:  907ab427d28b Downloading [================================================>  ]  252.2MB/258.8MB
+[   96.089337] app-compose.sh[756]:  41db9356bf37 Extracting [====================================>              ]  154.9MB/209.5MB
+[   96.155226] app-compose.sh[756]:  907ab427d28b Downloading [=================================================> ]  254.4MB/258.8MB
+[   96.261511] app-compose.sh[756]:  41db9356bf37 Extracting [=====================================>             ]  155.4MB/209.5MB
+[   96.278763] app-compose.sh[756]:  907ab427d28b Downloading [=================================================> ]  257.5MB/258.8MB
+[   96.333024] app-compose.sh[756]:  907ab427d28b Verifying Checksum
+[   96.338863] app-compose.sh[756]:  907ab427d28b Download complete
+[   96.373918] app-compose.sh[756]:  41db9356bf37 Extracting [=====================================>             ]  156.5MB/209.5MB
+[   96.810226] app-compose.sh[756]:  41db9356bf37 Extracting [=====================================>             ]  157.1MB/209.5MB
+[   96.983752] app-compose.sh[756]:  41db9356bf37 Extracting [=====================================>             ]  157.6MB/209.5MB
+[   97.624630] app-compose.sh[756]:  41db9356bf37 Extracting [=====================================>             ]  158.2MB/209.5MB
+[   98.049015] app-compose.sh[756]:  41db9356bf37 Extracting [=====================================>             ]  158.8MB/209.5MB
+[   98.219396] app-compose.sh[756]:  41db9356bf37 Extracting [======================================>            ]  159.3MB/209.5MB
+[   98.367587] app-compose.sh[756]:  41db9356bf37 Extracting [======================================>            ]  159.9MB/209.5MB
+[   98.655169] app-compose.sh[756]:  41db9356bf37 Extracting [======================================>            ]  160.4MB/209.5MB
+[   98.876958] app-compose.sh[756]:  41db9356bf37 Extracting [======================================>            ]    161MB/209.5MB
+[   99.129301] app-compose.sh[756]:  41db9356bf37 Extracting [======================================>            ]  161.5MB/209.5MB
+[   99.296599] app-compose.sh[756]:  41db9356bf37 Extracting [======================================>            ]  162.7MB/209.5MB
+[   99.491625] app-compose.sh[756]:  41db9356bf37 Extracting [======================================>            ]  163.2MB/209.5MB
+[   99.658069] app-compose.sh[756]:  41db9356bf37 Extracting [=======================================>           ]  163.8MB/209.5MB
+[   99.814514] app-compose.sh[756]:  41db9356bf37 Extracting [=======================================>           ]  164.3MB/209.5MB
+[   99.981802] app-compose.sh[756]:  41db9356bf37 Extracting [=======================================>           ]  164.9MB/209.5MB
+[  100.123152] app-compose.sh[756]:  41db9356bf37 Extracting [=======================================>           ]    166MB/209.5MB
+[  100.255995] app-compose.sh[756]:  41db9356bf37 Extracting [========================================>          ]  168.2MB/209.5MB
+[  100.358388] app-compose.sh[756]:  41db9356bf37 Extracting [========================================>          ]  169.3MB/209.5MB
+[  100.466233] app-compose.sh[756]:  41db9356bf37 Extracting [========================================>          ]  171.6MB/209.5MB
+[  100.590490] app-compose.sh[756]:  41db9356bf37 Extracting [=========================================>         ]  174.4MB/209.5MB
+[  100.704195] app-compose.sh[756]:  41db9356bf37 Extracting [==========================================>        ]    176MB/209.5MB
+[  100.829718] app-compose.sh[756]:  41db9356bf37 Extracting [==========================================>        ]  178.8MB/209.5MB
+[  100.944222] app-compose.sh[756]:  41db9356bf37 Extracting [===========================================>       ]    181MB/209.5MB
+[  101.070049] app-compose.sh[756]:  41db9356bf37 Extracting [===========================================>       ]  183.3MB/209.5MB
+[  101.202482] app-compose.sh[756]:  41db9356bf37 Extracting [============================================>      ]  185.5MB/209.5MB
+[  101.329099] app-compose.sh[756]:  41db9356bf37 Extracting [============================================>      ]  186.6MB/209.5MB
+[  101.429178] app-compose.sh[756]:  41db9356bf37 Extracting [============================================>      ]  187.2MB/209.5MB
+[  101.570280] app-compose.sh[756]:  41db9356bf37 Extracting [============================================>      ]  188.3MB/209.5MB
+[  101.699482] app-compose.sh[756]:  41db9356bf37 Extracting [=============================================>     ]  188.8MB/209.5MB
+[  101.849402] app-compose.sh[756]:  41db9356bf37 Extracting [=============================================>     ]  189.4MB/209.5MB
+[  102.036613] app-compose.sh[756]:  41db9356bf37 Extracting [=============================================>     ]    190MB/209.5MB
+[  102.295023] app-compose.sh[756]:  41db9356bf37 Extracting [=============================================>     ]  191.1MB/209.5MB
+[  102.482240] app-compose.sh[756]:  41db9356bf37 Extracting [=============================================>     ]  191.6MB/209.5MB
+[  102.741174] app-compose.sh[756]:  41db9356bf37 Extracting [=============================================>     ]  192.2MB/209.5MB
+[  102.874759] app-compose.sh[756]:  41db9356bf37 Extracting [=============================================>     ]  192.7MB/209.5MB
+[  103.025253] app-compose.sh[756]:  41db9356bf37 Extracting [==============================================>    ]  193.3MB/209.5MB
+[  103.206698] app-compose.sh[756]:  41db9356bf37 Extracting [==============================================>    ]  193.9MB/209.5MB
+[  103.486710] app-compose.sh[756]:  41db9356bf37 Extracting [==============================================>    ]  194.4MB/209.5MB
+[  103.812737] app-compose.sh[756]:  41db9356bf37 Extracting [==============================================>    ]    195MB/209.5MB
+[  103.908580] app-compose.sh[756]:  41db9356bf37 Extracting [==============================================>    ]  195.5MB/209.5MB
+[  104.088966] app-compose.sh[756]:  41db9356bf37 Extracting [==============================================>    ]  196.6MB/209.5MB
+[  104.195700] app-compose.sh[756]:  41db9356bf37 Extracting [===============================================>   ]  197.8MB/209.5MB
+[  104.381686] app-compose.sh[756]:  41db9356bf37 Extracting [===============================================>   ]  198.3MB/209.5MB
+[  104.579382] app-compose.sh[756]:  41db9356bf37 Extracting [===============================================>   ]  198.9MB/209.5MB
+[  104.793119] app-compose.sh[756]:  41db9356bf37 Extracting [===============================================>   ]  199.4MB/209.5MB
+[  104.994845] app-compose.sh[756]:  41db9356bf37 Extracting [===============================================>   ]  201.1MB/209.5MB
+[  105.140248] app-compose.sh[756]:  41db9356bf37 Extracting [================================================>  ]  203.3MB/209.5MB
+[  105.330338] app-compose.sh[756]:  41db9356bf37 Extracting [=================================================> ]  205.6MB/209.5MB
+[  105.979068] app-compose.sh[756]:  41db9356bf37 Extracting [=================================================> ]  206.1MB/209.5MB
+[  106.848943] app-compose.sh[756]:  41db9356bf37 Extracting [=================================================> ]  206.7MB/209.5MB
+[  107.665286] app-compose.sh[756]:  41db9356bf37 Extracting [=================================================> ]  207.2MB/209.5MB
+[  108.285786] app-compose.sh[756]:  41db9356bf37 Extracting [=================================================> ]  207.8MB/209.5MB
+[  108.411456] app-compose.sh[756]:  41db9356bf37 Extracting [=================================================> ]  208.3MB/209.5MB
+[  108.632662] app-compose.sh[756]:  41db9356bf37 Extracting [=================================================> ]  209.5MB/209.5MB
+[  108.692150] app-compose.sh[756]:  41db9356bf37 Extracting [==================================================>]  209.5MB/209.5MB
+[  109.153983] app-compose.sh[756]:  41db9356bf37 Pull complete
+[  109.162991] app-compose.sh[756]:  4361e6a86c1f Extracting [==================================================>]     617B/617B
+[  109.177005] app-compose.sh[756]:  4361e6a86c1f Extracting [==================================================>]     617B/617B
+[  109.197193] app-compose.sh[756]:  4361e6a86c1f Pull complete
+[  109.204974] app-compose.sh[756]:  c3441125e86b Extracting [==================================================>]  4.192kB/4.192kB
+[  109.221357] app-compose.sh[756]:  c3441125e86b Extracting [==================================================>]  4.192kB/4.192kB
+[  109.248276] app-compose.sh[756]:  c3441125e86b Pull complete
+[  109.285964] app-compose.sh[756]:  faa381f77e90 Extracting [>                                                  ]  196.6kB/16.51MB
+[  109.400084] app-compose.sh[756]:  faa381f77e90 Extracting [=>                                                 ]  393.2kB/16.51MB
+[  109.521901] app-compose.sh[756]:  faa381f77e90 Extracting [==>                                                ]    983kB/16.51MB
+[  109.662298] app-compose.sh[756]:  faa381f77e90 Extracting [====>                                              ]  1.376MB/16.51MB
+[  109.769576] app-compose.sh[756]:  faa381f77e90 Extracting [======>                                            ]  2.163MB/16.51MB
+[  109.869586] app-compose.sh[756]:  faa381f77e90 Extracting [============>                                      ]  4.129MB/16.51MB
+[  110.052073] app-compose.sh[756]:  faa381f77e90 Extracting [=============>                                     ]  4.325MB/16.51MB
+[  110.158535] app-compose.sh[756]:  faa381f77e90 Extracting [==============>                                    ]  4.915MB/16.51MB
+[  110.274519] app-compose.sh[756]:  faa381f77e90 Extracting [===============>                                   ]  5.112MB/16.51MB
+[  110.382796] app-compose.sh[756]:  faa381f77e90 Extracting [================>                                  ]  5.308MB/16.51MB
+[  110.551003] app-compose.sh[756]:  faa381f77e90 Extracting [=================>                                 ]  5.898MB/16.51MB
+[  110.703136] app-compose.sh[756]:  faa381f77e90 Extracting [===================>                               ]  6.488MB/16.51MB
+[  110.828817] app-compose.sh[756]:  faa381f77e90 Extracting [====================>                              ]  6.685MB/16.51MB
+[  111.026854] app-compose.sh[756]:  faa381f77e90 Extracting [=====================>                             ]  7.078MB/16.51MB
+[  111.202489] app-compose.sh[756]:  faa381f77e90 Extracting [======================>                            ]  7.471MB/16.51MB
+[  111.351934] app-compose.sh[756]:  faa381f77e90 Extracting [=========================>                         ]  8.454MB/16.51MB
+[  111.453586] app-compose.sh[756]:  faa381f77e90 Extracting [==========================>                        ]  8.651MB/16.51MB
+[  111.561433] app-compose.sh[756]:  faa381f77e90 Extracting [===============================>                   ]  10.42MB/16.51MB
+[  111.682283] app-compose.sh[756]:  faa381f77e90 Extracting [==================================>                ]   11.4MB/16.51MB
+[  111.780387] app-compose.sh[756]:  faa381f77e90 Extracting [======================================>            ]  12.78MB/16.51MB
+[  111.959155] app-compose.sh[756]:  faa381f77e90 Extracting [=========================================>         ]  13.57MB/16.51MB
+[  112.400340] app-compose.sh[756]:  faa381f77e90 Extracting [=========================================>         ]  13.76MB/16.51MB
+[  112.600578] app-compose.sh[756]:  faa381f77e90 Extracting [==========================================>        ]  13.96MB/16.51MB
+[  112.765296] app-compose.sh[756]:  faa381f77e90 Extracting [==========================================>        ]  14.16MB/16.51MB
+[  113.220542] app-compose.sh[756]:  faa381f77e90 Extracting [===========================================>       ]  14.35MB/16.51MB
+[  113.438711] app-compose.sh[756]:  faa381f77e90 Extracting [============================================>      ]  14.55MB/16.51MB
+[  113.687795] app-compose.sh[756]:  faa381f77e90 Extracting [============================================>      ]  14.75MB/16.51MB
+[  114.135786] app-compose.sh[756]:  faa381f77e90 Extracting [=============================================>     ]  14.94MB/16.51MB
+[  114.363184] app-compose.sh[756]:  faa381f77e90 Extracting [=============================================>     ]  15.14MB/16.51MB
+[  114.645154] app-compose.sh[756]:  faa381f77e90 Extracting [==============================================>    ]  15.34MB/16.51MB
+[  114.803183] app-compose.sh[756]:  faa381f77e90 Extracting [===============================================>   ]  15.73MB/16.51MB
+[  114.986863] app-compose.sh[756]:  faa381f77e90 Extracting [==================================================>]  16.51MB/16.51MB
+[  114.998218] app-compose.sh[756]:  faa381f77e90 Extracting [==================================================>]  16.51MB/16.51MB
+[  115.145108] app-compose.sh[756]:  faa381f77e90 Pull complete
+[  115.155091] app-compose.sh[756]:  0fd7c55519d4 Extracting [==================================================>]     709B/709B
+[  115.171229] app-compose.sh[756]:  0fd7c55519d4 Extracting [==================================================>]     709B/709B
+[  115.195012] app-compose.sh[756]:  0fd7c55519d4 Pull complete
+[  115.201908] app-compose.sh[756]:  b6993ede9b8f Extracting [==================================================>]  1.102kB/1.102kB
+[  115.214745] app-compose.sh[756]:  b6993ede9b8f Extracting [==================================================>]  1.102kB/1.102kB
+[  115.241033] app-compose.sh[756]:  b6993ede9b8f Pull complete
+[  115.249334] app-compose.sh[756]:  629ae508ebfc Extracting [==================================================>]  1.451kB/1.451kB
+[  115.262211] app-compose.sh[756]:  629ae508ebfc Extracting [==================================================>]  1.451kB/1.451kB
+[  115.297073] app-compose.sh[756]:  629ae508ebfc Pull complete
+[  115.305016] app-compose.sh[756]:  760dbd97e5f9 Extracting [==================================================>]     530B/530B
+[  115.318894] app-compose.sh[756]:  760dbd97e5f9 Extracting [==================================================>]     530B/530B
+[  115.347045] app-compose.sh[756]:  760dbd97e5f9 Pull complete
+[  115.353517] app-compose.sh[756]:  4f4fb700ef54 Extracting [==================================================>]      32B/32B
+[  115.366621] app-compose.sh[756]:  4f4fb700ef54 Extracting [==================================================>]      32B/32B
+[  115.387251] app-compose.sh[756]:  4f4fb700ef54 Pull complete
+[  115.397427] app-compose.sh[756]:  ce21914aeb0a Extracting [==================================================>]     546B/546B
+[  115.414833] app-compose.sh[756]:  ce21914aeb0a Extracting [==================================================>]     546B/546B
+[  115.436050] app-compose.sh[756]:  ce21914aeb0a Pull complete
+[  115.529478] app-compose.sh[756]:  907ab427d28b Extracting [>                                                  ]  557.1kB/258.8MB
+[  115.629451] app-compose.sh[756]:  907ab427d28b Extracting [=>                                                 ]  7.242MB/258.8MB
+[  115.754852] app-compose.sh[756]:  907ab427d28b Extracting [==>                                                ]  13.37MB/258.8MB
+[  115.881100] app-compose.sh[756]:  907ab427d28b Extracting [===>                                               ]   15.6MB/258.8MB
+[  115.982992] app-compose.sh[756]:  907ab427d28b Extracting [===>                                               ]  18.38MB/258.8MB
+[  116.089255] app-compose.sh[756]:  907ab427d28b Extracting [=====>                                             ]   27.3MB/258.8MB
+[  116.191823] app-compose.sh[756]:  907ab427d28b Extracting [=====>                                             ]  30.08MB/258.8MB
+[  116.348681] app-compose.sh[756]:  907ab427d28b Extracting [======>                                            ]  31.75MB/258.8MB
+[  116.491534] app-compose.sh[756]:  907ab427d28b Extracting [======>                                            ]  32.31MB/258.8MB
+[  116.614820] app-compose.sh[756]:  907ab427d28b Extracting [======>                                            ]  32.87MB/258.8MB
+[  116.759979] app-compose.sh[756]:  907ab427d28b Extracting [======>                                            ]  33.42MB/258.8MB
+[  116.861098] app-compose.sh[756]:  907ab427d28b Extracting [======>                                            ]  34.54MB/258.8MB
+[  117.144445] app-compose.sh[756]:  907ab427d28b Extracting [======>                                            ]  36.21MB/258.8MB
+[  117.269382] app-compose.sh[756]:  907ab427d28b Extracting [=======>                                           ]  37.32MB/258.8MB
+[  117.450851] app-compose.sh[756]:  907ab427d28b Extracting [=======>                                           ]  37.88MB/258.8MB
+[  117.627486] app-compose.sh[756]:  907ab427d28b Extracting [=======>                                           ]  38.44MB/258.8MB
+[  117.835222] app-compose.sh[756]:  907ab427d28b Extracting [=======>                                           ]  38.99MB/258.8MB
+[  118.137422] app-compose.sh[756]:  907ab427d28b Extracting [=======>                                           ]  39.55MB/258.8MB
+[  118.331995] app-compose.sh[756]:  907ab427d28b Extracting [=======>                                           ]  40.11MB/258.8MB
+[  118.456306] app-compose.sh[756]:  907ab427d28b Extracting [=======>                                           ]  41.22MB/258.8MB
+[  118.568211] app-compose.sh[756]:  907ab427d28b Extracting [========>                                          ]  42.34MB/258.8MB
+[  118.723968] app-compose.sh[756]:  907ab427d28b Extracting [========>                                          ]  44.01MB/258.8MB
+[  118.860470] app-compose.sh[756]:  907ab427d28b Extracting [========>                                          ]  46.24MB/258.8MB
+[  119.720797] app-compose.sh[756]:  907ab427d28b Extracting [=========>                                         ]  46.79MB/258.8MB
+[  120.569251] app-compose.sh[756]:  907ab427d28b Extracting [=========>                                         ]  47.35MB/258.8MB
+[  121.413401] app-compose.sh[756]:  907ab427d28b Extracting [=========>                                         ]  47.91MB/258.8MB
+[  121.882727] app-compose.sh[756]:  907ab427d28b Extracting [=========>                                         ]  48.46MB/258.8MB
+[  122.049394] app-compose.sh[756]:  907ab427d28b Extracting [=========>                                         ]  49.58MB/258.8MB
+[  122.226980] app-compose.sh[756]:  907ab427d28b Extracting [=========>                                         ]  50.14MB/258.8MB
+[  122.331234] app-compose.sh[756]:  907ab427d28b Extracting [==========>                                        ]  53.48MB/258.8MB
+[  122.446535] app-compose.sh[756]:  907ab427d28b Extracting [==========>                                        ]  56.82MB/258.8MB
+[  122.593849] app-compose.sh[756]:  907ab427d28b Extracting [===========>                                       ]  57.93MB/258.8MB
+[  122.697378] app-compose.sh[756]:  907ab427d28b Extracting [===========>                                       ]  60.16MB/258.8MB
+[  122.806096] app-compose.sh[756]:  907ab427d28b Extracting [============>                                      ]  62.95MB/258.8MB
+[  122.910227] app-compose.sh[756]:  907ab427d28b Extracting [============>                                      ]  66.29MB/258.8MB
+[  123.027045] app-compose.sh[756]:  907ab427d28b Extracting [=============>                                     ]  69.63MB/258.8MB
+[  123.176893] app-compose.sh[756]:  907ab427d28b Extracting [=============>                                     ]  72.42MB/258.8MB
+[  123.252181] app-compose.sh[756]:  907ab427d28b Extracting [==============>                                    ]   75.2MB/258.8MB
+[  123.353865] app-compose.sh[756]:  907ab427d28b Extracting [===============>                                   ]  77.99MB/258.8MB
+[  123.466585] app-compose.sh[756]:  907ab427d28b Extracting [===============>                                   ]  81.33MB/258.8MB
+[  123.586862] app-compose.sh[756]:  907ab427d28b Extracting [================>                                  ]  84.67MB/258.8MB
+[  123.687278] app-compose.sh[756]:  907ab427d28b Extracting [================>                                  ]  87.46MB/258.8MB
+[  123.794670] app-compose.sh[756]:  907ab427d28b Extracting [=================>                                 ]  90.24MB/258.8MB
+[  123.904375] app-compose.sh[756]:  907ab427d28b Extracting [==================>                                ]  93.59MB/258.8MB
+[  124.091108] app-compose.sh[756]:  907ab427d28b Extracting [==================>                                ]  96.93MB/258.8MB
+[  124.149955] app-compose.sh[756]:  907ab427d28b Extracting [===================>                               ]  99.16MB/258.8MB
+[  124.250420] app-compose.sh[756]:  907ab427d28b Extracting [===================>                               ]  102.5MB/258.8MB
+[  124.371864] app-compose.sh[756]:  907ab427d28b Extracting [====================>                              ]  105.8MB/258.8MB
+[  124.484702] app-compose.sh[756]:  907ab427d28b Extracting [====================>                              ]  108.6MB/258.8MB
+[  124.595963] app-compose.sh[756]:  907ab427d28b Extracting [=====================>                             ]    112MB/258.8MB
+[  124.713233] app-compose.sh[756]:  907ab427d28b Extracting [======================>                            ]  115.3MB/258.8MB
+[  124.831914] app-compose.sh[756]:  907ab427d28b Extracting [======================>                            ]  118.7MB/258.8MB
+[  124.954771] app-compose.sh[756]:  907ab427d28b Extracting [=======================>                           ]  121.4MB/258.8MB
+[  125.051984] app-compose.sh[756]:  907ab427d28b Extracting [========================>                          ]  124.2MB/258.8MB
+[  125.168600] app-compose.sh[756]:  907ab427d28b Extracting [========================>                          ]  127.6MB/258.8MB
+[  125.282180] app-compose.sh[756]:  907ab427d28b Extracting [=========================>                         ]  130.9MB/258.8MB
+[  125.393351] app-compose.sh[756]:  907ab427d28b Extracting [=========================>                         ]  133.7MB/258.8MB
+[  125.514128] app-compose.sh[756]:  907ab427d28b Extracting [==========================>                        ]  135.9MB/258.8MB
+[  125.615989] app-compose.sh[756]:  907ab427d28b Extracting [==========================>                        ]  139.3MB/258.8MB
+[  125.718196] app-compose.sh[756]:  907ab427d28b Extracting [===========================>                       ]  142.6MB/258.8MB
+[  125.819717] app-compose.sh[756]:  907ab427d28b Extracting [============================>                      ]  145.9MB/258.8MB
+[  125.931933] app-compose.sh[756]:  907ab427d28b Extracting [============================>                      ]  147.1MB/258.8MB
+[  126.039158] app-compose.sh[756]:  907ab427d28b Extracting [============================>                      ]  148.2MB/258.8MB
+[  126.138822] app-compose.sh[756]:  907ab427d28b Extracting [============================>                      ]  149.8MB/258.8MB
+[  126.246439] app-compose.sh[756]:  907ab427d28b Extracting [=============================>                     ]  152.6MB/258.8MB
+[  126.352593] app-compose.sh[756]:  907ab427d28b Extracting [==============================>                    ]  155.4MB/258.8MB
+[  126.476086] app-compose.sh[756]:  907ab427d28b Extracting [==============================>                    ]  158.2MB/258.8MB
+[  126.569050] app-compose.sh[756]:  907ab427d28b Extracting [===============================>                   ]    161MB/258.8MB
+[  126.678887] app-compose.sh[756]:  907ab427d28b Extracting [===============================>                   ]  163.8MB/258.8MB
+[  126.783166] app-compose.sh[756]:  907ab427d28b Extracting [================================>                  ]  166.6MB/258.8MB
+[  126.884032] app-compose.sh[756]:  907ab427d28b Extracting [================================>                  ]  169.3MB/258.8MB
+[  127.030719] app-compose.sh[756]:  907ab427d28b Extracting [=================================>                 ]  172.1MB/258.8MB
+[  127.096017] app-compose.sh[756]:  907ab427d28b Extracting [=================================>                 ]  174.9MB/258.8MB
+[  127.199565] app-compose.sh[756]:  907ab427d28b Extracting [==================================>                ]  177.7MB/258.8MB
+[  127.314746] app-compose.sh[756]:  907ab427d28b Extracting [==================================>                ]    181MB/258.8MB
+[  127.417086] app-compose.sh[756]:  907ab427d28b Extracting [===================================>               ]  184.4MB/258.8MB
+[  127.519597] app-compose.sh[756]:  907ab427d28b Extracting [====================================>              ]  187.2MB/258.8MB
+[  127.620133] app-compose.sh[756]:  907ab427d28b Extracting [====================================>              ]    190MB/258.8MB
+[  127.726533] app-compose.sh[756]:  907ab427d28b Extracting [=====================================>             ]  193.3MB/258.8MB
+[  127.862953] app-compose.sh[756]:  907ab427d28b Extracting [=====================================>             ]  196.1MB/258.8MB
+[  127.969026] app-compose.sh[756]:  907ab427d28b Extracting [=====================================>             ]  196.6MB/258.8MB
+[  128.243156] app-compose.sh[756]:  907ab427d28b Extracting [======================================>            ]  197.2MB/258.8MB
+[  128.426216] app-compose.sh[756]:  907ab427d28b Extracting [======================================>            ]  198.3MB/258.8MB
+[  128.545653] app-compose.sh[756]:  907ab427d28b Extracting [======================================>            ]  200.5MB/258.8MB
+[  128.774460] app-compose.sh[756]:  907ab427d28b Extracting [======================================>            ]  201.1MB/258.8MB
+[  129.017085] app-compose.sh[756]:  907ab427d28b Extracting [======================================>            ]  201.7MB/258.8MB
+[  129.376478] app-compose.sh[756]:  907ab427d28b Extracting [=======================================>           ]  202.2MB/258.8MB
+[  129.561112] app-compose.sh[756]:  907ab427d28b Extracting [=======================================>           ]  204.4MB/258.8MB
+[  129.785602] app-compose.sh[756]:  907ab427d28b Extracting [=======================================>           ]    205MB/258.8MB
+[  129.966681] app-compose.sh[756]:  907ab427d28b Extracting [=======================================>           ]  206.1MB/258.8MB
+[  130.317087] app-compose.sh[756]:  907ab427d28b Extracting [=======================================>           ]  206.7MB/258.8MB
+[  130.553742] app-compose.sh[756]:  907ab427d28b Extracting [========================================>          ]  207.2MB/258.8MB
+[  131.339210] app-compose.sh[756]:  907ab427d28b Extracting [========================================>          ]  207.8MB/258.8MB
+[  131.513151] app-compose.sh[756]:  907ab427d28b Extracting [========================================>          ]  208.3MB/258.8MB
+[  131.798544] app-compose.sh[756]:  907ab427d28b Extracting [========================================>          ]  208.9MB/258.8MB
+[  132.092076] app-compose.sh[756]:  907ab427d28b Extracting [========================================>          ]  209.5MB/258.8MB
+[  132.284243] app-compose.sh[756]:  907ab427d28b Extracting [========================================>          ]    210MB/258.8MB
+[  132.545993] app-compose.sh[756]:  907ab427d28b Extracting [========================================>          ]  210.6MB/258.8MB
+[  132.649330] app-compose.sh[756]:  907ab427d28b Extracting [========================================>          ]  211.1MB/258.8MB
+[  132.763516] app-compose.sh[756]:  907ab427d28b Extracting [========================================>          ]  211.7MB/258.8MB
+[  132.948584] app-compose.sh[756]:  907ab427d28b Extracting [=========================================>         ]  212.2MB/258.8MB
+[  133.154251] app-compose.sh[756]:  907ab427d28b Extracting [=========================================>         ]  212.8MB/258.8MB
+[  133.346661] app-compose.sh[756]:  907ab427d28b Extracting [=========================================>         ]  213.4MB/258.8MB
+[  133.682472] app-compose.sh[756]:  907ab427d28b Extracting [=========================================>         ]  213.9MB/258.8MB
+[  133.875271] app-compose.sh[756]:  907ab427d28b Extracting [=========================================>         ]  214.5MB/258.8MB
+[  134.067949] app-compose.sh[756]:  907ab427d28b Extracting [=========================================>         ]    215MB/258.8MB
+[  134.216872] app-compose.sh[756]:  907ab427d28b Extracting [=========================================>         ]  216.1MB/258.8MB
+[  134.378743] app-compose.sh[756]:  907ab427d28b Extracting [==========================================>        ]  217.8MB/258.8MB
+[  134.485988] app-compose.sh[756]:  907ab427d28b Extracting [==========================================>        ]  218.4MB/258.8MB
+[  134.598440] app-compose.sh[756]:  907ab427d28b Extracting [==========================================>        ]    220MB/258.8MB
+[  134.721146] app-compose.sh[756]:  907ab427d28b Extracting [==========================================>        ]  221.7MB/258.8MB
+[  134.864090] app-compose.sh[756]:  907ab427d28b Extracting [===========================================>       ]  222.8MB/258.8MB
+[  134.971872] app-compose.sh[756]:  907ab427d28b Extracting [===========================================>       ]  225.1MB/258.8MB
+[  135.097327] app-compose.sh[756]:  907ab427d28b Extracting [============================================>      ]  227.8MB/258.8MB
+[  135.208216] app-compose.sh[756]:  907ab427d28b Extracting [============================================>      ]  230.1MB/258.8MB
+[  135.310992] app-compose.sh[756]:  907ab427d28b Extracting [============================================>      ]  231.7MB/258.8MB
+[  135.430891] app-compose.sh[756]:  907ab427d28b Extracting [=============================================>     ]  233.4MB/258.8MB
+[  135.547219] app-compose.sh[756]:  907ab427d28b Extracting [=============================================>     ]  235.1MB/258.8MB
+[  135.655751] app-compose.sh[756]:  907ab427d28b Extracting [=============================================>     ]  236.2MB/258.8MB
+[  135.771990] app-compose.sh[756]:  907ab427d28b Extracting [=============================================>     ]  237.3MB/258.8MB
+[  135.885744] app-compose.sh[756]:  907ab427d28b Extracting [=============================================>     ]  237.9MB/258.8MB
+[  136.005459] app-compose.sh[756]:  907ab427d28b Extracting [==============================================>    ]  238.4MB/258.8MB
+[  136.170035] app-compose.sh[756]:  907ab427d28b Extracting [==============================================>    ]    239MB/258.8MB
+[  136.284151] app-compose.sh[756]:  907ab427d28b Extracting [==============================================>    ]  239.5MB/258.8MB
+[  136.407781] app-compose.sh[756]:  907ab427d28b Extracting [==============================================>    ]  240.1MB/258.8MB
+[  136.616572] app-compose.sh[756]:  907ab427d28b Extracting [==============================================>    ]  240.6MB/258.8MB
+[  136.935165] app-compose.sh[756]:  907ab427d28b Extracting [==============================================>    ]  241.2MB/258.8MB
+[  137.151194] app-compose.sh[756]:  907ab427d28b Extracting [==============================================>    ]  241.8MB/258.8MB
+[  137.280930] app-compose.sh[756]:  907ab427d28b Extracting [==============================================>    ]  242.3MB/258.8MB
+[  137.469223] app-compose.sh[756]:  907ab427d28b Extracting [==============================================>    ]  242.9MB/258.8MB
+[  137.772776] app-compose.sh[756]:  907ab427d28b Extracting [===============================================>   ]  243.4MB/258.8MB
+[  138.074297] app-compose.sh[756]:  907ab427d28b Extracting [===============================================>   ]    244MB/258.8MB
+[  138.281396] app-compose.sh[756]:  907ab427d28b Extracting [===============================================>   ]  244.5MB/258.8MB
+[  138.382943] app-compose.sh[756]:  907ab427d28b Extracting [===============================================>   ]  245.1MB/258.8MB
+[  138.543220] app-compose.sh[756]:  907ab427d28b Extracting [===============================================>   ]  246.2MB/258.8MB
+[  138.697846] app-compose.sh[756]:  907ab427d28b Extracting [===============================================>   ]  247.3MB/258.8MB
+[  139.006287] app-compose.sh[756]:  907ab427d28b Extracting [===============================================>   ]  247.9MB/258.8MB
+[  139.120205] app-compose.sh[756]:  907ab427d28b Extracting [================================================>  ]  248.4MB/258.8MB
+[  139.226260] app-compose.sh[756]:  907ab427d28b Extracting [================================================>  ]    249MB/258.8MB
+[  139.395374] app-compose.sh[756]:  907ab427d28b Extracting [================================================>  ]  250.1MB/258.8MB
+[  139.509935] app-compose.sh[756]:  907ab427d28b Extracting [================================================>  ]  251.8MB/258.8MB
+[  139.618211] app-compose.sh[756]:  907ab427d28b Extracting [================================================>  ]  252.9MB/258.8MB
+[  139.767829] app-compose.sh[756]:  907ab427d28b Extracting [=================================================> ]  254.6MB/258.8MB
+[  139.917338] app-compose.sh[756]:  907ab427d28b Extracting [=================================================> ]  255.1MB/258.8MB
+[  140.764575] app-compose.sh[756]:  907ab427d28b Extracting [=================================================> ]  255.7MB/258.8MB
+[  141.600404] app-compose.sh[756]:  907ab427d28b Extracting [=================================================> ]  256.2MB/258.8MB
+[  142.368009] app-compose.sh[756]:  907ab427d28b Extracting [=================================================> ]  256.8MB/258.8MB
+[  142.722714] app-compose.sh[756]:  907ab427d28b Extracting [=================================================> ]  257.4MB/258.8MB
+[  142.861893] app-compose.sh[756]:  907ab427d28b Extracting [=================================================> ]  258.5MB/258.8MB
+[  143.134938] app-compose.sh[756]:  907ab427d28b Extracting [==================================================>]  258.8MB/258.8MB
+[  143.649017] app-compose.sh[756]:  907ab427d28b Pull complete
+[  143.671324] app-compose.sh[756]:  app Pulled
+[  143.685047] app-compose.sh[756]:  Network dstack_tee-network  Creating
+[  143.763378] app-compose.sh[756]:  Network dstack_tee-network  Created
+[  143.767036] app-compose.sh[756]:  Container tee-trust-validator  Creating
+[  143.849006] app-compose.sh[756]:  Container tee-trust-validator  Created
+[  143.852547] app-compose.sh[756]:  Container tee-trust-validator  Starting
+[  143.731126] br-1bbe94e67b4b: port 1(veth8f3a096) entered blocking state
+[  143.735956] br-1bbe94e67b4b: port 1(veth8f3a096) entered disabled state
+[  143.738452] veth8f3a096: entered allmulticast mode
+[  143.740393] veth8f3a096: entered promiscuous mode
+[  144.124698] br-1bbe94e67b4b: port 1(veth8f3a096) entered disabled state
+[  144.128223] veth8f3a096 (unregistering): left allmulticast mode
+[  144.130934] veth8f3a096 (unregistering): left promiscuous mode
+[  144.133634] br-1bbe94e67b4b: port 1(veth8f3a096) entered disabled state
+[  144.311236] app-compose.sh[756]: Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: error mounting "/dstack/.env" to rootfs at "/app/.env": mount /dstack/.env:/app/.env (via /proc/self/fd/6), flags: 0x5000: not a directory: unknown: Are you trying to mount a directory onto a file (or vice-versa)? Check if the specified host path exists and is the expected type
+[[0;1;31mFAILED[0m] Failed to start [0;1;39mApp Compose Service[0m.
+
+See 'systemctl status app-compose.service' for details.
+
+[[0;32m  OK  [0m] Reached target [0;1;39mMulti-User System[0m.
+
+         Starting [0;1;39mRecord Runlevel Change in UTMP[0m...
+
+[[0;32m  OK  [0m] Finished [0;1;39mRecord Runlevel Change in UTMP[0m.

@@ -1,2 +1,0 @@
- rm .phala/config 2>/dev/null || true && phala deploy docker-compose.yml --name "attestation-dashboard" --vcpu 2 --memory 2048MB --disk-size 10GB --node-id 12 --image dstack-0.5.3 --kms-id phala-prod7
- rm .phala/config 2>/dev/null || true && rm docker-compose.tee.yml 2>/dev/null || true

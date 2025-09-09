@@ -1,42 +1,36 @@
-# WebStorm settings
-/.idea
+# Environment files - NEVER commit these!
 .env
 .env.*
+!.env.example
 .env.production
 .env.development
 .env.test
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
+*.env
 
-# dependencies
+# Dependencies
+node_modules/
 /node_modules
 /.pnp
 .pnp.js
 /templates/*/node_modules
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+ENV/
 
-# testing
-/coverage
-*.test.js.snap
-/test-results/
-/playwright-report/
-/playwright/.cache/
-
-# production
+# Production builds
 /build
 /dist
 /.next/
 /out/
+/templates/*/out/
+/templates/*/.next/
 
-# runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
-
-# logs
-logs
+# Logs
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -44,184 +38,106 @@ yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
 
-# runtime data
-lib-cov
-coverage
-*.lcov
-.nyc_output
-.grunt
-bower_components
-.lock-wscript
-build/Release
-node_modules/
-jspm_packages/
-typings/
-.npm
-.eslintcache
-.stylelintcache
-.rpt2_cache/
-.rts2_cache_cjs/
-.rts2_cache_es/
-.rts2_cache_umd/
-
-# optional npm cache directory
-.npm
-
-# optional eslint cache
-.eslintcache
-
-# microbundle cache
-.rpt2_cache/
-.rts2_cache_cjs/
-.rts2_cache_es/
-.rts2_cache_umd/
-
-# optional REPL history
-.node_repl_history
-
-# output of 'npm pack'
-*.tgz
-
-# yarn integrity file
-.yarn-integrity
-
-# parcel-bundler cache (https://parceljs.org/)
-.cache
-.parcel-cache
-
-# next.js build output
-.next
-out
-
-# nuxt.js build / generate output
-.nuxt
-dist
-
-# gatsby files
-.cache/
-public
-
-# vuepress build output
-.vuepress/dist
-
-# serverless directories
-.serverless/
-
-# fusebox cache
-.fusebox/
-
-# dynamodb local files
-.dynamodb/
-
-# ternjs port file
-.tern-port
-
-# stores vscode versions used for testing vscode extensions
-.vscode-test
-
-# yarn v2
-.yarn/cache
-.yarn/unplugged
-.yarn/build-state.yml
-.yarn/install-state.gz
-.pnp.*
-
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-*.swp
-*.swo
-*~
+# Testing
+/coverage
+*.test.js.snap
+/test-results/
+/playwright-report/
+/playwright/.cache/
+.pytest_cache/
+.coverage
+htmlcov/
 
 # IDE files
 .vscode/
 .idea/
 *.sublime-project
 *.sublime-workspace
+*.swp
+*.swo
+*~
 
-# OS generated files
+# OS files
+.DS_Store
 Thumbs.db
 ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
 
 # Docker
-.dockerignore
 docker-compose.override.yml
+.dockerignore
 
 # Python
-__pycache__/
-*.py[cod]
-*$py.class
 *.so
 .Python
-env/
-venv/
-ENV/
 env.bak/
 venv.bak/
-.pytest_cache/
-.coverage
-htmlcov/
 .tox/
 .cache
 nosetests.xml
 coverage.xml
 *.cover
 .hypothesis/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# pyenv
-.python-version
-
-# pipenv
-Pipfile.lock
-
-# PEP 582
-__pypackages__/
-
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
-
-# SageMath parsed files
-*.sage.py
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
 .mypy_cache/
 .dmypy.json
 dmypy.json
-
-# Pyre type checker
 .pyre/
-
-# TEE and attestation specific
-*.pem
-*.key
-*.crt
-*.p12
-attestation-reports/
-tee-logs/
-secure-storage/
-enclave-data/
 
 # Temporary files
 *.tmp
 *.temp
 .tmp/
 .temp/
+tmp/
+temp/
+
+# Security - CRITICAL
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+private/
+secrets/
+credentials/
+attestation-reports/
+tee-logs/
+secure-storage/
+enclave-data/
+
+# Test files
+test-*.py
+test-*.js
+*-test.py
+*-test.js
+fixed-*.py
+temp-*.py
+
+# Cache
+.cache/
+.parcel-cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+.eslintcache
+.stylelintcache
+
+# Package files
+*.tgz
+*.tar.gz
+*.zip
+
+# Yarn
+.yarn-integrity
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# Misc
+*.bak
+*.backup
+*.old
+.phala/

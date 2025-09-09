@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { DStackSDK } from '@/lib/dstack-client';
+// Using API calls to backend instead of direct SDK
 
 interface TEEDashboardProps {
   onVisualize: (data: any) => void;
@@ -12,24 +12,24 @@ export function TEEDashboard({ onVisualize }: TEEDashboardProps) {
   const [result, setResult] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const sdk = new DStackSDK({
-    apiKey: process.env.NEXT_PUBLIC_DSTACK_API_KEY || 'test-key',
-    endpoint: process.env.NEXT_PUBLIC_DSTACK_ENDPOINT || 'https://api.dstack.network'
-  });
+  // Use API calls to Python backend (WORKING!)
+  const API_BASE = 'https://55531fcff1d542372a3fb0627f1fc12721f2fa24-8000.dstack-pha-prod7.phala.network';
 
   const handleGetTEEInfo = async () => {
     setLoading(true);
     setError(null);
     try {
-      const info = await sdk.getTEEInfo();
+      // Call Python API backend
+      const response = await fetch(`${API_BASE}/api/tee/info`);
+      const info = await response.json();
       setResult(info);
       onVisualize({
-        type: 'tee-info',
+        type: 'backend-tee-info',
         data: info,
         timestamp: new Date().toISOString()
       });
     } catch (err: any) {
-      setError(err.message || 'Failed to get TEE info');
+      setError(err.message || 'Failed to get TEE info from backend');
     } finally {
       setLoading(false);
     }
@@ -39,15 +39,21 @@ export function TEEDashboard({ onVisualize }: TEEDashboardProps) {
     setLoading(true);
     setError(null);
     try {
-      const measurements = await sdk.getMeasurements();
+      // Call Python API backend
+      const response = await fetch(`${API_BASE}/api/tee/measurements`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({})
+      });
+      const measurements = await response.json();
       setResult(measurements);
       onVisualize({
-        type: 'tee-measurements',
+        type: 'backend-measurements',
         data: measurements,
         timestamp: new Date().toISOString()
       });
     } catch (err: any) {
-      setError(err.message || 'Failed to get measurements');
+      setError(err.message || 'Failed to get measurements from backend');
     } finally {
       setLoading(false);
     }
@@ -57,13 +63,16 @@ export function TEEDashboard({ onVisualize }: TEEDashboardProps) {
     setLoading(true);
     setError(null);
     try {
-      const result = await sdk.executeInTEE({
-        function: 'hash',
-        params: { data: 'test-input-' + Date.now() }
+      // Call Python API backend
+      const response = await fetch(`${API_BASE}/api/tee/execute`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ function: 'test-execution' })
       });
+      const result = await response.json();
       setResult(result);
       onVisualize({
-        type: 'tee-execution',
+        type: 'backend-tee-execution',
         data: result,
         timestamp: new Date().toISOString()
       });

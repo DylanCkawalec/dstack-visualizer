@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { DStackSDK } from '@/lib/dstack-client';
 
 interface AttestationDashboardProps {
   onVisualize: (data: any) => void;
@@ -12,27 +11,33 @@ export function AttestationDashboard({ onVisualize }: AttestationDashboardProps)
   const [result, setResult] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const sdk = new DStackSDK({
-    apiKey: process.env.NEXT_PUBLIC_DSTACK_API_KEY || 'test-key',
-    endpoint: process.env.NEXT_PUBLIC_DSTACK_ENDPOINT || 'https://api.dstack.network'
-  });
+  // Use API calls to Python backend (WORKING!)
+  const API_BASE = 'https://55531fcff1d542372a3fb0627f1fc12721f2fa24-8000.dstack-pha-prod7.phala.network';
 
   const handleGenerateAttestation = async () => {
     setLoading(true);
     setError(null);
     try {
-      const attestation = await sdk.generateAttestation({
-        data: 'test-data-' + Date.now(),
-        nonce: Date.now().toString()
+      // Call Python API backend
+      const response = await fetch(`${API_BASE}/api/attestation/generate`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          data: `test-${Date.now()}`,
+          nonce: Date.now().toString()
+        })
       });
+      
+      const attestation = await response.json();
       setResult(attestation);
       onVisualize({
-        type: 'attestation-generation',
+        type: 'backend-attestation',
         data: attestation,
         timestamp: new Date().toISOString()
       });
     } catch (err: any) {
-      setError(err.message || 'Failed to generate attestation');
+      setError(err.message || 'Failed to call backend API');
+      console.error('Backend API error:', err);
     } finally {
       setLoading(false);
     }
@@ -42,18 +47,25 @@ export function AttestationDashboard({ onVisualize }: AttestationDashboardProps)
     setLoading(true);
     setError(null);
     try {
-      const verification = await sdk.verifyAttestation({
-        attestation: 'sample-attestation-id',
-        expectedData: 'test-data'
+      // Call Python API backend
+      const response = await fetch(`${API_BASE}/api/attestation/verify`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          attestation_id: 'sample-attestation',
+          expected_data: 'test-data'
+        })
       });
+      
+      const verification = await response.json();
       setResult(verification);
       onVisualize({
-        type: 'attestation-verification',
+        type: 'backend-verification',
         data: verification,
         timestamp: new Date().toISOString()
       });
     } catch (err: any) {
-      setError(err.message || 'Failed to verify attestation');
+      setError(err.message || 'Failed to verify via backend');
     } finally {
       setLoading(false);
     }
@@ -63,18 +75,17 @@ export function AttestationDashboard({ onVisualize }: AttestationDashboardProps)
     setLoading(true);
     setError(null);
     try {
-      const remoteAttestation = await sdk.createRemoteAttestation({
-        targetTEE: 'target-tee-' + Date.now(),
-        challenge: 'challenge-' + Date.now()
-      });
-      setResult(remoteAttestation);
+      // Call Python API backend for TEE info
+      const response = await fetch(`${API_BASE}/api/tee/info`);
+      const teeInfo = await response.json();
+      setResult(teeInfo);
       onVisualize({
-        type: 'remote-attestation',
-        data: remoteAttestation,
+        type: 'backend-tee-info',
+        data: teeInfo,
         timestamp: new Date().toISOString()
       });
     } catch (err: any) {
-      setError(err.message || 'Failed to create remote attestation');
+      setError(err.message || 'Failed to get TEE info from backend');
     } finally {
       setLoading(false);
     }

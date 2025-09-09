@@ -32,14 +32,14 @@ class DStackSDK {
 }
 
 const sdk = new DStackSDK({
-  apiKey: Bun.env.DSTACK_API_KEY || 'test-key',
-  endpoint: Bun.env.DSTACK_ENDPOINT || 'https://api.dstack.network'
+  apiKey: process.env.PHALA_API_KEY || process.env.DSTACK_API_KEY || 'test-key',
+  endpoint: process.env.PHALA_ENDPOINT || process.env.DSTACK_ENDPOINT || 'https://api.dstack.network'
 });
 
-const server = Bun.serve({
+const server = (globalThis as any).Bun.serve({
   port: 8001,
   
-  async fetch(req) {
+  async fetch(req: Request) {
     const url = new URL(req.url);
     
     // Enable CORS

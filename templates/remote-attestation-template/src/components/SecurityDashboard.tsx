@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { DStackSDK } from '@/lib/dstack-client';
 
 interface SecurityDashboardProps {
   onVisualize: (data: any) => void;
@@ -10,34 +9,55 @@ interface SecurityDashboardProps {
 export function SecurityDashboard({ onVisualize }: SecurityDashboardProps) {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<any>(null);
+  const [error, setError] = useState<string | null>(null);
 
-  const sdk = new DStackSDK({
-    apiKey: process.env.NEXT_PUBLIC_DSTACK_API_KEY || 'test-key',
-    endpoint: process.env.NEXT_PUBLIC_DSTACK_ENDPOINT || 'https://api.dstack.network'
-  });
+  // Use API calls to Python backend (WORKING!)
+  const API_BASE = 'https://55531fcff1d542372a3fb0627f1fc12721f2fa24-8000.dstack-pha-prod7.phala.network';
 
   const handleOperation = async (operation: string) => {
     setLoading(true);
+    setError(null);
     try {
-      let res;
+      let response;
       switch(operation) {
         case 'security-status':
-          res = await sdk.getSecurityStatus();
+          response = await fetch(`${API_BASE}/api/security/status`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({})
+          });
           break;
         case 'validate-cert':
-          res = await sdk.validateCertificate({ certificate: 'test-cert' });
+          response = await fetch(`${API_BASE}/api/tee/key`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+              path: 'cert-validation', 
+              purpose: 'certificate' 
+            })
+          });
           break;
         case 'create-policy':
-          res = await sdk.createPolicy({ 
-            name: 'test-policy', 
-            rules: [{ type: 'measurement', value: 'test' }] 
+          response = await fetch(`${API_BASE}/api/tee/quote`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+              data: 'policy-creation' 
+            })
           });
           break;
       }
+      
+      if (!response) {
+        throw new Error('No response received');
+      }
+      
+      const res = await response.json();
       setResult(res);
       onVisualize({ type: operation, data: res, timestamp: new Date().toISOString() });
-    } catch (err) {
-      setResult({ error: err });
+    } catch (err: any) {
+      setError(err.message || 'Failed to call backend API');
+      setResult({ error: err.message });
     } finally {
       setLoading(false);
     }
@@ -59,10 +79,23 @@ export function SecurityDashboard({ onVisualize }: SecurityDashboardProps) {
             </button>
           ))}
         </div>
+        {loading && (
+          <div className="text-yellow-400">Processing...</div>
+        )}
+
+        {error && (
+          <div className="bg-red-900 border border-red-700 text-red-200 px-4 py-3 rounded">
+            Error: {error}
+          </div>
+        )}
+
         {result && (
-          <pre className="bg-gray-900 p-4 rounded text-green-400 text-sm overflow-auto">
-            {JSON.stringify(result, null, 2)}
-          </pre>
+          <div className="bg-gray-900 p-4 rounded">
+            <h3 className="text-white font-bold mb-2">Result:</h3>
+            <pre className="text-green-400 text-sm overflow-auto">
+              {JSON.stringify(result, null, 2)}
+            </pre>
+          </div>
         )}
       </div>
     </div>

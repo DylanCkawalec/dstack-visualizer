@@ -1,17 +1,20 @@
 'use client';
 
 import { useState } from 'react';
-import { DStackSDK } from '@/lib/dstack-client';
 
 interface APITesterProps {
   onVisualize: (data: any) => void;
 }
 
+// Real dStack API endpoints that match our Python backend
 const API_ENDPOINTS = [
-  'generateAttestation', 'verifyAttestation', 'getTEEInfo', 'getMeasurements',
-  'createSecureSession', 'executeInTEE', 'getAttestationReport', 'validateCertificate',
-  'createRemoteAttestation', 'secureDataTransfer', 'getEnclaveQuote', 'getSecurityStatus',
-  'createPolicy', 'getTEECapabilities', 'createChallenge', 'monitorTEEHealth'
+  { name: 'generateAttestation', method: 'POST', path: '/api/attestation/generate', body: { data: 'test', nonce: '123' } },
+  { name: 'verifyAttestation', method: 'POST', path: '/api/attestation/verify', body: { attestation_id: 'test', expected_data: 'test' } },
+  { name: 'getTEEInfo', method: 'GET', path: '/api/tee/info', body: null },
+  { name: 'getSecurityStatus', method: 'POST', path: '/api/security/status', body: {} },
+  { name: 'getKey', method: 'POST', path: '/api/tee/key', body: { path: 'test', purpose: 'attestation' } },
+  { name: 'getQuote', method: 'POST', path: '/api/tee/quote', body: { data: 'test-quote' } },
+  { name: 'healthCheck', method: 'GET', path: '/api/health', body: null }
 ];
 
 export function APITester({ onVisualize }: APITesterProps) {
@@ -19,10 +22,8 @@ export function APITester({ onVisualize }: APITesterProps) {
   const [running, setRunning] = useState(false);
   const [progress, setProgress] = useState(0);
 
-  const sdk = new DStackSDK({
-    apiKey: process.env.NEXT_PUBLIC_DSTACK_API_KEY || 'test-key',
-    endpoint: process.env.NEXT_PUBLIC_DSTACK_ENDPOINT || 'https://api.dstack.network'
-  });
+  // Use API calls to Python backend (WORKING!)
+  const API_BASE = 'https://55531fcff1d542372a3fb0627f1fc12721f2fa24-8000.dstack-pha-prod7.phala.network';
 
   const runAllTests = async () => {
     setRunning(true);
@@ -39,7 +40,7 @@ export function APITester({ onVisualize }: APITesterProps) {
       
       onVisualize({
         type: 'api-test',
-        endpoint,
+        endpoint: endpoint.name,
         result,
         progress: (i + 1) / API_ENDPOINTS.length * 100
       });
@@ -48,23 +49,35 @@ export function APITester({ onVisualize }: APITesterProps) {
     setRunning(false);
   };
 
-  const testEndpoint = async (endpoint: string) => {
+  const testEndpoint = async (endpoint: any) => {
     const startTime = Date.now();
     try {
-      // Mock API call - replace with actual SDK methods
-      await new Promise(resolve => setTimeout(resolve, Math.random() * 500));
+      const options: RequestInit = {
+        method: endpoint.method,
+        headers: { 'Content-Type': 'application/json' }
+      };
+      
+      if (endpoint.body) {
+        options.body = JSON.stringify(endpoint.body);
+      }
+      
+      const response = await fetch(`${API_BASE}${endpoint.path}`, options);
+      const data = await response.json();
       const endTime = Date.now();
+      
       return {
-        endpoint,
-        status: 'success',
+        endpoint: endpoint.name,
+        status: response.ok ? 'success' : 'failed',
         responseTime: endTime - startTime,
+        data: data,
         timestamp: new Date().toISOString()
       };
-    } catch (error) {
+    } catch (error: any) {
       return {
-        endpoint,
+        endpoint: endpoint.name,
         status: 'failed',
-        error: error,
+        error: error.message,
+        responseTime: Date.now() - startTime,
         timestamp: new Date().toISOString()
       };
     }
@@ -92,13 +105,13 @@ export function APITester({ onVisualize }: APITesterProps) {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-4">
           {API_ENDPOINTS.map(endpoint => {
-            const result = testResults.find(r => r.endpoint === endpoint);
+            const result = testResults.find(r => r.endpoint === endpoint.name);
             return (
-              <div key={endpoint} 
+              <div key={endpoint.name} 
                    className={`p-2 rounded text-xs font-mono ${
                      result ? (result.status === 'success' ? 'bg-green-900' : 'bg-red-900') : 'bg-gray-700'
                    }`}>
-                <p className="text-white truncate">{endpoint}</p>
+                <p className="text-white truncate">{endpoint.name}</p>
                 {result && (
                   <p className="text-gray-300">{result.responseTime}ms</p>
                 )}
