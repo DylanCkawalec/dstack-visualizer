@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  tee-trust-validator:
+    image: dylanckawalec/complete-tee-app:latest
+    container_name: tee-trust-validator-complete
+    ports:
+      - "3000:3000"
+      - "8000:8000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - PYTHONUNBUFFERED=1
+      - DSTACK_API_KEY=${DSTACK_API_KEY}
+      - DSTACK_ENDPOINT=${DSTACK_ENDPOINT}
+      - PHALA_API_KEY=${PHALA_API_KEY}
+      - PHALA_ENDPOINT=${PHALA_ENDPOINT}
+    volumes:
+      - /var/run/dstack.sock:/var/run/dstack.sock:ro
+      - /var/run/tappd.sock:/var/run/tappd.sock:ro
+    networks:
+      - tee-network
+    user: root
+    restart: unless-stopped
+
+networks:
+  tee-network:
+    driver: bridge

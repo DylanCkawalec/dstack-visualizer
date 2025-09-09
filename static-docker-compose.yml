@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  tee-trust-validator:
+    image: dylanckawalec/static-tee-dashboard:latest
+    container_name: tee-trust-validator-static
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - /var/run/dstack.sock:/var/run/dstack.sock:ro
+      - /var/run/tappd.sock:/var/run/tappd.sock:ro
+    networks:
+      - tee-network
+    user: root
+    restart: unless-stopped
+
+networks:
+  tee-network:
+    driver: bridge

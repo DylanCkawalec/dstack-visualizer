@@ -1,0 +1,39 @@
+# Complete TEE Trust Validator App - Frontend + Backend
+FROM node:20-alpine AS base
+RUN apk add --no-cache python3 py3-pip
+WORKDIR /app
+
+# Copy and build NextJS frontend
+COPY templates/remote-attestation-template/package*.json ./templates/remote-attestation-template/
+WORKDIR /app/templates/remote-attestation-template
+RUN npm ci
+
+# Copy frontend source
+COPY templates/remote-attestation-template/src ./src
+COPY templates/remote-attestation-template/public ./public
+COPY templates/remote-attestation-template/next.config.ts ./
+COPY templates/remote-attestation-template/tailwind.config.js ./
+COPY templates/remote-attestation-template/postcss.config.mjs ./
+COPY templates/remote-attestation-template/tsconfig.json ./
+
+# Build NextJS
+RUN npm run build
+
+# Copy backend API
+COPY ultra-simple-api.py /app/
+
+# Create startup script
+RUN echo '#!/bin/sh' > /app/start.sh && \
+    echo 'cd /app' >> /app/start.sh && \
+    echo 'PORT=8000 python3 ultra-simple-api.py &' >> /app/start.sh && \
+    echo 'cd /app/templates/remote-attestation-template' >> /app/start.sh && \
+    echo 'npm start &' >> /app/start.sh && \
+    echo 'wait' >> /app/start.sh && \
+    chmod +x /app/start.sh
+
+EXPOSE 3000
+ENV NODE_ENV=production
+ENV PORT=3000
+ENV PYTHONUNBUFFERED=1
+
+CMD ["/app/start.sh"]

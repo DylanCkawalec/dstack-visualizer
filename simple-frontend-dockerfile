@@ -1,0 +1,31 @@
+# Simple frontend with integrated API
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Copy package files
+COPY templates/remote-attestation-template/package*.json ./
+RUN npm ci
+
+# Copy source files
+COPY templates/remote-attestation-template/src ./src
+COPY templates/remote-attestation-template/public ./public
+COPY templates/remote-attestation-template/next.config.ts ./
+COPY templates/remote-attestation-template/tailwind.config.js ./
+COPY templates/remote-attestation-template/postcss.config.mjs ./
+COPY templates/remote-attestation-template/tsconfig.json ./
+
+# Copy integrated server
+COPY frontend-with-api.js ./
+
+# Install additional dependencies
+RUN npm install express http-proxy-middleware
+
+# Build NextJS
+RUN npm run build
+
+EXPOSE 3000
+ENV NODE_ENV=production
+ENV PORT=3000
+
+CMD ["node", "frontend-with-api.js"]

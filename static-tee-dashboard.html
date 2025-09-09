@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEE Trust Validator - Zero Trust Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); }
+        .card { background: rgba(31, 41, 55, 0.8); backdrop-filter: blur(10px); }
+        .glow { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+    </style>
+</head>
+<body class="min-h-screen text-white">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold mb-2">🔐 TEE Trust Validator</h1>
+            <p class="text-xl text-blue-200">Zero Trust Architecture - Never Trust, Always Verify</p>
+            <p class="text-sm text-gray-300 mt-2">Running on Phala Cloud with Intel TDX TEE</p>
+        </div>
+
+        <!-- Status Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="card rounded-lg p-6 glow">
+                <h3 class="text-lg font-semibold mb-2">🛡️ TEE Status</h3>
+                <div id="tee-status" class="text-sm">Loading...</div>
+            </div>
+            <div class="card rounded-lg p-6 glow">
+                <h3 class="text-lg font-semibold mb-2">🔑 Attestation</h3>
+                <div id="attestation-status" class="text-sm">Ready</div>
+            </div>
+            <div class="card rounded-lg p-6 glow">
+                <h3 class="text-lg font-semibold mb-2">📊 Measurements</h3>
+                <div id="measurements-status" class="text-sm">Available</div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <button onclick="getTEEInfo()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                Get TEE Info
+            </button>
+            <button onclick="generateAttestation()" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                Generate Attestation
+            </button>
+            <button onclick="getMeasurements()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                Get Measurements
+            </button>
+            <button onclick="getSecurityStatus()" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                Security Status
+            </button>
+        </div>
+
+        <!-- Results Display -->
+        <div class="card rounded-lg p-6">
+            <h3 class="text-xl font-semibold mb-4">📋 Results</h3>
+            <div id="results" class="bg-gray-900 p-4 rounded-lg">
+                <p class="text-gray-400">Click any button above to see TEE operations...</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center mt-8 text-gray-400">
+            <p>Powered by Phala Network • Intel TDX TEE • dStack 0.5.3</p>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'https://55531fcff1d542372a3fb0627f1fc12721f2fa24-3000.dstack-pha-prod7.phala.network';
+        
+        function displayResult(data, title) {
+            const results = document.getElementById('results');
+            results.innerHTML = `
+                <h4 class="text-lg font-semibold mb-2 text-blue-400">${title}</h4>
+                <pre class="text-green-400 text-sm overflow-auto">${JSON.stringify(data, null, 2)}</pre>
+            `;
+        }
+
+        async function getTEEInfo() {
+            try {
+                const response = await fetch(`${API_BASE}/api/tee/info`);
+                const data = await response.json();
+                displayResult(data, 'TEE Information');
+                document.getElementById('tee-status').innerHTML = '✅ Connected';
+            } catch (error) {
+                displayResult({error: error.message}, 'TEE Info Error');
+            }
+        }
+
+        async function generateAttestation() {
+            try {
+                const response = await fetch(`${API_BASE}/api/attestation/generate`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({data: 'test-data', nonce: Date.now().toString()})
+                });
+                const data = await response.json();
+                displayResult(data, 'Attestation Generated');
+                document.getElementById('attestation-status').innerHTML = '✅ Generated';
+            } catch (error) {
+                displayResult({error: error.message}, 'Attestation Error');
+            }
+        }
+
+        async function getMeasurements() {
+            try {
+                const response = await fetch(`${API_BASE}/api/tee/measurements`);
+                const data = await response.json();
+                displayResult(data, 'TEE Measurements');
+                document.getElementById('measurements-status').innerHTML = '✅ Retrieved';
+            } catch (error) {
+                displayResult({error: error.message}, 'Measurements Error');
+            }
+        }
+
+        async function getSecurityStatus() {
+            try {
+                const response = await fetch(`${API_BASE}/api/security/status`);
+                const data = await response.json();
+                displayResult(data, 'Security Status');
+            } catch (error) {
+                displayResult({error: error.message}, 'Security Status Error');
+            }
+        }
+
+        // Auto-load TEE info on page load
+        window.onload = function() {
+            getTEEInfo();
+        };
+    </script>
+</body>
+</html>
