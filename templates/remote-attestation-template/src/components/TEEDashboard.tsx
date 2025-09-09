@@ -40,7 +40,11 @@ export function TEEDashboard({ onVisualize }: TEEDashboardProps) {
     setError(null);
     try {
       // Call Python API backend
-      const response = await fetch(`${API_BASE}/api/tee/measurements`);
+      const response = await fetch(`${API_BASE}/api/tee/measurements`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({})
+      });
       const measurements = await response.json();
       setResult(measurements);
       onVisualize({
@@ -60,16 +64,20 @@ export function TEEDashboard({ onVisualize }: TEEDashboardProps) {
     setError(null);
     try {
       // Call Python API backend
-      const response = await fetch(`${API_BASE}/api/security/status`);
-      const status = await response.json();
-      setResult(status);
+      const response = await fetch(`${API_BASE}/api/tee/execute`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ function: 'test-execution' })
+      });
+      const result = await response.json();
+      setResult(result);
       onVisualize({
-        type: 'backend-security-status',
-        data: status,
+        type: 'backend-tee-execution',
+        data: result,
         timestamp: new Date().toISOString()
       });
     } catch (err: any) {
-      setError(err.message || 'Failed to get security status');
+      setError(err.message || 'Failed to execute in TEE');
     } finally {
       setLoading(false);
     }

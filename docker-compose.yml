@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   tee-trust-validator:
-    image: dylanckawalec/tee-trust-validator:fixed
+    image: dylanckawalec/tee-trust-validator:tested
     container_name: tee-trust-validator
     ports:
       - "3000:3000"
