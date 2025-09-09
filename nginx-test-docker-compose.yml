@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  tee-trust-validator:
+    image: nginx:alpine
+    container_name: tee-trust-validator-nginx
+    ports:
+      - "3000:80"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - /var/run/dstack.sock:/var/run/dstack.sock:ro
+      - /var/run/tappd.sock:/var/run/tappd.sock:ro
+    networks:
+      - tee-network
+    user: root
+    restart: unless-stopped
+
+networks:
+  tee-network:
+    driver: bridge
