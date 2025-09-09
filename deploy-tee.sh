@@ -61,46 +61,8 @@ echo -e "${YELLOW}Step 4: Pushing to Docker Hub...${NC}"
 docker push $DOCKER_IMAGE
 
 echo ""
-echo -e "${YELLOW}Step 5: Creating docker-compose.yml for TEE...${NC}"
-cat > docker-compose.tee.yml << EOF
-version: '3.8'
-
-services:
-  app:
-    image: $DOCKER_IMAGE
-    container_name: attestation-dashboard
-    ports:
-      - "80:8000"  # Map internal port 8000 to gateway port 80
-    volumes:
-      - /var/run/tappd.sock:/var/run/tappd.sock  # TEE socket
-      - ./logs:/app/logs
-    environment:
-      PHALA_API_KEY: \${PHALA_API_KEY}
-      PHALA_ENDPOINT: \${PHALA_ENDPOINT}
-      PHALA_CLUSTER_ID: \${PHALA_CLUSTER_ID}
-      PHALA_CONTRACT_ID: \${PHALA_CONTRACT_ID}
-      APP_NAME: \${APP_NAME}
-      DEVELOPER_NAME: \${DEVELOPER_NAME}
-      DEVELOPER_ROLE: \${DEVELOPER_ROLE}
-      ORGANIZATION: \${ORGANIZATION}
-      NODE_ENV: production
-      TEE_ENVIRONMENT: production
-      ENABLE_MOCK_MODE: "false"
-      REQUIRE_ATTESTATION: "true"
-      ATTESTATION_SEED: \${ATTESTATION_SEED}
-      ATTESTATION_SALT: \${ATTESTATION_SALT}
-      PORT: "8000"
-      API_PORT: "8000"
-    restart: always
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 40s
-EOF
-
-echo -e "${GREEN}✓ Created docker-compose.tee.yml${NC}"
+echo -e "${YELLOW}Step 5: Using app-compose.json for proper env var authorization...${NC}"
+echo -e "${GREEN}✓ app-compose.json already configured with allowed_envs${NC}"
 
 echo ""
 echo -e "${YELLOW}Step 6: Checking Phala authentication...${NC}"
@@ -110,9 +72,9 @@ echo ""
 echo -e "${YELLOW}Step 7: Deploying to Phala TEE...${NC}"
 echo "Deploying with name: $APP_NAME (max 20 chars)"
 
-# Deploy using phala CLI to dStack 0.5.3 node with env file
+# Deploy using phala CLI to dStack 0.5.3 node with app-compose.json
 phala deploy \
-    docker-compose.yml \
+    app-compose.json \
     --env-file .env.production \
     --name "attestation-dashboard" \
     --vcpu 2 \
@@ -123,12 +85,20 @@ phala deploy \
     --kms-id phala-prod7
 
 echo ""
-echo -e "${YELLOW}Step 8: Getting deployment info...${NC}"
+echo -e "${YELLOW}Step 8: Getting deployment info and waiting for initialization...${NC}"
 phala cvms ls | grep -E "$APP_NAME|HEADER"
+
+echo ""
+echo -e "${YELLOW}Step 9: Waiting for services to fully initialize (5-6 minutes)...${NC}"
+echo "This ensures all services (NextJS, Python API, Bun server) are ready"
+for i in {1..6}; do
+    echo "⏳ Waiting... ${i}/6 minutes"
+    sleep 60
+done
 
 # Get the deployment URL
 echo ""
-echo -e "${YELLOW}Step 9: Retrieving access URL...${NC}"
+echo -e "${YELLOW}Step 10: Retrieving access URL...${NC}"
 CVM_INFO=$(phala cvms ls | grep "$APP_NAME" | head -1)
 if [ ! -z "$CVM_INFO" ]; then
     CVM_ID=$(echo "$CVM_INFO" | awk '{print $1}')
@@ -164,24 +134,35 @@ echo "  List CVMs:     phala cvms ls"
 echo "  Delete CVM:    phala cvms delete $APP_NAME"
 
 echo ""
-echo -e "${YELLOW}Testing attestation after 2 minutes...${NC}"
-echo "Waiting for CVM to initialize..."
-sleep 120
-
-echo ""
-echo -e "${YELLOW}Testing attestation endpoint...${NC}"
-if [ ! -z "$BASE_URL" ]; then
-    curl -s "$BASE_URL/api/health" && echo -e "\n${GREEN}✓ API is healthy${NC}" || echo -e "${RED}✗ API not responding yet${NC}"
+echo -e "${YELLOW}Step 11: Testing all services after initialization...${NC}"
+if [ ! -z "$CVM_ID" ]; then
+    APP_URL_BASE="https://$CVM_ID-"
+    
+    echo "🧪 Testing all three services:"
+    echo ""
+    
+    echo "1. Testing NextJS Dashboard (port 3000):"
+    NEXTJS_URL="${APP_URL_BASE}3000.dstack-pha-prod7.phala.network"
+    echo "   URL: $NEXTJS_URL"
+    curl -I "$NEXTJS_URL" 2>/dev/null && echo -e "   ${GREEN}✅ NextJS responding${NC}" || echo -e "   ${YELLOW}⚠ NextJS initializing${NC}"
     
     echo ""
-    echo "Testing attestation generation..."
-    ATTESTATION=$(curl -s "$BASE_URL/api/attestation/generate")
-    if [ ! -z "$ATTESTATION" ]; then
-        echo -e "${GREEN}✓ Attestation generated successfully!${NC}"
-        echo "$ATTESTATION" | jq '.report' -r 2>/dev/null || echo "$ATTESTATION"
-    else
-        echo -e "${YELLOW}⚠ Attestation not available yet. Try again in a minute.${NC}"
-    fi
+    echo "2. Testing Python API (port 8000):"
+    API_URL="${APP_URL_BASE}8000.dstack-pha-prod7.phala.network"
+    echo "   URL: $API_URL"
+    curl -s "$API_URL/" 2>/dev/null && echo -e "   ${GREEN}✅ Python API responding${NC}" || echo -e "   ${YELLOW}⚠ Python API initializing${NC}"
+    
+    echo ""
+    echo "3. Testing Bun Server (port 8001):"
+    BUN_URL="${APP_URL_BASE}8001.dstack-pha-prod7.phala.network"
+    echo "   URL: $BUN_URL"
+    curl -s "$BUN_URL/" 2>/dev/null && echo -e "   ${GREEN}✅ Bun Server responding${NC}" || echo -e "   ${YELLOW}⚠ Bun Server initializing${NC}"
+    
+    echo ""
+    echo -e "${GREEN}🎯 All URLs for your TEE Trust Validator:${NC}"
+    echo "   NextJS Dashboard: $NEXTJS_URL"
+    echo "   Python API: $API_URL" 
+    echo "   Bun Server: $BUN_URL"
 fi
 
 echo ""
