@@ -1,0 +1,29 @@
+{
+  "manifest_version": 1,
+  "name": "attestation-dashboard",
+  "runner": "docker-compose",
+  "docker_compose_file": "version: '3.8'\n\nservices:\n  app:\n    image: dylanckawalec/attestation-dashboard:latest\n    container_name: tee-trust-validator\n    ports:\n      - \"3000:3000\"\n      - \"8000:8000\"\n      - \"8001:8001\"\n    volumes:\n      - /var/run/tappd.sock:/var/run/tappd.sock\n      - /var/run/dstack.sock:/var/run/dstack.sock\n      - ./logs:/app/logs\n    environment:\n      - PHALA_API_KEY=${PHALA_API_KEY}\n      - PHALA_ENDPOINT=${PHALA_ENDPOINT}\n      - PHALA_CLUSTER_ID=${PHALA_CLUSTER_ID}\n      - PHALA_CONTRACT_ID=${PHALA_CONTRACT_ID}\n      - APP_NAME=${APP_NAME}\n      - DEVELOPER_NAME=${DEVELOPER_NAME}\n      - DEVELOPER_ROLE=${DEVELOPER_ROLE}\n      - ORGANIZATION=${ORGANIZATION}\n      - NODE_ENV=production\n      - TEE_ENVIRONMENT=production\n      - ENABLE_MOCK_MODE=false\n      - REQUIRE_ATTESTATION=true\n      - ATTESTATION_SEED=${ATTESTATION_SEED}\n      - ATTESTATION_SALT=${ATTESTATION_SALT}\n      - PORT=3000\n      - API_PORT=8000\n      - BUN_PORT=8001\n    restart: always\n    healthcheck:\n      test: [\"CMD\", \"curl\", \"-f\", \"http://localhost:3000/\"]\n      interval: 30s\n      timeout: 10s\n      retries: 3\n      start_period: 60s",
+  "allowed_envs": [
+    "PHALA_API_KEY",
+    "PHALA_ENDPOINT", 
+    "PHALA_CLUSTER_ID",
+    "PHALA_CONTRACT_ID",
+    "APP_NAME",
+    "DEVELOPER_NAME",
+    "DEVELOPER_ROLE", 
+    "ORGANIZATION",
+    "NODE_ENV",
+    "TEE_ENVIRONMENT",
+    "ENABLE_MOCK_MODE",
+    "REQUIRE_ATTESTATION",
+    "ATTESTATION_SEED",
+    "ATTESTATION_SALT",
+    "PORT",
+    "API_PORT", 
+    "BUN_PORT"
+  ],
+  "public_tcbinfo": true,
+  "public_sysinfo": true,
+  "kms_enabled": true,
+  "gateway_enabled": true
+}
