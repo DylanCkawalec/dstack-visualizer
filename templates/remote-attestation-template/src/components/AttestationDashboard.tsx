@@ -12,7 +12,7 @@ export function AttestationDashboard({ onVisualize }: AttestationDashboardProps)
   const [error, setError] = useState<string | null>(null);
 
   // Use API calls to Python backend (WORKING!)
-  const API_BASE = 'https://55531fcff1d542372a3fb0627f1fc12721f2fa24-3000.dstack-pha-prod7.phala.network';
+  const API_BASE = 'https://55531fcff1d542372a3fb0627f1fc12721f2fa24-8000.dstack-pha-prod7.phala.network';
 
   const handleGenerateAttestation = async () => {
     setLoading(true);
