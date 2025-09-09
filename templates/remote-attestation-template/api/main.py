@@ -16,15 +16,16 @@ import requests
 from datetime import datetime
 import uvicorn
 
-# Import the real dStack SDK
+# Import the real dStack SDK 0.5.1
 try:
-    from dstack_sdk import DStackSDK as RealDStackSDK
+    from dstack_sdk import AsyncDstackClient
     DSTACK_AVAILABLE = True
+    print("✅ dStack SDK 0.5.1+ available")
 except ImportError:
     DSTACK_AVAILABLE = False
-    print("Warning: dstack-sdk not available, using fallback implementation")
+    print("⚠️ dStack SDK not available, using fallback")
 
-# dStack SDK wrapper with real TEE integration
+# Real dStack SDK integration for TEE operations
 class DStackSDK:
     def __init__(self, api_key=None, endpoint=None):
         self.api_key = api_key or os.getenv("DSTACK_API_KEY", "") or os.getenv("PHALA_API_KEY", "")
@@ -32,17 +33,17 @@ class DStackSDK:
         self.socket_path = "/var/run/dstack.sock"
         self.tappd_socket = "/var/run/tappd.sock"
         
-        # Initialize real dStack SDK if available
-        if DSTACK_AVAILABLE and self.api_key:
+        # Initialize real dStack SDK client
+        if DSTACK_AVAILABLE:
             try:
-                self.real_sdk = RealDStackSDK(api_key=self.api_key, endpoint=self.endpoint)
-                print(f"✅ Real dStack SDK initialized with endpoint: {self.endpoint}")
+                self.real_sdk = AsyncDstackClient()
+                print(f"✅ Real AsyncDstackClient initialized")
             except Exception as e:
-                print(f"⚠️ Failed to initialize real dStack SDK: {e}")
+                print(f"⚠️ Failed to initialize AsyncDstackClient: {e}")
                 self.real_sdk = None
         else:
             self.real_sdk = None
-            print("ℹ️ Using fallback dStack implementation")
+            print("ℹ️ Using fallback implementation")
     
     async def _call_dstack_api(self, method: str, params: dict = None):
         """Call dStack API via Unix socket"""
@@ -86,35 +87,49 @@ class DStackSDK:
             return {"error": str(e), "mock": True}
     
     async def generate_attestation(self, data, nonce):
-        """Generate real TEE attestation"""
-        # Try real dStack SDK first
+        """Generate real TEE attestation using dStack SDK 0.5.1"""
+        # Use real dStack SDK for attestation
         if self.real_sdk:
             try:
-                result = await self.real_sdk.generate_attestation(data=data, nonce=nonce)
-                return result
+                # Get real TEE info first
+                info = await self.real_sdk.info()
+                
+                # Generate real quote with data
+                quote_data = f"{data}-{nonce}".encode()[:64]  # Max 64 bytes
+                quote = await self.real_sdk.get_quote(quote_data)
+                
+                return {
+                    "attestation_id": f"tee-{info.app_id}-{nonce}",
+                    "data": data,
+                    "nonce": nonce,
+                    "tee_quote": quote.quote,
+                    "event_log": quote.event_log,
+                    "rtmrs": quote.replay_rtmrs(),
+                    "app_id": info.app_id,
+                    "instance_id": info.instance_id,
+                    "device_id": info.device_id,
+                    "tcb_info": info.tcb_info,
+                    "timestamp": datetime.now().isoformat(),
+                    "environment": "Intel TDX",
+                    "dstack_version": "0.5.3",
+                    "real_tee": True
+                }
             except Exception as e:
-                print(f"Real SDK failed: {e}")
+                print(f"Real SDK error: {e}")
         
-        # Fallback to socket-based approach
-        result = await self._call_dstack_api("GenerateAttestation", {
+        # Fallback with real environment data
+        return {
+            "attestation_id": f"fallback-{nonce}",
             "data": data,
-            "nonce": nonce
-        })
-        
-        if result.get("mock") or result.get("error"):
-            # Get real TEE environment data
-            return {
-                "attestation_id": f"tee-attest-{nonce}",
-                "data": data,
-                "tee_quote": self._get_tee_quote(),
-                "device_id": self._get_device_id(),
-                "measurements": self._get_measurements(),
-                "timestamp": datetime.now().isoformat(),
-                "environment": "Intel TDX",
-                "dstack_version": "0.5.3"
-            }
-        
-        return result
+            "tee_quote": self._get_tee_quote(),
+            "device_id": self._get_device_id(),
+            "measurements": self._get_measurements(),
+            "timestamp": datetime.now().isoformat(),
+            "environment": "Intel TDX",
+            "dstack_version": "0.5.3",
+            "real_tee": False,
+            "note": "Using fallback - real SDK not available"
+        }
     
     async def verify_attestation(self, attestation, expected_data):
         """Verify TEE attestation"""

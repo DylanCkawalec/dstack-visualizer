@@ -76,7 +76,7 @@ echo "Deploying with name: $APP_NAME (max 20 chars)"
 phala deploy \
     docker-compose.yml \
     --env-file .env.production \
-    --name "attestation-dashboard" \
+    --name "dstack-dashboard-phala-cloud" \
     --vcpu 2 \
     --memory 2048MB \
     --disk-size 10GB \

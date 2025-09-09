@@ -32,8 +32,8 @@ class DStackSDK {
 }
 
 const sdk = new DStackSDK({
-  apiKey: process.env.DSTACK_API_KEY || 'test-key',
-  endpoint: process.env.DSTACK_ENDPOINT || 'https://api.dstack.network'
+  apiKey: process.env.PHALA_API_KEY || process.env.DSTACK_API_KEY || 'test-key',
+  endpoint: process.env.PHALA_ENDPOINT || process.env.DSTACK_ENDPOINT || 'https://api.dstack.network'
 });
 
 const server = (globalThis as any).Bun.serve({
