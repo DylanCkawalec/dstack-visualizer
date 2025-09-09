@@ -1,6 +1,6 @@
 # 🛡️ TEE Trust Validator - Remote Attestation Dashboard
 
-[![Deploy to Phala Cloud](https://cloud.phala.network/deploy-button.svg)](https://cloud.phala.network/templates/tee-trust-validator)
+[![Deploy to Phala Cloud](https://cloud.phala.network/deploy-button.svg)](https://phala.com/)
 
 A production-ready remote attestation dashboard for Phala Network's Trusted Execution Environment (TEE), demonstrating Zero Trust architecture with hardware-backed security.
 
