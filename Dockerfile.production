@@ -32,7 +32,7 @@ WORKDIR /app
 
 # Copy Python requirements
 COPY templates/remote-attestation-template/api/requirements.txt ./api/
-RUN pip install --no-cache-dir --user -r api/requirements.txt
+RUN pip install --no-cache-dir -r api/requirements.txt
 
 # ============================================
 # Stage 4: Next.js build
@@ -77,8 +77,9 @@ RUN adduser --system --uid 1001 nextjs
 
 WORKDIR /app
 
-# Copy Python dependencies
-COPY --from=python-deps /root/.local /home/nextjs/.local
+# Copy Python dependencies (system-wide installation)
+COPY --from=python-deps /usr/local/lib/python3.11/site-packages /usr/local/lib/python3.11/site-packages
+COPY --from=python-deps /usr/local/bin /usr/local/bin
 
 # Copy built application
 COPY --from=builder /app/templates/remote-attestation-template/.next ./templates/remote-attestation-template/.next
