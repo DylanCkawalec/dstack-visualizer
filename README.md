@@ -36,7 +36,7 @@ A production-ready remote attestation dashboard for Phala Network's Trusted Exec
 │         └──────────┬───────┘                     │
 │                    │                             │
 │           ┌────────▼────────┐                    │
-│           │   dStack SDK    │                    │
+│           │   dstack SDK    │                    │
 │           │    v0.5.1       │                    │
 │           └────────┬────────┘                    │
 │                    │                             │
@@ -126,7 +126,7 @@ NODE_ENV=production
 
 The `docker-compose.yml` includes:
 - Frontend service (Next.js)
-- Backend API (Python with dStack SDK)
+- Backend API (Python with dstack SDK)
 - Volume mounts for TEE sockets
 - Network configuration
 
@@ -168,7 +168,7 @@ curl -X POST http://localhost:8000/api/attestation/generate \
 ## 🔐 Security Features
 
 - **Intel TDX Integration**: Hardware-based trusted execution
-- **dStack SDK 0.5.1**: Latest security protocols
+- **dstack SDK 0.5.1**: Latest security protocols
 - **Zero Trust Architecture**: Continuous verification
 - **Secure Key Management**: Hardware-backed key generation
 - **Real-time Attestation**: Live TEE measurements
@@ -202,7 +202,7 @@ Contributions are welcome! Please follow these steps:
 ## 🏆 Acknowledgments
 
 - **Phala Network** - For providing the TEE infrastructure
-- **dStack** - For the secure SDK implementation
+- **dstack** - For the secure SDK implementation
 - **Intel TDX** - For hardware security features
 
 ## 📄 License
@@ -223,7 +223,7 @@ Developer Relations at Phala Network
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![TEE](https://img.shields.io/badge/TEE-Intel%20TDX-orange)
-![dStack](https://img.shields.io/badge/dStack-0.5.1-purple)
+![dstack](https://img.shields.io/badge/dstack-0.5.1-purple)
 
 **Production Ready** ✅ | **Fully Tested** ✅ | **Secure** ✅
 

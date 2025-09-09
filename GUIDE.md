@@ -9,8 +9,8 @@
    - Go to Dashboard → API Keys
    - Create new API key
 
-2. **dStack API Key** (Optional)
-   - Visit [dStack Documentation](https://github.com/Phala-Network/dstack-sdk)
+2. **dstack API Key** (Optional)
+   - Visit [dstack Documentation](https://github.com/Phala-Network/dstack-sdk)
    - Follow setup instructions
 
 ### Step 2: Configure Environment

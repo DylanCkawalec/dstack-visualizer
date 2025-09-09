@@ -1,6 +1,6 @@
 #!/usr/bin/env bun
 /**
- * Bun server for dStack Remote Attestation Template
+ * Bun server for dstack Remote Attestation Template
  * Provides high-performance TEE operations
  */
 
@@ -58,7 +58,7 @@ const server = (globalThis as any).Bun.serve({
       switch (url.pathname) {
         case '/':
           return Response.json({
-            message: 'Bun dStack Server',
+            message: 'Bun dstack Server',
             status: 'running',
             timestamp: new Date().toISOString()
           }, { headers });

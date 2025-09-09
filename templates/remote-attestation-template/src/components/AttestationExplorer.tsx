@@ -13,7 +13,9 @@ export function AttestationExplorer({ onVisualize }: AttestationExplorerProps) {
   const [quoteData, setQuoteData] = useState('');
 
   // Use API calls to Python backend
-  const API_BASE = 'https://55531fcff1d542372a3fb0627f1fc12721f2fa24-8000.dstack-pha-prod7.phala.network';
+  const API_BASE = typeof window !== 'undefined' && window.location.hostname === 'localhost' 
+    ? 'http://localhost:8000'
+    : 'https://55531fcff1d542372a3fb0627f1fc12721f2fa24-8000.dstack-pha-prod7.phala.network';
 
   const handleSubmitQuote = async () => {
     if (!quoteData) {

@@ -6,7 +6,7 @@ interface APITesterProps {
   onVisualize: (data: any) => void;
 }
 
-// Real dStack API endpoints that match our Python backend
+// Real dstack API endpoints that match our Python backend
 const API_ENDPOINTS = [
   { name: 'generateAttestation', method: 'POST', path: '/api/attestation/generate', body: { data: 'test', nonce: '123' } },
   { name: 'verifyAttestation', method: 'POST', path: '/api/attestation/verify', body: { attestation_id: 'test', expected_data: 'test' } },
@@ -22,8 +22,10 @@ export function APITester({ onVisualize }: APITesterProps) {
   const [running, setRunning] = useState(false);
   const [progress, setProgress] = useState(0);
 
-  // Use API calls to Python backend (WORKING!)
-  const API_BASE = 'https://55531fcff1d542372a3fb0627f1fc12721f2fa24-8000.dstack-pha-prod7.phala.network';
+  // Use API calls to Python backend - auto-detect environment
+  const API_BASE = typeof window !== 'undefined' && window.location.hostname === 'localhost' 
+    ? 'http://localhost:8000'
+    : 'https://55531fcff1d542372a3fb0627f1fc12721f2fa24-8000.dstack-pha-prod7.phala.network';
 
   const runAllTests = async () => {
     setRunning(true);

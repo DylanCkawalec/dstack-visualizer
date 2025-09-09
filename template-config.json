@@ -24,7 +24,7 @@
       },
       {
         "name": "DSTACK_API_KEY",
-        "description": "dStack API key",
+        "description": "dstack API key",
         "required": true
       },
       {
@@ -45,7 +45,7 @@
     "Zero Trust Architecture",
     "Real-time Monitoring",
     "Comprehensive API Testing",
-    "dStack SDK 0.5.1",
+    "dstack SDK 0.5.1",
     "Production Ready"
   ],
   "tags": [

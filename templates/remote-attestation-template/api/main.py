@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-FastAPI backend for dStack Remote Attestation Template
+FastAPI backend for dstack Remote Attestation Template
 Provides Python-based TEE operations alongside the NextJS frontend
 """
 
@@ -16,18 +16,18 @@ import requests
 from datetime import datetime
 import uvicorn
 
-# Import the real dStack SDK 0.5.1
+# Import the real dstack SDK 0.5.1
 try:
     from dstack_sdk import AsyncDstackClient
 
     DSTACK_AVAILABLE = True
-    print("✅ dStack SDK 0.5.1+ available")
+    print("✅ dstack SDK 0.5.1+ available")
 except ImportError:
     DSTACK_AVAILABLE = False
-    print("⚠️ dStack SDK not available, using fallback")
+    print("⚠️ dstack SDK not available, using fallback")
 
 
-# Real dStack SDK integration for TEE operations
+# Real dstack SDK integration for TEE operations
 class DStackSDK:
     def __init__(self, api_key=None, endpoint=None):
         self.api_key = (
@@ -41,7 +41,7 @@ class DStackSDK:
         self.socket_path = "/var/run/dstack.sock"
         self.tappd_socket = "/var/run/tappd.sock"
 
-        # Initialize real dStack SDK client
+        # Initialize real dstack SDK client
         if DSTACK_AVAILABLE:
             try:
                 self.real_sdk = AsyncDstackClient()
@@ -54,7 +54,7 @@ class DStackSDK:
             print("ℹ️ Using fallback implementation")
 
     async def _call_dstack_api(self, method: str, params: dict = None):
-        """Call dStack API via Unix socket"""
+        """Call dstack API via Unix socket"""
         try:
             # Try dstack socket first
             if os.path.exists(self.socket_path):
@@ -94,7 +94,7 @@ class DStackSDK:
     async def generate_attestation(self, data, nonce):
         """Generate real TEE attestation - bulletproof approach"""
         try:
-            # Try real dStack SDK first
+            # Try real dstack SDK first
             if self.real_sdk:
                 try:
                     info = await self.real_sdk.info()
@@ -133,7 +133,7 @@ class DStackSDK:
                     "environment": "Intel TDX",
                     "dstack_version": "0.5.3",
                     "real_tee": True,
-                    "source": "dStack Socket",
+                    "source": "dstack Socket",
                 }
         except Exception as e:
             print(f"All TEE methods failed: {e}")
@@ -170,7 +170,7 @@ class DStackSDK:
             # Return real environment info
             return {
                 "type": "Intel TDX",
-                "version": "dStack 0.5.3",
+                "version": "dstack 0.5.3",
                 "device_id": os.getenv("DEVICE_ID", "unknown"),
                 "os": "DStack 0.5.3",
                 "kernel": "6.9.0-dstack",
@@ -275,7 +275,7 @@ class DStackSDK:
         return result
 
 
-app = FastAPI(title="dStack Remote Attestation API", version="1.0.0")
+app = FastAPI(title="dstack Remote Attestation API", version="1.0.0")
 
 # Configure CORS for Phala environment
 app.add_middleware(
@@ -315,7 +315,7 @@ class TEEExecutionRequest(BaseModel):
 @app.get("/")
 async def root():
     return {
-        "message": "dStack Remote Attestation API",
+        "message": "dstack Remote Attestation API",
         "status": "running",
         "timestamp": datetime.now().isoformat(),
     }
@@ -328,7 +328,7 @@ async def health_check():
 
     return {
         "status": "healthy",
-        "service": "dStack Remote Attestation API",
+        "service": "dstack Remote Attestation API",
         "version": "1.0.0",
         "tee_available": tee_status.get("tee_enabled", False),
         "attestation_ready": tee_status.get("attestation_available", False),
@@ -421,7 +421,7 @@ async def get_security_status():
 
 @app.get("/api/test/all")
 async def test_all_apis():
-    """Test all available dStack APIs"""
+    """Test all available dstack APIs"""
     results = []
 
     test_cases = [

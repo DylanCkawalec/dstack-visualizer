@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Fixed dStack Python API for TEE Trust Validator
+Fixed dstack Python API for TEE Trust Validator
 """
 
 import json
@@ -12,7 +12,7 @@ from datetime import datetime
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import threading
 
-# Import real dStack SDK
+# Import real dstack SDK
 try:
     from dstack_sdk import DstackClient
     DSTACK_AVAILABLE = True
@@ -22,7 +22,7 @@ except ImportError:
 
 class TEEAPIHandler(BaseHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
-        # Initialize dStack client if available
+        # Initialize dstack client if available
         self.dstack_client = None
         if DSTACK_AVAILABLE:
             try:
@@ -31,7 +31,7 @@ class TEEAPIHandler(BaseHTTPRequestHandler):
                 elif os.path.exists("/var/run/tappd.sock"):
                     self.dstack_client = DstackClient("/var/run/tappd.sock")
             except Exception as e:
-                print(f"Could not initialize dStack client: {e}")
+                print(f"Could not initialize dstack client: {e}")
         
         super().__init__(*args, **kwargs)
     
@@ -95,7 +95,7 @@ class TEEAPIHandler(BaseHTTPRequestHandler):
         elif self.path == '/api/health':
             response = {
                 "status": "healthy",
-                "service": "dStack TEE API",
+                "service": "dstack TEE API",
                 "version": "1.0.0",
                 "timestamp": datetime.now().isoformat(),
                 "working": True,
@@ -132,7 +132,7 @@ class TEEAPIHandler(BaseHTTPRequestHandler):
                     "environment": "Intel TDX",
                     "dstack_version": "0.5.3",
                     "real_tee": os.path.exists("/var/run/dstack.sock"),
-                    "source": "dStack Socket" if os.path.exists("/var/run/dstack.sock") else "Demo Mode"
+                    "source": "dstack Socket" if os.path.exists("/var/run/dstack.sock") else "Demo Mode"
                 },
                 "timestamp": datetime.now().isoformat()
             }
@@ -190,7 +190,7 @@ class TEEAPIHandler(BaseHTTPRequestHandler):
                     "purpose": data.get("purpose", "attestation"),
                     "key_data": hashlib.sha256(f"key_{path}".encode()).hexdigest(),
                     "timestamp": datetime.now().isoformat(),
-                    "source": "Real dStack SDK"
+                    "source": "Real dstack SDK"
                 },
                 "timestamp": datetime.now().isoformat()
             }
@@ -205,7 +205,7 @@ class TEEAPIHandler(BaseHTTPRequestHandler):
                     "data": quote_data,
                     "quote": hashlib.sha256(quote_data.encode()).hexdigest(),
                     "timestamp": datetime.now().isoformat(),
-                    "source": "Real dStack SDK"
+                    "source": "Real dstack SDK"
                 },
                 "timestamp": datetime.now().isoformat()
             }
@@ -257,7 +257,7 @@ class TEEAPIHandler(BaseHTTPRequestHandler):
                         "enclave_id": "6de516cec046f6e4a301d45ead2bde6e83fd6ed0"
                     },
                     "timestamp": datetime.now().isoformat(),
-                    "source": "Real dStack TEE Execution"
+                    "source": "Real dstack TEE Execution"
                 },
                 "timestamp": datetime.now().isoformat()
             }
