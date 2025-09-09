@@ -129,5 +129,5 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
 # Entry point
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 
-# Default command - use robust startup script
-CMD ["/usr/local/bin/start-all-services.sh"]
+# Default command - use supervisord to manage all services
+CMD ["supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]

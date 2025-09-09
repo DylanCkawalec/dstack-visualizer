@@ -5,9 +5,9 @@ services:
     image: dylanckawalec/attestation-dashboard:latest
     container_name: tee-trust-validator
     ports:
-      - "3000:3000" # NextJS Dashboard
-      - "8000:8000" # Python API
-      - "8001:8001" # Bun Server (optional)
+      - "3000:3000" # NextJS Dashboard with Algorithm Visualizer
+      - "8000:8000" # Python API with real TEE data
+      - "8001:8001" # Bun Server for high-performance dStack ops
     volumes:
       - /var/run/tappd.sock:/var/run/tappd.sock  # TEE attestation socket
       - /var/run/dstack.sock:/var/run/dstack.sock # dStack socket
