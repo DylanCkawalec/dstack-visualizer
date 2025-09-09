@@ -110,20 +110,10 @@ echo ""
 echo -e "${YELLOW}Step 7: Deploying to Phala TEE...${NC}"
 echo "Deploying with name: $APP_NAME (max 20 chars)"
 
-# Deploy using phala CLI to dStack 0.5.3 node with explicit env vars
-export PHALA_API_KEY="$PHALA_API_KEY"
-export PHALA_ENDPOINT="$PHALA_ENDPOINT"
-export PHALA_CLUSTER_ID="$PHALA_CLUSTER_ID"
-export PHALA_CONTRACT_ID="$PHALA_CONTRACT_ID"
-export APP_NAME="$APP_NAME"
-export DEVELOPER_NAME="$DEVELOPER_NAME"
-export DEVELOPER_ROLE="$DEVELOPER_ROLE"
-export ORGANIZATION="$ORGANIZATION"
-export ATTESTATION_SEED="$ATTESTATION_SEED"
-export ATTESTATION_SALT="$ATTESTATION_SALT"
-
+# Deploy using phala CLI to dStack 0.5.3 node with env file
 phala deploy \
     docker-compose.yml \
+    --env-file .env.production \
     --name "attestation-dashboard" \
     --vcpu 2 \
     --memory 2048MB \

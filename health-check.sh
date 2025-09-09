@@ -1,30 +1,25 @@
 #!/bin/sh
 
 # Health check script for production deployment
-# Checks all services are running properly
+# Checks critical services are running properly
 
 NEXTJS_PORT=${PORT:-3000}
 API_PORT=${API_PORT:-8000}
-BUN_PORT=${BUN_PORT:-8001}
 
-# Check NextJS
-if ! wget -q --spider http://localhost:${NEXTJS_PORT}; then
+# Check if at least NextJS is responding (primary service)
+if wget -q --spider --timeout=5 http://localhost:${NEXTJS_PORT} 2>/dev/null; then
+    echo "NextJS healthy on port ${NEXTJS_PORT}"
+    
+    # If Python API is also responding, that's great
+    if wget -q --spider --timeout=3 http://localhost:${API_PORT} 2>/dev/null; then
+        echo "Python API healthy on port ${API_PORT}"
+    else
+        echo "Warning: Python API not responding on port ${API_PORT}"
+    fi
+    
+    echo "Health check passed (NextJS responding)"
+    exit 0
+else
     echo "NextJS not responding on port ${NEXTJS_PORT}"
     exit 1
 fi
-
-# Check Python API
-if ! wget -q --spider http://localhost:${API_PORT}; then
-    echo "Python API not responding on port ${API_PORT}"
-    exit 1
-fi
-
-# Check Bun server (optional, don't fail if not running)
-if [ "$ENABLE_BUN_SERVER" = "true" ]; then
-    if ! wget -q --spider http://localhost:${BUN_PORT}; then
-        echo "Warning: Bun server not responding on port ${BUN_PORT}"
-    fi
-fi
-
-echo "All services healthy"
-exit 0

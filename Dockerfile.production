@@ -95,9 +95,9 @@ COPY --from=bun-runtime /app/bun-server ./templates/remote-attestation-template/
 # Copy configuration files
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY docker-entrypoint.sh /usr/local/bin/
-COPY startup-services.sh /usr/local/bin/
+COPY start-all-services.sh /usr/local/bin/
 COPY .env /app/.env
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh /usr/local/bin/startup-services.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh /usr/local/bin/start-all-services.sh
 
 # Copy health check script
 COPY health-check.sh /usr/local/bin/
@@ -129,5 +129,5 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
 # Entry point
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 
-# Default command - use startup script to manage all services
-CMD ["/usr/local/bin/startup-services.sh"]
+# Default command - use robust startup script
+CMD ["/usr/local/bin/start-all-services.sh"]
