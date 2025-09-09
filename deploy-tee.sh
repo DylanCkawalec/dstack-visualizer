@@ -72,9 +72,9 @@ echo ""
 echo -e "${YELLOW}Step 7: Deploying to Phala TEE...${NC}"
 echo "Deploying with name: $APP_NAME (max 20 chars)"
 
-# Deploy using phala CLI to dStack 0.5.3 node with app-compose.json
+# Deploy using phala CLI to dStack 0.5.3 node (matching working manual method)
 phala deploy \
-    app-compose.json \
+    docker-compose.yml \
     --env-file .env.production \
     --name "attestation-dashboard" \
     --vcpu 2 \

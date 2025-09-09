@@ -1,443 +1,319 @@
-[    0.022006] ACPI: INT_SRC_OVR (bus 0 bus_irq 1 global_irq 1 high edge)
-[    0.022008] ACPI: INT_SRC_OVR (bus 0 bus_irq 2 global_irq 2 high edge)
-[    0.022011] ACPI: INT_SRC_OVR (bus 0 bus_irq 3 global_irq 3 high edge)
-[    0.022012] ACPI: INT_SRC_OVR (bus 0 bus_irq 4 global_irq 4 high edge)
-[    0.022015] ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high edge)
-[    0.022016] ACPI: INT_SRC_OVR (bus 0 bus_irq 6 global_irq 6 high edge)
-[    0.022018] ACPI: INT_SRC_OVR (bus 0 bus_irq 7 global_irq 7 high edge)
-[    0.022020] ACPI: INT_SRC_OVR (bus 0 bus_irq 8 global_irq 8 high edge)
-[    0.022022] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high edge)
-[    0.022024] ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high edge)
-[    0.022026] ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high edge)
-[    0.022028] ACPI: INT_SRC_OVR (bus 0 bus_irq 12 global_irq 12 high edge)
-[    0.022030] ACPI: INT_SRC_OVR (bus 0 bus_irq 13 global_irq 13 high edge)
-[    0.022032] ACPI: INT_SRC_OVR (bus 0 bus_irq 14 global_irq 14 high edge)
-[    0.022035] ACPI: INT_SRC_OVR (bus 0 bus_irq 15 global_irq 15 high edge)
-[    0.022040] ACPI: Found unsupported MADT entry (type = 0x10)
-[    0.022043] ACPI: APIC: wakeup_secondary_cpu_64() replaced with acpi_wakeup_cpu()
-[    0.022060] ACPI: Using ACPI (MADT) for SMP configuration information
-[    0.022064] TSC deadline timer available
-[    0.022078] CPU topo: Max. logical packages:   1
-[    0.022079] CPU topo: Max. logical dies:       1
-[    0.022080] CPU topo: Max. dies per package:   1
-[    0.022091] CPU topo: Max. threads per core:   1
-[    0.022092] CPU topo: Num. cores per package:     2
-[    0.022094] CPU topo: Num. threads per package:   2
-[    0.022095] CPU topo: Allowing 2 present CPUs plus 0 hotplug CPUs
-[    0.022265] [mem 0x80000000-0xdfffffff] available for PCI devices
-[    0.022269] Booting paravirtualized kernel on KVM
-[    0.022278] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
-[    0.022289] setup_percpu: NR_CPUS:64 nr_cpumask_bits:2 nr_cpu_ids:2 nr_node_ids:1
-[    0.023277] percpu: Embedded 58 pages/cpu s197480 r8192 d31896 u1048576
-[    0.023354] kvm-guest: PV spinlocks enabled
-[    0.023357] PV qspinlock hash table entries: 256 (order: 0, 4096 bytes, linear)
-[    0.023361] Kernel command line: console=ttyS0 init=/init panic=1 systemd.unified_cgroup_hierarchy=0 net.ifnames=0 biosdevname=0 mce=off oops=panic pci=noearly pci=nommconf random.trust_cpu=y random.trust_bootloader=n tsc=reliable no-kvmclock dstack.rootfs_hash=9d684404e3f9618671855a200d799c66eb871280dfe5a9ceb6d6e44ba4b216eb dstack.rootfs_size=136339456 initrd=initrd
-[    0.023600] Unknown kernel command line parameters "biosdevname=0", will be passed to user space.
-[    0.023620] random: crng init done
-[    0.024445] Dentry cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
-[    0.024867] Inode-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
-[    0.024934] Built 1 zonelists, mobility grouping on.  Total pages: 515434
-[    0.024938] mem auto-init: stack:all(zero), heap alloc:off, heap free:off
-[    0.024944] software IO TLB: area num 2.
-[    0.024947] software IO TLB: SWIOTLB bounce buffer size roundup to 128MB
-[    0.151649] Memory: 1838744K/2095136K available (14336K kernel code, 2056K rwdata, 4716K rodata, 2384K init, 1584K bss, 256132K reserved, 0K cma-reserved)
-[    0.151736] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
-[    0.151938] Dynamic Preempt: full
-[    0.152000] rcu: Preemptible hierarchical RCU implementation.
-[    0.152002] rcu: 	RCU event tracing is enabled.
-[    0.152004] rcu: 	RCU restricting CPUs from NR_CPUS=64 to nr_cpu_ids=2.
-[    0.152007] 	Trampoline variant of Tasks RCU enabled.
-[    0.152009] 	Tracing variant of Tasks RCU enabled.
-[    0.152012] rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
-[    0.152014] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
-[    0.152031] RCU Tasks: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1.
-[    0.152034] RCU Tasks Trace: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1.
-[    0.153995] NR_IRQS: 4352, nr_irqs: 440, preallocated irqs: 16
-[    0.154464] rcu: srcu_init: Setting srcu_struct sizes based on contention.
-[    0.154892] Console: colour dummy device 80x25
-[    0.155033] printk: legacy console [ttyS0] enabled
-[    0.512287] ACPI: Core revision 20230628
-[    0.514028] APIC: Switch to symmetric I/O mode setup
-[    0.520006] APIC: Switched APIC routing to: physical x2apic
-[    0.522234] kvm-guest: APIC: send_IPI_mask() replaced with kvm_send_ipi_mask()
-[    0.524997] kvm-guest: APIC: send_IPI_mask_allbutself() replaced with kvm_send_ipi_mask_allbutself()
-[    0.528474] kvm-guest: setup PV IPIs
-[    0.536637] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
-[    0.539227] clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x22983777dd9, max_idle_ns: 440795300422 ns
-[    0.543425] Calibrating delay loop (skipped), value calculated using timer frequency.. 4800.00 BogoMIPS (lpj=2400000)
-[    0.544668] x86/cpu: User Mode Instruction Prevention (UMIP) activated
-[    0.545433] Last level iTLB entries: 4KB 0, 2MB 0, 4MB 0
-[    0.546424] Last level dTLB entries: 4KB 0, 2MB 0, 4MB 0, 1GB 0
-[    0.547428] process: using TDX aware idle routine
-[    0.548432] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
-[    0.549428] Spectre V2 : Mitigation: Enhanced / Automatic IBRS
-[    0.550424] Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
-[    0.551424] Spectre V2 : Spectre v2 / PBRSB-eIBRS: Retire a single CALL on VMEXIT
-[    0.552426] Spectre V2 : mitigation: Enabling conditional Indirect Branch Prediction Barrier
-[    0.553425] Speculative Store Bypass: Mitigation: Speculative Store Bypass disabled via prctl
-[    0.554455] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
-[    0.555424] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
-[    0.556424] x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
-[    0.557425] x86/fpu: Supporting XSAVE feature 0x200: 'Protection Keys User registers'
-[    0.558425] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
-[    0.559424] x86/fpu: xstate_offset[9]:  832, xstate_sizes[9]:    8
-[    0.560424] x86/fpu: Enabled xstate features 0x207, context size is 840 bytes, using 'compacted' format.
-[    0.589030] Freeing SMP alternatives memory: 24K
-[    0.603440] Memory Encryption Features active: Intel TDX
-[    0.604427] pid_max: default: 32768 minimum: 301
-[    0.607886] Mount-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
-[    0.608431] Mountpoint-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
-[    0.610043] smpboot: CPU0: Intel 06/af (family: 0x6, model: 0xaf, stepping: 0x3)
-[    0.610665] Performance Events: unsupported p6 CPU model 175 no PMU driver, software events only.
-[    0.611469] signal: max sigframe size: 3632
-[    0.612422] rcu: Hierarchical SRCU implementation.
-[    0.612436] rcu: 	Max phase no-delay instances is 400.
-[    0.613602] smp: Bringing up secondary CPUs ...
-[    0.614450] smpboot: Parallel CPU startup disabled by the platform
-[    0.615585] smpboot: x86: Booting SMP configuration:
-[    0.616437] .... node  #0, CPUs:      #1
-[    0.617643] smp: Brought up 1 node, 2 CPUs
-[    0.619422] smpboot: Total of 2 processors activated (9600.00 BogoMIPS)
-[    0.619880] devtmpfs: initialized
-[    0.620849] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
-[    0.621443] futex hash table entries: 512 (order: 3, 32768 bytes, linear)
-[    0.622489] pinctrl core: initialized pinctrl subsystem
-[    0.623664] NET: Registered PF_NETLINK/PF_ROUTE protocol family
-[    0.624680] thermal_sys: Registered thermal governor 'step_wise'
-[    0.624682] thermal_sys: Registered thermal governor 'user_space'
-[    0.625452] cpuidle: using governor menu
-[    0.627511] PCI: Using configuration type 1 for base access
-[    0.628910] cryptd: max_cpu_qlen set to 1000
-[    0.629642] ACPI: Added _OSI(Module Device)
-[    0.630435] ACPI: Added _OSI(Processor Device)
-[    0.631434] ACPI: Added _OSI(3.0 _SCP Extensions)
-[    0.632434] ACPI: Added _OSI(Processor Aggregator Device)
-[    0.634185] ACPI: 1 ACPI AML tables successfully acquired and loaded
-[    0.638149] ACPI: _OSC evaluation for CPUs failed, trying _PDC
-[    0.638552] ACPI: Interpreter enabled
-[    0.639422] ACPI: PM: (supports S0 S5)
-[    0.639438] ACPI: Using IOAPIC for interrupt routing
-[    0.640479] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
-[    0.641434] PCI: Using E820 reservations for host bridge windows
-[    0.642545] ACPI: Enabled 2 GPEs in block 00 to 3F
-[    0.645010] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
-[    0.645460] acpi PNP0A08:00: _OSC: OS supports [ASPM ClockPM Segments MSI HPX-Type3]
-[    0.646436] acpi PNP0A08:00: _OSC: not requesting OS control; OS requires [ExtendedConfig ASPM ClockPM MSI]
-[    0.647469] acpi PNP0A08:00: MMCONFIG is disabled, can't access extended configuration space under this bridge
-[    0.648500] PCI host bridge to bus 0000:00
-[    0.649435] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
-[    0.650434] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
-[    0.651434] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
-[    0.652434] pci_bus 0000:00: root bus resource [mem 0x80000000-0xdfffffff window]
-[    0.653434] pci_bus 0000:00: root bus resource [mem 0xf0000000-0xfebfffff window]
-[    0.654434] pci_bus 0000:00: root bus resource [mem 0x380000000000-0x3807ffffffff window]
-[    0.655435] pci_bus 0000:00: root bus resource [bus 00-ff]
-[    0.656560] pci 0000:00:00.0: [8086:29c0] type 00 class 0x060000 conventional PCI endpoint
-[    0.658459] pci 0000:00:01.0: [1af4:1042] type 00 class 0x010000 conventional PCI endpoint
-[    0.660422] pci 0000:00:01.0: BAR 1 [mem 0x80005000-0x80005fff]
-[    0.661804] pci 0000:00:01.0: BAR 4 [mem 0x380000000000-0x380000003fff 64bit pref]
-[    0.665040] pci 0000:00:02.0: [1af4:1042] type 00 class 0x010000 conventional PCI endpoint
-[    0.666422] pci 0000:00:02.0: BAR 1 [mem 0x80004000-0x80004fff]
-[    0.667422] pci 0000:00:02.0: BAR 4 [mem 0x380000004000-0x380000007fff 64bit pref]
-[    0.669422] pci 0000:00:03.0: [1af4:1041] type 00 class 0x020000 conventional PCI endpoint
-[    0.670422] pci 0000:00:03.0: BAR 1 [mem 0x80003000-0x80003fff]
-[    0.671422] pci 0000:00:03.0: BAR 4 [mem 0x380000008000-0x38000000bfff 64bit pref]
-[    0.671862] pci 0000:00:03.0: ROM [mem 0x00000000-0x0007ffff pref]
-[    0.673866] pci 0000:00:04.0: [1af4:1053] type 00 class 0x078000 conventional PCI endpoint
-[    0.675386] pci 0000:00:04.0: BAR 1 [mem 0x80002000-0x80002fff]
-[    0.676422] pci 0000:00:04.0: BAR 4 [mem 0x38000000c000-0x38000000ffff 64bit pref]
-[    0.678422] pci 0000:00:05.0: [1af4:1049] type 00 class 0x000200 conventional PCI endpoint
-[    0.679422] pci 0000:00:05.0: BAR 1 [mem 0x80001000-0x80001fff]
-[    0.680422] pci 0000:00:05.0: BAR 4 [mem 0x380000010000-0x380000013fff 64bit pref]
-[    0.682851] pci 0000:00:1f.0: [8086:2918] type 00 class 0x060100 conventional PCI endpoint
-[    0.684422] pci 0000:00:1f.0: quirk: [io  0x0600-0x067f] claimed by ICH6 ACPI/GPIO/TCO
-[    0.685081] pci 0000:00:1f.2: [8086:2922] type 00 class 0x010601 conventional PCI endpoint
-[    0.687422] pci 0000:00:1f.2: BAR 4 [io  0x6040-0x605f]
-[    0.688111] pci 0000:00:1f.2: BAR 5 [mem 0x80000000-0x80000fff]
-[    0.689459] pci 0000:00:1f.3: [8086:2930] type 00 class 0x0c0500 conventional PCI endpoint
-[    0.691574] pci 0000:00:1f.3: BAR 4 [io  0x6000-0x603f]
-[    0.693422] ACPI: PCI: Interrupt link LNKA configured for IRQ 10
-[    0.693573] ACPI: PCI: Interrupt link LNKB configured for IRQ 10
-[    0.694569] ACPI: PCI: Interrupt link LNKC configured for IRQ 11
-[    0.695568] ACPI: PCI: Interrupt link LNKD configured for IRQ 11
-[    0.696566] ACPI: PCI: Interrupt link LNKE configured for IRQ 10
-[    0.697567] ACPI: PCI: Interrupt link LNKF configured for IRQ 10
-[    0.698565] ACPI: PCI: Interrupt link LNKG configured for IRQ 11
-[    0.699567] ACPI: PCI: Interrupt link LNKH configured for IRQ 11
-[    0.700496] ACPI: PCI: Interrupt link GSIA configured for IRQ 16
-[    0.701444] ACPI: PCI: Interrupt link GSIB configured for IRQ 17
-[    0.702447] ACPI: PCI: Interrupt link GSIC configured for IRQ 18
-[    0.703443] ACPI: PCI: Interrupt link GSID configured for IRQ 19
-[    0.704443] ACPI: PCI: Interrupt link GSIE configured for IRQ 20
-[    0.705442] ACPI: PCI: Interrupt link GSIF configured for IRQ 21
-[    0.706443] ACPI: PCI: Interrupt link GSIG configured for IRQ 22
-[    0.707446] ACPI: PCI: Interrupt link GSIH configured for IRQ 23
-[    0.708942] iommu: Default domain type: Translated
-[    0.709437] iommu: DMA domain TLB invalidation policy: lazy mode
-[    0.710593] SCSI subsystem initialized
-[    0.711487] ACPI: bus type USB registered
-[    0.712464] usbcore: registered new interface driver usbfs
-[    0.713442] usbcore: registered new interface driver hub
-[    0.714443] usbcore: registered new device driver usb
-[    0.715464] pps_core: LinuxPPS API ver. 1 registered
-[    0.716437] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
-[    0.717452] PTP clock support registered
-[    0.718539] efivars: Registered efivars operations
-[    0.719872] PCI: Using ACPI for IRQ routing
-[    0.720945] vgaarb: loaded
-[    0.721685] clocksource: Switched to clocksource tsc-early
-[    0.724208] pnp: PnP ACPI init
-[    0.725841] system 00:04: [mem 0xe0000000-0xefffffff window] has been reserved
-[    0.729420] pnp: PnP ACPI: found 5 devices
-[    0.737026] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
-[    0.741154] NET: Registered PF_INET protocol family
-[    0.744528] IP idents hash table entries: 32768 (order: 6, 262144 bytes, linear)
-[    0.748267] tcp_listen_portaddr_hash hash table entries: 1024 (order: 2, 16384 bytes, linear)
-[    0.752057] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
-[    0.755586] TCP established hash table entries: 16384 (order: 5, 131072 bytes, linear)
-[    0.759185] TCP bind hash table entries: 16384 (order: 7, 524288 bytes, linear)
-[    0.762659] TCP: Hash tables configured (established 16384 bind 16384)
-[    0.765688] UDP hash table entries: 1024 (order: 3, 32768 bytes, linear)
-[    0.768650] UDP-Lite hash table entries: 1024 (order: 3, 32768 bytes, linear)
-[    0.771753] NET: Registered PF_UNIX/PF_LOCAL protocol family
-[    0.774953] RPC: Registered named UNIX socket transport module.
-[    0.777539] RPC: Registered udp transport module.
-[    0.779615] RPC: Registered tcp transport module.
-[    0.781695] RPC: Registered tcp-with-tls transport module.
-[    0.784065] RPC: Registered tcp NFSv4.1 backchannel transport module.
-[    0.786883] pci 0000:00:03.0: ROM [mem 0x80080000-0x800fffff pref]: assigned
-[    0.789920] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
-[    0.792595] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
-[    0.795177] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
-[    0.798112] pci_bus 0000:00: resource 7 [mem 0x80000000-0xdfffffff window]
-[    0.801065] pci_bus 0000:00: resource 8 [mem 0xf0000000-0xfebfffff window]
-[    0.804079] pci_bus 0000:00: resource 9 [mem 0x380000000000-0x3807ffffffff window]
-[    0.807588] PCI: CLS 0 bytes, default 64
-[    0.809345] PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
-[    0.809724] Trying to unpack rootfs image as initramfs...
-[    0.812151] software IO TLB: mapped [mem 0x0000000070400000-0x0000000078400000] (128MB)
-[    0.812296] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x22983777dd9, max_idle_ns: 440795300422 ns
-[    0.827607] clocksource: Switched to clocksource tsc
-[    0.833483] Initialise system trusted keyrings
-[    0.835879] workingset: timestamp_bits=46 max_order=19 bucket_order=0
-[    0.838948] squashfs: version 4.0 (2009/01/31) Phillip Lougher
-[    0.841685] NFS: Registering the id_resolver key type
-[    0.843953] Key type id_resolver registered
-[    0.845836] Key type id_legacy registered
-[    0.847657] 9p: Installing v9fs 9p2000 file system support
-[    0.859277] Key type asymmetric registered
-[    0.860994] Asymmetric key parser 'x509' registered
-[    0.863234] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 250)
-[    0.866507] io scheduler mq-deadline registered
-[    0.868528] io scheduler kyber registered
-[    0.870467] hv_vmbus: registering driver hyperv_fb
-[    0.872785] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
-[    0.876169] ACPI: button: Power Button [PWRF]
-[    0.878651] ACPI: \_SB_.GSIF: Enabled at IRQ 21
-[    0.883838] ACPI: \_SB_.GSIG: Enabled at IRQ 22
-[    0.888341] ACPI: \_SB_.GSIH: Enabled at IRQ 23
-[    0.892983] ACPI: \_SB_.GSIE: Enabled at IRQ 20
-[    0.899927] Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
-[    0.903099] 00:02: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
-[    0.906865] Linux agpgart interface v0.103
-[    0.908821] ACPI: bus type drm_connector registered
-[    0.911639] brd: module loaded
-[    0.913469] virtio_blk virtio0: 2/0/0 default/read/poll queues
-[    1.003535] virtio_blk virtio0: [vda] 274704 512-byte logical blocks (141 MB/134 MiB)
-[    1.006365] Freeing initrd memory: 7616K
-[    1.008313] software IO TLB: Memory encryption is active and system is using DMA bounce buffers
-[    1.015221] virtio_blk virtio1: 2/0/0 default/read/poll queues
-[    1.020466] virtio_blk virtio1: [vdb] 20971520 512-byte logical blocks (10.7 GB/10.0 GiB)
-[    1.025160] hv_vmbus: registering driver hv_storvsc
-[    1.028182] ACPI: \_SB_.GSIA: Enabled at IRQ 16
-[    1.031776] ahci 0000:00:1f.2: AHCI vers 0001.0000, 32 command slots, 1.5 Gbps, SATA mode
-[    1.035221] ahci 0000:00:1f.2: 6/6 ports implemented (port mask 0x3f)
-[    1.037903] ahci 0000:00:1f.2: flags: 64bit ncq only 
-[    1.047517] scsi host0: ahci
-[    1.048963] scsi host1: ahci
-[    1.050519] scsi host2: ahci
-[    1.051974] scsi host3: ahci
-[    1.053466] scsi host4: ahci
-[    1.054940] scsi host5: ahci
-[    1.056265] ata1: SATA max UDMA/133 abar m4096@0x80000000 port 0x80000100 irq 30 lpm-pol 0
-[    1.059701] ata2: SATA max UDMA/133 abar m4096@0x80000000 port 0x80000180 irq 30 lpm-pol 0
-[    1.063136] ata3: SATA max UDMA/133 abar m4096@0x80000000 port 0x80000200 irq 30 lpm-pol 0
-[    1.066527] ata4: SATA max UDMA/133 abar m4096@0x80000000 port 0x80000280 irq 30 lpm-pol 0
-[    1.069935] ata5: SATA max UDMA/133 abar m4096@0x80000000 port 0x80000300 irq 30 lpm-pol 0
-[    1.073378] ata6: SATA max UDMA/133 abar m4096@0x80000000 port 0x80000380 irq 30 lpm-pol 0
-[    1.076898] wireguard: WireGuard 1.0.0 loaded. See www.wireguard.com for information.
-[    1.080910] wireguard: Copyright (C) 2015-2019 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.
-[    1.088419] e100: Intel(R) PRO/100 Network Driver
-[    1.090364] e100: Copyright(c) 1999-2006 Intel Corporation
-[    1.092669] e1000: Intel(R) PRO/1000 Network Driver
-[    1.094681] e1000: Copyright (c) 1999-2006 Intel Corporation.
-[    1.097071] e1000e: Intel(R) PRO/1000 Network Driver
-[    1.099097] e1000e: Copyright(c) 1999 - 2015 Intel Corporation.
-[    1.101584] igb: Intel(R) Gigabit Ethernet Network Driver
-[    1.103795] igb: Copyright (c) 2007-2014 Intel Corporation.
-[    1.106136] hv_vmbus: registering driver hv_netvsc
-[    1.108089] usbcore: registered new interface driver usbserial_generic
-[    1.110793] usbserial: USB Serial support registered for generic
-[    1.113330] usbcore: registered new interface driver ftdi_sio
-[    1.115709] usbserial: USB Serial support registered for FTDI USB Serial Device
-[    1.118730] usbcore: registered new interface driver pl2303
-[    1.121083] usbserial: USB Serial support registered for pl2303
-[    1.123602] i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
-[    1.129188] serio: i8042 KBD port at 0x60,0x64 irq 1
-[    1.131293] serio: i8042 AUX port at 0x60,0x64 irq 12
-[    1.133514] hv_vmbus: registering driver hyperv_keyboard
-[    1.135878] mousedev: PS/2 mouse device common for all mice
-[    1.138455] rtc_cmos 00:03: RTC can wake from S4
-[    1.142858] rtc_cmos 00:03: registered as rtc0
-[    1.144775] input: AT Raw Set 2 keyboard as /devices/platform/i8042/serio0/input/input1
-[    1.146405] rtc_cmos 00:03: setting system clock to 2025-09-09T00:30:50 UTC (1757377850)
-[    1.160877] rtc_cmos 00:03: alarms up to one day, y3k, 242 bytes nvram
-[    1.170956] i801_smbus 0000:00:1f.3: Enabling SMBus device
-[    1.173673] fail to initialize ptp_kvm
-[    1.174043] device-mapper: ioctl: 4.48.0-ioctl (2023-03-01) initialised: dm-devel@lists.linux.dev
-[    1.174282] i801_smbus 0000:00:1f.3: SMBus using PCI interrupt
-[    1.178821] intel_pstate: CPU model not supported
-[    1.182654] i2c i2c-0: Memory type 0x07 not supported yet, not instantiating SPD
-[    1.189222] hv_vmbus: registering driver hid_hyperv
-[    1.203503] usbcore: registered new interface driver usbhid
-[    1.208656] usbhid: USB HID core driver
-[    1.212199] hv_utils: Registering HyperV Utility Driver
-[    1.216528] hv_vmbus: registering driver hv_utils
-[    1.220443] hv_vmbus: registering driver hv_balloon
-[    1.224464] Initializing XFRM netlink socket
-[    1.227886] NET: Registered PF_INET6 protocol family
-[    1.232640] Segment Routing with IPv6
-[    1.235338] In-situ OAM (IOAM) with IPv6
-[    1.238164] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
-[    1.242400] NET: Registered PF_PACKET protocol family
-[    1.245751] 8021q: 802.1Q VLAN Support v1.8
-[    1.248483] 9pnet: Installing 9P2000 support
-[    1.255512] Key type dns_resolver registered
-[    1.258537] NET: Registered PF_VSOCK protocol family
-[    1.268616] mce: Unable to init MCE device (rc: -5)
-[    1.276112] IPI shorthand broadcast: enabled
-[    1.282228] AVX2 version of gcm_enc/dec engaged.
-[    1.289413] AES CTR mode by8 optimization enabled
-[    1.303123] sched_clock: Marking stable (914613073, 387619639)->(2090317405, -788084693)
-[    1.315517] Timer migration: 1 hierarchy levels; 8 children per group; 1 crossnode level
-[    1.326102] registered taskstats version 1
-[    1.331671] Loading compiled-in X.509 certificates
-[    1.342132] printk: legacy console [netcon0] enabled
-[    1.347153] netconsole: network logging started
-[    1.351883] clk: Disabling unused clocks
-[    1.392181] ata6: SATA link down (SStatus 0 SControl 300)
-[    1.397907] ata5: SATA link down (SStatus 0 SControl 300)
-[    1.404108] ata4: SATA link down (SStatus 0 SControl 300)
-[    1.409882] ata2: SATA link down (SStatus 0 SControl 300)
-[    1.416587] ata3: SATA link down (SStatus 0 SControl 300)
-[    1.422563] ata1: SATA link down (SStatus 0 SControl 300)
-[    1.435462] Freeing unused kernel image (initmem) memory: 2384K
-[    1.440652] Write protecting the kernel read-only data: 20480k
-[    1.447587] Freeing unused kernel image (rodata/data gap) memory: 1428K
-[    1.452558] Run /init as init process
+[    0.656794] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    0.658234] acpi PNP0A08:00: _OSC: OS supports [ASPM ClockPM Segments MSI HPX-Type3]
+[    0.660222] acpi PNP0A08:00: _OSC: not requesting OS control; OS requires [ExtendedConfig ASPM ClockPM MSI]
+[    0.662256] acpi PNP0A08:00: MMCONFIG is disabled, can't access extended configuration space under this bridge
+[    0.665289] PCI host bridge to bus 0000:00
+[    0.666222] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[    0.667221] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    0.669221] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[    0.671221] pci_bus 0000:00: root bus resource [mem 0x80000000-0xdfffffff window]
+[    0.672221] pci_bus 0000:00: root bus resource [mem 0xf0000000-0xfebfffff window]
+[    0.674221] pci_bus 0000:00: root bus resource [mem 0x380000000000-0x3807ffffffff window]
+[    0.676240] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.678367] pci 0000:00:00.0: [8086:29c0] type 00 class 0x060000 conventional PCI endpoint
+[    0.681269] pci 0000:00:01.0: [1af4:1042] type 00 class 0x010000 conventional PCI endpoint
+[    0.684222] pci 0000:00:01.0: BAR 1 [mem 0x80005000-0x80005fff]
+[    0.686703] pci 0000:00:01.0: BAR 4 [mem 0x380000000000-0x380000003fff 64bit pref]
+[    0.691209] pci 0000:00:02.0: [1af4:1042] type 00 class 0x010000 conventional PCI endpoint
+[    0.693209] pci 0000:00:02.0: BAR 1 [mem 0x80004000-0x80004fff]
+[    0.696222] pci 0000:00:02.0: BAR 4 [mem 0x380000004000-0x380000007fff 64bit pref]
+[    0.700131] pci 0000:00:03.0: [1af4:1041] type 00 class 0x020000 conventional PCI endpoint
+[    0.702178] pci 0000:00:03.0: BAR 1 [mem 0x80003000-0x80003fff]
+[    0.704209] pci 0000:00:03.0: BAR 4 [mem 0x380000008000-0x38000000bfff 64bit pref]
+[    0.705884] pci 0000:00:03.0: ROM [mem 0x00000000-0x0007ffff pref]
+[    0.709255] pci 0000:00:04.0: [1af4:1053] type 00 class 0x078000 conventional PCI endpoint
+[    0.712209] pci 0000:00:04.0: BAR 1 [mem 0x80002000-0x80002fff]
+[    0.714209] pci 0000:00:04.0: BAR 4 [mem 0x38000000c000-0x38000000ffff 64bit pref]
+[    0.718164] pci 0000:00:05.0: [1af4:1049] type 00 class 0x000200 conventional PCI endpoint
+[    0.720156] pci 0000:00:05.0: BAR 1 [mem 0x80001000-0x80001fff]
+[    0.722209] pci 0000:00:05.0: BAR 4 [mem 0x380000010000-0x380000013fff 64bit pref]
+[    0.725209] pci 0000:00:1f.0: [8086:2918] type 00 class 0x060100 conventional PCI endpoint
+[    0.729139] pci 0000:00:1f.0: quirk: [io  0x0600-0x067f] claimed by ICH6 ACPI/GPIO/TCO
+[    0.730902] pci 0000:00:1f.2: [8086:2922] type 00 class 0x010601 conventional PCI endpoint
+[    0.733864] pci 0000:00:1f.2: BAR 4 [io  0x6040-0x605f]
+[    0.735628] pci 0000:00:1f.2: BAR 5 [mem 0x80000000-0x80000fff]
+[    0.737209] pci 0000:00:1f.3: [8086:2930] type 00 class 0x0c0500 conventional PCI endpoint
+[    0.740433] pci 0000:00:1f.3: BAR 4 [io  0x6000-0x603f]
+[    0.742209] ACPI: PCI: Interrupt link LNKA configured for IRQ 10
+[    0.743364] ACPI: PCI: Interrupt link LNKB configured for IRQ 10
+[    0.745355] ACPI: PCI: Interrupt link LNKC configured for IRQ 11
+[    0.746389] ACPI: PCI: Interrupt link LNKD configured for IRQ 11
+[    0.748355] ACPI: PCI: Interrupt link LNKE configured for IRQ 10
+[    0.749354] ACPI: PCI: Interrupt link LNKF configured for IRQ 10
+[    0.750364] ACPI: PCI: Interrupt link LNKG configured for IRQ 11
+[    0.752355] ACPI: PCI: Interrupt link LNKH configured for IRQ 11
+[    0.753285] ACPI: PCI: Interrupt link GSIA configured for IRQ 16
+[    0.754229] ACPI: PCI: Interrupt link GSIB configured for IRQ 17
+[    0.755229] ACPI: PCI: Interrupt link GSIC configured for IRQ 18
+[    0.757229] ACPI: PCI: Interrupt link GSID configured for IRQ 19
+[    0.758229] ACPI: PCI: Interrupt link GSIE configured for IRQ 20
+[    0.759229] ACPI: PCI: Interrupt link GSIF configured for IRQ 21
+[    0.760229] ACPI: PCI: Interrupt link GSIG configured for IRQ 22
+[    0.762232] ACPI: PCI: Interrupt link GSIH configured for IRQ 23
+[    0.764297] iommu: Default domain type: Translated
+[    0.765248] iommu: DMA domain TLB invalidation policy: lazy mode
+[    0.766507] SCSI subsystem initialized
+[    0.767364] ACPI: bus type USB registered
+[    0.768209] usbcore: registered new interface driver usbfs
+[    0.769249] usbcore: registered new interface driver hub
+[    0.770209] usbcore: registered new device driver usb
+[    0.771253] pps_core: LinuxPPS API ver. 1 registered
+[    0.772221] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.774225] PTP clock support registered
+[    0.775340] efivars: Registered efivars operations
+[    0.776655] PCI: Using ACPI for IRQ routing
+[    0.778322] vgaarb: loaded
+[    0.778490] clocksource: Switched to clocksource tsc-early
+[    0.780402] pnp: PnP ACPI init
+[    0.781756] system 00:04: [mem 0xe0000000-0xefffffff window] has been reserved
+[    0.784683] pnp: PnP ACPI: found 5 devices
+[    0.799515] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    0.802930] NET: Registered PF_INET protocol family
+[    0.804912] IP idents hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    0.808079] tcp_listen_portaddr_hash hash table entries: 1024 (order: 2, 16384 bytes, linear)
+[    0.811086] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.813835] TCP established hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.816774] TCP bind hash table entries: 16384 (order: 7, 524288 bytes, linear)
+[    0.819577] TCP: Hash tables configured (established 16384 bind 16384)
+[    0.821931] UDP hash table entries: 1024 (order: 3, 32768 bytes, linear)
+[    0.824313] UDP-Lite hash table entries: 1024 (order: 3, 32768 bytes, linear)
+[    0.826908] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.829717] RPC: Registered named UNIX socket transport module.
+[    0.831866] RPC: Registered udp transport module.
+[    0.833533] RPC: Registered tcp transport module.
+[    0.835263] RPC: Registered tcp-with-tls transport module.
+[    0.837198] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.839516] pci 0000:00:03.0: ROM [mem 0x80080000-0x800fffff pref]: assigned
+[    0.842017] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+[    0.844183] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+[    0.846362] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+[    0.848780] pci_bus 0000:00: resource 7 [mem 0x80000000-0xdfffffff window]
+[    0.851215] pci_bus 0000:00: resource 8 [mem 0xf0000000-0xfebfffff window]
+[    0.853627] pci_bus 0000:00: resource 9 [mem 0x380000000000-0x3807ffffffff window]
+[    0.856555] PCI: CLS 0 bytes, default 64
+[    0.857968] PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+[    0.858362] Trying to unpack rootfs image as initramfs...
+[    0.860245] software IO TLB: mapped [mem 0x0000000070400000-0x0000000078400000] (128MB)
+[    0.860376] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x22983777dd9, max_idle_ns: 440795300422 ns
+[    0.874020] clocksource: Switched to clocksource tsc
+[    0.876732] Initialise system trusted keyrings
+[    0.878425] workingset: timestamp_bits=46 max_order=19 bucket_order=0
+[    0.880821] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.882996] NFS: Registering the id_resolver key type
+[    0.884807] Key type id_resolver registered
+[    0.886294] Key type id_legacy registered
+[    0.887282] 9p: Installing v9fs 9p2000 file system support
+[    0.898731] Key type asymmetric registered
+[    0.900216] Asymmetric key parser 'x509' registered
+[    0.901981] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 250)
+[    0.904607] io scheduler mq-deadline registered
+[    0.906234] io scheduler kyber registered
+[    0.907738] hv_vmbus: registering driver hyperv_fb
+[    0.909579] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[    0.912261] ACPI: button: Power Button [PWRF]
+[    0.914412] ACPI: \_SB_.GSIF: Enabled at IRQ 21
+[    0.918696] ACPI: \_SB_.GSIG: Enabled at IRQ 22
+[    0.922873] ACPI: \_SB_.GSIH: Enabled at IRQ 23
+[    0.927161] ACPI: \_SB_.GSIE: Enabled at IRQ 20
+[    0.933911] Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+[    0.936715] 00:02: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+[    0.940063] Linux agpgart interface v0.103
+[    0.941737] ACPI: bus type drm_connector registered
+[    0.944108] brd: module loaded
+[    0.945565] virtio_blk virtio0: 2/0/0 default/read/poll queues
+[    0.951034] virtio_blk virtio0: [vda] 274704 512-byte logical blocks (141 MB/134 MiB)
+[    0.955366] software IO TLB: Memory encryption is active and system is using DMA bounce buffers
+[    0.961256] virtio_blk virtio1: 2/0/0 default/read/poll queues
+[    0.965844] virtio_blk virtio1: [vdb] 20971520 512-byte logical blocks (10.7 GB/10.0 GiB)
+[    0.969977] hv_vmbus: registering driver hv_storvsc
+[    0.972482] ACPI: \_SB_.GSIA: Enabled at IRQ 16
+[    0.975899] ahci 0000:00:1f.2: AHCI vers 0001.0000, 32 command slots, 1.5 Gbps, SATA mode
+[    0.979004] ahci 0000:00:1f.2: 6/6 ports implemented (port mask 0x3f)
+[    0.981450] ahci 0000:00:1f.2: flags: 64bit ncq only 
+[    0.990540] scsi host0: ahci
+[    0.991856] scsi host1: ahci
+[    0.993096] scsi host2: ahci
+[    0.994327] scsi host3: ahci
+[    0.995215] scsi host4: ahci
+[    0.996751] scsi host5: ahci
+[    0.997933] ata1: SATA max UDMA/133 abar m4096@0x80000000 port 0x80000100 irq 30 lpm-pol 0
+[    1.001114] ata2: SATA max UDMA/133 abar m4096@0x80000000 port 0x80000180 irq 30 lpm-pol 0
+[    1.004281] ata3: SATA max UDMA/133 abar m4096@0x80000000 port 0x80000200 irq 30 lpm-pol 0
+[    1.007391] ata4: SATA max UDMA/133 abar m4096@0x80000000 port 0x80000280 irq 30 lpm-pol 0
+[    1.010515] ata5: SATA max UDMA/133 abar m4096@0x80000000 port 0x80000300 irq 30 lpm-pol 0
+[    1.013622] ata6: SATA max UDMA/133 abar m4096@0x80000000 port 0x80000380 irq 30 lpm-pol 0
+[    1.016878] wireguard: WireGuard 1.0.0 loaded. See www.wireguard.com for information.
+[    1.019885] wireguard: Copyright (C) 2015-2019 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.
+[    1.029197] e100: Intel(R) PRO/100 Network Driver
+[    1.031016] e100: Copyright(c) 1999-2006 Intel Corporation
+[    1.033133] e1000: Intel(R) PRO/1000 Network Driver
+[    1.034986] e1000: Copyright (c) 1999-2006 Intel Corporation.
+[    1.037178] e1000e: Intel(R) PRO/1000 Network Driver
+[    1.039062] e1000e: Copyright(c) 1999 - 2015 Intel Corporation.
+[    1.041318] igb: Intel(R) Gigabit Ethernet Network Driver
+[    1.043379] igb: Copyright (c) 2007-2014 Intel Corporation.
+[    1.045520] hv_vmbus: registering driver hv_netvsc
+[    1.047413] usbcore: registered new interface driver usbserial_generic
+[    1.049874] usbserial: USB Serial support registered for generic
+[    1.052155] usbcore: registered new interface driver ftdi_sio
+[    1.054355] usbserial: USB Serial support registered for FTDI USB Serial Device
+[    1.057135] usbcore: registered new interface driver pl2303
+[    1.059263] usbserial: USB Serial support registered for pl2303
+[    1.061564] i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+[    1.067110] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    1.069055] serio: i8042 AUX port at 0x60,0x64 irq 12
+[    1.070982] hv_vmbus: registering driver hyperv_keyboard
+[    1.071158] Freeing initrd memory: 7616K
+[    1.073085] mousedev: PS/2 mouse device common for all mice
+[    1.077400] input: AT Raw Set 2 keyboard as /devices/platform/i8042/serio0/input/input1
+[    1.079121] rtc_cmos 00:03: RTC can wake from S4
+[    1.084707] rtc_cmos 00:03: registered as rtc0
+[    1.086763] rtc_cmos 00:03: setting system clock to 2025-09-09T00:53:08 UTC (1757379188)
+[    1.090181] rtc_cmos 00:03: alarms up to one day, y3k, 242 bytes nvram
+[    1.093300] fail to initialize ptp_kvm
+[    1.093383] i801_smbus 0000:00:1f.3: Enabling SMBus device
+[    1.093388] device-mapper: ioctl: 4.48.0-ioctl (2023-03-01) initialised: dm-devel@lists.linux.dev
+[    1.095365] i801_smbus 0000:00:1f.3: SMBus using PCI interrupt
+[    1.097717] intel_pstate: CPU model not supported
+[    1.101109] i2c i2c-0: Memory type 0x07 not supported yet, not instantiating SPD
+[    1.103665] hv_vmbus: registering driver hid_hyperv
+[    1.110165] usbcore: registered new interface driver usbhid
+[    1.112320] usbhid: USB HID core driver
+[    1.113917] hv_utils: Registering HyperV Utility Driver
+[    1.115941] hv_vmbus: registering driver hv_utils
+[    1.117791] hv_vmbus: registering driver hv_balloon
+[    1.119945] Initializing XFRM netlink socket
+[    1.121666] NET: Registered PF_INET6 protocol family
+[    1.124404] Segment Routing with IPv6
+[    1.125943] In-situ OAM (IOAM) with IPv6
+[    1.127559] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    1.130184] NET: Registered PF_PACKET protocol family
+[    1.132302] 8021q: 802.1Q VLAN Support v1.8
+[    1.133988] 9pnet: Installing 9P2000 support
+[    1.139125] Key type dns_resolver registered
+[    1.140904] NET: Registered PF_VSOCK protocol family
+[    1.147698] mce: Unable to init MCE device (rc: -5)
+[    1.150088] IPI shorthand broadcast: enabled
+[    1.151739] AVX2 version of gcm_enc/dec engaged.
+[    1.153769] AES CTR mode by8 optimization enabled
+[    1.157282] sched_clock: Marking stable (770615239, 386197441)->(1899994564, -743181884)
+[    1.160427] Timer migration: 1 hierarchy levels; 8 children per group; 1 crossnode level
+[    1.163762] registered taskstats version 1
+[    1.166151] Loading compiled-in X.509 certificates
+[    1.170121] printk: legacy console [netcon0] enabled
+[    1.172241] netconsole: network logging started
+[    1.174378] clk: Disabling unused clocks
+[    1.333135] ata1: SATA link down (SStatus 0 SControl 300)
+[    1.339108] ata2: SATA link down (SStatus 0 SControl 300)
+[    1.346725] ata5: SATA link down (SStatus 0 SControl 300)
+[    1.353579] ata6: SATA link down (SStatus 0 SControl 300)
+[    1.360445] ata3: SATA link down (SStatus 0 SControl 300)
+[    1.365958] ata4: SATA link down (SStatus 0 SControl 300)
+[    1.379703] Freeing unused kernel image (initmem) memory: 2384K
+[    1.384128] Write protecting the kernel read-only data: 20480k
+[    1.389968] Freeing unused kernel image (rodata/data gap) memory: 1428K
+[    1.394466] Run /init as init process
 Setting up verity device:
   Root device: /dev/vda
   Root hash: 9d684404e3f9618671855a200d799c66eb871280dfe5a9ceb6d6e44ba4b216eb
   Data size: 136339456
-[    1.512379] device-mapper: verity: sha256 using implementation "sha256-ni"
+[    1.436011] device-mapper: verity: sha256 using implementation "sha256-ni"
 Mounting rootfs...
 Switching to new root...
-[    1.757715] systemd[1]: Failed to find module 'autofs4'
-[    1.782121] systemd[1]: systemd 255.4^ running in system mode (-PAM -AUDIT -SELINUX -APPARMOR +IMA -SMACK +SECCOMP -GCRYPT -GNUTLS -OPENSSL -ACL +BLKID -CURL -ELFUTILS -FIDO2 -IDN2 -IDN -IPTC +KMOD -LIBCRYPTSETUP +LIBFDISK -PCRE2 -PWQUALITY -P11KIT -QRENCODE -TPM2 -BZIP2 -LZ4 -XZ -ZLIB +ZSTD -BPF_FRAMEWORK -XKBCOMMON +UTMP +SYSVINIT default-hierarchy=unified)
-[    1.785505] input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input3
-[    1.792079] systemd[1]: Detected virtualization kvm.
-[    1.792093] systemd[1]: Detected confidential virtualization tdx.
-[    1.792098] systemd[1]: Detected architecture x86-64.
+[    1.623663] systemd[1]: Failed to find module 'autofs4'
+[    1.644006] systemd[1]: systemd 255.4^ running in system mode (-PAM -AUDIT -SELINUX -APPARMOR +IMA -SMACK +SECCOMP -GCRYPT -GNUTLS -OPENSSL -ACL +BLKID -CURL -ELFUTILS -FIDO2 -IDN2 -IDN -IPTC +KMOD -LIBCRYPTSETUP +LIBFDISK -PCRE2 -PWQUALITY -P11KIT -QRENCODE -TPM2 -BZIP2 -LZ4 -XZ -ZLIB +ZSTD -BPF_FRAMEWORK -XKBCOMMON +UTMP +SYSVINIT default-hierarchy=unified)
+[    1.651244] systemd[1]: Detected virtualization kvm.
+[    1.652428] systemd[1]: Detected confidential virtualization tdx.
+[    1.653885] systemd[1]: Detected architecture x86-64.
 
 Welcome to DStack 0.5.3 (scarthgap)!
 
 
-[    1.834460] systemd[1]: Hostname set to <tdx>.
-[    1.838379] systemd[1]: Initializing machine ID from random generator.
-[    1.840970] systemd[1]: Installed transient /etc/machine-id file.
-[    2.013619] systemd[1]: Queued start job for default target Multi-User System.
-[    2.046405] systemd[1]: Created slice Slice /system/modprobe.
+[    1.676594] systemd[1]: Hostname set to <tdx>.
+[    1.679202] systemd[1]: Initializing machine ID from random generator.
+[    1.680879] systemd[1]: Installed transient /etc/machine-id file.
+[    1.782933] input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input3
+[    1.795267] systemd[1]: Queued start job for default target Multi-User System.
+[    1.817238] systemd[1]: Created slice Slice /system/modprobe.
 [  OK  ] Created slice Slice /system/modprobe.
 
-[    2.055836] systemd[1]: Reached target Path Units.
+[    1.821205] systemd[1]: Reached target Path Units.
 [  OK  ] Reached target Path Units.
 
-[    2.063098] systemd[1]: Reached target Remote File Systems.
+[    1.824233] systemd[1]: Reached target Remote File Systems.
 [  OK  ] Reached target Remote File Systems.
 
-[    2.070950] systemd[1]: Reached target Slice Units.
+[    1.827708] systemd[1]: Reached target Slice Units.
 [  OK  ] Reached target Slice Units.
 
-[    2.077562] systemd[1]: Reached target Swaps.
+[    1.830778] systemd[1]: Reached target Swaps.
 [  OK  ] Reached target Swaps.
 
-[    2.083682] systemd[1]: Reached target System Time Set.
+[    1.833547] systemd[1]: Reached target System Time Set.
 [  OK  ] Reached target System Time Set.
 
-[    2.094779] systemd[1]: Journal Audit Socket was skipped because of an unmet condition check (ConditionSecurity=audit).
-[    2.101493] systemd[1]: Listening on Journal Socket (/dev/log).
+[    1.839000] systemd[1]: Journal Audit Socket was skipped because of an unmet condition check (ConditionSecurity=audit).
+[    1.842946] systemd[1]: Listening on Journal Socket (/dev/log).
 [  OK  ] Listening on Journal Socket (/dev/log).
 
-[    2.109043] systemd[1]: Listening on Journal Socket.
+[    1.847279] systemd[1]: Listening on Journal Socket.
 [  OK  ] Listening on Journal Socket.
 
-[    2.115417] systemd[1]: Listening on Network Service Netlink Socket.
+[    1.850500] systemd[1]: Listening on Network Service Netlink Socket.
 [  OK  ] Listening on Network Service Netlink Socket.
 
-[    2.125537] systemd[1]: Listening on udev Control Socket.
+[    1.855935] systemd[1]: Listening on udev Control Socket.
 [  OK  ] Listening on udev Control Socket.
 
-[    2.131986] systemd[1]: Listening on udev Kernel Socket.
+[    1.859417] systemd[1]: Listening on udev Kernel Socket.
 [  OK  ] Listening on udev Kernel Socket.
 
-[    2.140377] systemd[1]: Listening on User Database Manager Socket.
+[    1.865248] systemd[1]: Listening on User Database Manager Socket.
 [  OK  ] Listening on User Database Manager Socket.
 
-[    2.147474] systemd[1]: Huge Pages File System was skipped because of an unmet condition check (ConditionPathExists=/sys/kernel/mm/hugepages).
-[    2.162402] systemd[1]: Mounting POSIX Message Queue File System...
-         Mounting POSIX Message Queue File System...
+[    1.869361] systemd[1]: Huge Pages File System was skipped because of an unmet condition check (ConditionPathExists=/sys/kernel/mm/hugepages).
+[    1.878959] systemd[1]: Mounting POSIX Message Queue File System...
+         Mountin[    1.880860] systemd[1]: Kernel Debug File System was skipped because of an unmet condition check (ConditionPathExists=/sys/kernel/debug).
+g POSIX Message Queue File System...
 
-[    2.168875] systemd[1]: Kernel Debug File System was skipped because of an unmet condition check (ConditionPathExists=/sys/kernel/debug).
-[    2.175873] systemd[1]: Mounting Kernel Trace File System...
+[    1.886440] systemd[1]: Mounting Kernel Trace File System...
          Mounting Kernel Trace File System...
 
-[    2.188425] systemd[1]: Mounting Temporary Directory /tmp...
+[    1.891287] systemd[1]: Mounting Temporary Directory /tmp...
          Mounting Temporary Directory /tmp...
 
-[    2.203470] systemd[1]: Starting Create List of Static Device Nodes...
+[    1.900172] systemd[1]: Starting Create List of Static Device Nodes...
          Starting Create List of Static Device Nodes...
 
-[    2.214395] systemd[1]: Starting Load Kernel Module configfs...
+[    1.905997] systemd[1]: Starting Load Kernel Module configfs...
          Starting Load Kernel Module configfs...
 
-[    2.222406] systemd[1]: Starting Load Kernel Module fuse...
+[    1.920004] systemd[1]: Starting Load Kernel Module fuse...
          Starting Load Kernel Module fuse...
 
-[    2.235660] systemd[1]: Starting Journal Service...
+[    1.925939] systemd[1]: Starting Journal Service...
          Starting Journal Service...
 
-[    2.249568] fuse: init (API version 7.40)
-[    2.252931] systemd[1]: Starting Load Kernel Modules...
+[    1.930144] fuse: init (API version 7.40)
+[    1.935981] systemd[1]: Starting Load Kernel Modules...
          Starting Load Kernel Modules...
 
-[    2.261434] systemd[1]: Starting Generate network units from Kernel command line...
+[    1.942892] systemd[1]: Starting Generate network units from Kernel command line...
          Starting Generate network units from Kernel command line...
 
-[    2.280478] systemd[1]: Starting Remount Root and Kernel File Systems...
+[    1.953666] systemd[1]: Starting Remount Root and Kernel File Systems...
+[    1.956198] systemd-journald[107]: Collecting audit messages is disabled.
          Starting Remount Root and Kernel File Systems...
 
-[    2.292434] systemd[1]: Starting Coldplug All udev Devices...
+[    1.975474] systemd[1]: Starting Coldplug All udev Devices...
          Starting Coldplug All udev Devices...
-[    2.298902] systemd-journald[107]: Collecting audit messages is disabled.
 
-[    2.304085] systemd[1]: Mounted POSIX Message Queue File System.
+[    1.993119] systemd[1]: Started Journal Service.
+[  OK  ] Started Journal Service.
+
 [  OK  ] Mounted POSIX Message Queue File System.
 
-[    2.309674] systemd[1]: Mounted Kernel Trace File System.
 [  OK  ] Mounted Kernel Trace File System.
-
-[    2.315018] systemd[1]: Started Journal Service.
-[  OK  ] Started Journal Service.
 
 [  OK  ] Mounted Temporary Directory /tmp.
 
@@ -453,22 +329,22 @@ Welcome to DStack 0.5.3 (scarthgap)!
 
 [  OK  ] Finished Remount Root and Kernel File Systems.
 
+[  OK  ] Finished Coldplug All udev Devices.
+
          Mounting FUSE Control File System...
 
          Starting Flush Journal to Persistent Storage...
 
          Starting Apply Kernel Variables...
 
-[    2.385304] systemd-journald[107]: Received client request to flush runtime journal.
          Starting Create Static Device Nodes in /dev gracefully...
 
-[  OK  ] Finished Coldplug All udev Devices.
+         Starting Wait for udev To Complete Device Initialization...
 
 [  OK  ] Mounted FUSE Control File System.
 
+[    2.130487] systemd-journald[107]: Received client request to flush runtime journal.
 [  OK  ] Finished Flush Journal to Persistent Storage.
-
-         Starting Wait for udev To Complete Device Initialization...
 
 [  OK  ] Finished Apply Kernel Variables.
 
@@ -498,9 +374,9 @@ Welcome to DStack 0.5.3 (scarthgap)!
 
 [  OK  ] Finished Bind mount volatile /var/cache.
 
-[  OK  ] Finished Bind mount volatile /var/lib.
-
 [  OK  ] Finished Bind mount volatile /var/spool.
+
+[  OK  ] Finished Bind mount volatile /var/lib.
 
 [  OK  ] Finished Bind mount volatile /srv.
 
@@ -508,7 +384,7 @@ Welcome to DStack 0.5.3 (scarthgap)!
 
 [  OK  ] Finished Load/Save OS Random Seed.
 
-[    2.665820] tdx_guest: loading out-of-tree module taints kernel.
+[    2.375772] tdx_guest: loading out-of-tree module taints kernel.
          Starting Virtual Console Setup...
 
 [  OK  ] Finished Wait for udev To Complete Device Initialization.
@@ -565,9 +441,9 @@ See 'systemctl status systemd-vconsole-setup.service' for details.
 
 [  OK  ] Reached target ZFS startup target.
 
-[  OK  ] Finished IPv6 Packet Filtering Framework.
-
 [  OK  ] Finished IPv4 Packet Filtering Framework.
+
+[  OK  ] Finished IPv6 Packet Filtering Framework.
 
 [  OK  ] Reached target Preparation for Network.
 
@@ -575,202 +451,167 @@ See 'systemctl status systemd-vconsole-setup.service' for details.
 
 [  OK  ] Started D-Bus System Message Bus.
 
+[  OK  ] Started NTP client/server.
+
 [  OK  ] Started Network Configuration.
 
 [  OK  ] Reached target Network.
 
-[    3.052435] 8021q: adding VLAN 0 to HW filter on device eth0
+[    2.728468] 8021q: adding VLAN 0 to HW filter on device eth0
          Starting containerd container runtime...
-
-         Starting Wait for Network to be Configured...
-
-[  OK  ] Started NTP client/server.
 
          Starting DStack Guest Preparation Service...
 
-[    3.013934] dstack-prepare.sh[242]: Syncing system time...
-[    3.028493] dstack-prepare.sh[256]: 200 OK
-[    3.034114] dstack-prepare.sh[242]: Preparing dstack system...
-[    3.238442] dstack-prepare.sh[258]: 2025-09-09T00:30:52.979008Z  INFO cmd_lib::builtins: Mounting host-shared
-[    3.250063] dstack-prepare.sh[258]: 2025-09-09T00:30:52.991224Z  INFO cmd_lib::builtins: Copying host-shared files
-[    3.279078] dstack-prepare.sh[258]: 2025-09-09T00:30:53.020162Z  INFO cmd_lib::builtins: Unmounting host-shared
-[    3.334025] dstack-prepare.sh[258]: 2025-09-09T00:30:53.074394Z  INFO dstack_util::system_setup: Waiting for the system time to be synchronized
+         Starting Wait for Network to be Configured...
+
+[    2.545165] dstack-prepare.sh[238]: Syncing system time...
+[    2.559324] dstack-prepare.sh[255]: 200 OK
+[    2.562424] dstack-prepare.sh[238]: Preparing dstack system...
+[    2.669228] dstack-prepare.sh[257]: 2025-09-09T00:53:10.467898Z  INFO cmd_lib::builtins: Mounting host-shared
+[    2.678982] dstack-prepare.sh[257]: 2025-09-09T00:53:10.478263Z  INFO cmd_lib::builtins: Copying host-shared files
+[    2.700947] dstack-prepare.sh[257]: 2025-09-09T00:53:10.500351Z  INFO cmd_lib::builtins: Unmounting host-shared
+[    2.716462] dstack-prepare.sh[257]: 2025-09-09T00:53:10.515080Z  INFO dstack_util::system_setup: Waiting for the system time to be synchronized
 [  OK  ] Started containerd container runtime.
 
 [  OK  ] Finished Wait for Network to be Configured.
 
 [  OK  ] Reached target Network is Online.
 
-[   43.433286] dstack-prepare.sh[258]: {
-[   43.438828] dstack-prepare.sh[258]:   "app_id": "2a11d5926a45cd73cbd0f0e7d3801f693c310289",
-[   43.448341] dstack-prepare.sh[258]:   "compose_hash": "df2d2ef41a120f408a0e5567adb835d51ef33e2ed678d32c7054ec9da01f1352",
-[   43.460803] dstack-prepare.sh[258]:   "instance_id": "e6fad63c193013d68047a2cbc9245ae3c9e72fbd",
-[   43.471042] dstack-prepare.sh[258]:   "device_id": "e5a0c70bb6503de2d31c11d85914fe3776ed5b33a078ed856327c371a60fe0fd",
-[   43.481861] dstack-prepare.sh[258]:   "mrtd": "f06dfda6dce1cf904d4e2bab1dc370634cf95cefa2ceb2de2eee127c9382698090d7a4a13e14c536ec6c9c3c8fa87077",
-[   43.493401] dstack-prepare.sh[258]:   "rtmr0": "f8438db36b96f85d8752ff7f24a89ec05c79ec9eda2ba732c897fb970ca429365b7471b1c054cb84f17b1c2b23ba6640",
-[   43.504040] dstack-prepare.sh[258]:   "rtmr1": "19d16ecd33220ee15965b4fb28a0661e85ec4cad0a20d920bf4028f58ad014b262af3c9b0530f283e7d032e7bdca6308",
-[   43.513684] dstack-prepare.sh[258]:   "rtmr2": "05ac95f479e23db627217ce58b2587483c9ee4f374a7d8ebee3b812b8cfd8fd8fca04696369c33bd5279590d83e713c0",
-[   43.523369] dstack-prepare.sh[258]:   "rtmr3": "be1e7025b9ba02f55929d46b802a4f07f0b33b8945ef0d1264d9291280551201e798f1fa8bdcb4beff119626767200e4",
-[   43.531700] dstack-prepare.sh[258]:   "mr_system": "778887c7ed2aea07bb74c423ac99f58ae6e8f3f0d7f00f062488b095ff2fd6d0",
-[   43.538123] dstack-prepare.sh[258]:   "mr_aggregated": "c5b163cb95a71ea6979c625383f4ceb8dd9c717cd63d2f2dc545291d30377c81",
-[   43.546294] dstack-prepare.sh[258]:   "os_image_hash": "",
-[   43.549793] dstack-prepare.sh[258]:   "key_provider_info": ""
-[   43.553456] dstack-prepare.sh[258]: }
-[   43.555996] dstack-prepare.sh[258]: 2025-09-09T00:31:33.195767Z  INFO dstack_util::system_setup: Requesting app keys from KMS: https://kms.dstack-pha-prod7.phala.network/prpc
-[   43.565712] dstack-prepare.sh[258]: 2025-09-09T00:31:33.195803Z  INFO dstack_util::system_setup: Getting temp ca cert
-[   44.897456] dstack-prepare.sh[258]: 2025-09-09T00:31:34.638357Z  INFO dstack_util::system_setup::config_id_verifier: mr_config_id: 01df2d2ef41a120f408a0e5567adb835d51ef33e2ed678d32c7054ec9da01f1352000000000000000000000000000000
-[   44.922006] dstack-prepare.sh[258]: 2025-09-09T00:31:34.638472Z  INFO dstack_util::system_setup: Key provider info: KeyProviderInfo { name: "kms", id: "3059301306072a8648ce3d020106082a8648ce3d030107034200048844eb42ccdf8c52fd4f174f362fcb9bbd19c45fd48f1edec2d8f1ca23536ec1a74021b4cee610c074f8294d431b2b7fee2c39e5333fdaf0a4522d43fb159d9f" }
-[   44.955982] dstack-prepare.sh[258]: 2025-09-09T00:31:34.696938Z  INFO dstack_util::system_setup: Mounting encrypted data disk
-[   47.270631] zfs: module license 'CDDL' taints kernel.
-[   47.272471] Disabling lock debugging due to kernel taint
-[   47.274046] zfs: module license taints kernel.
-[   49.057794] ZFS: Loaded module v2.2.5-1, ZFS pool version 5000, ZFS filesystem version 5
-[   49.675448] dstack-prepare.sh[409]:   pool: dstack
-[   49.678668] dstack-prepare.sh[409]:  state: ONLINE
-[   49.681422] dstack-prepare.sh[409]: config:
-[   49.683677] dstack-prepare.sh[409]: 	NAME                STATE     READ WRITE CKSUM
-[   49.687806] dstack-prepare.sh[409]: 	dstack              ONLINE       0     0     0
-[   49.691552] dstack-prepare.sh[409]: 	  dstack_data_disk  ONLINE       0     0     0
-[   49.695515] dstack-prepare.sh[409]: errors: No known data errors
-[   49.798210] dstack-prepare.sh[258]: 2025-09-09T00:31:39.538804Z  INFO dstack_util::system_setup: Processing encrypted env
-[   49.803311] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539163Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: PHALA_API_KEY
-[   49.809041] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539173Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: PHALA_ENDPOINT
-[   49.814478] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539176Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: PHALA_CLUSTER_ID
-[   49.820100] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539179Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: PHALA_CONTRACT_ID
-[   49.827102] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539182Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: NEXT_PUBLIC_PHALA_ENDPOINT
-[   49.833045] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539184Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: NEXT_PUBLIC_APP_NAME
-[   49.839465] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539187Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: NEXT_PUBLIC_DEVELOPER
-[   49.846068] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539190Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: NEXT_PUBLIC_ORGANIZATION
-[   49.851771] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539192Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: APP_NAME
-[   49.858052] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539195Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: APP_VERSION
-[   49.864000] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539197Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: DEVELOPER_NAME
-[   49.869465] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539200Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: DEVELOPER_ROLE
-[   49.875198] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539202Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: ORGANIZATION
-[   49.882443] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539204Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: ORGANIZATION_URL
-[   49.888435] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539206Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: ATTESTATION_SEED
-[   49.894425] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539211Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: ATTESTATION_SALT
-[   49.902803] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539214Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: ATTESTATION_ALGORITHM
-[   49.909697] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539217Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: ATTESTATION_VERSION
-[   49.915872] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539220Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: NODE_ENV
-[   49.921497] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539222Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: PORT
-[   49.926661] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539225Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: API_PORT
-[   49.931947] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539228Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: BUN_PORT
-[   49.937240] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539231Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: ENABLE_MOCK_MODE
-[   49.942780] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539237Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: REQUIRE_ATTESTATION
-[   49.948400] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539240Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: TEE_ENVIRONMENT
-[   49.953913] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539243Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: ATTESTATION_LEVEL
-[   49.959743] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539247Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: VERIFY_SIGNATURES
-[   49.965427] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539251Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: ENFORCE_HTTPS
-[   49.970796] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539253Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: CORS_ORIGIN
-[   49.976247] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539255Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: ALLOWED_HOSTS
-[   49.981731] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539256Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: LOG_LEVEL
-[   49.987086] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539258Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: LOG_FORMAT
-[   49.992479] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539261Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: ENABLE_AUDIT_LOG
-[   49.998007] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539263Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: AUDIT_LOG_PATH
-[   50.003511] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539265Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: HEALTH_CHECK_ENABLED
-[   50.009076] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539267Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: HEALTH_CHECK_INTERVAL
-[   50.014718] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539270Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: GIT_COMMIT_HASH
-[   50.020213] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539272Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: GIT_BRANCH
-[   50.025553] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539274Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: BUILD_TIMESTAMP
-[   50.031136] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539277Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: BUILD_NUMBER
-[   50.036548] dstack-prepare.sh[258]: 2025-09-09T00:31:39.539285Z  INFO dstack_util::system_setup: Writing env
-[   50.040644] dstack-prepare.sh[258]: 2025-09-09T00:31:39.541891Z  INFO dstack_util::system_setup: Setting up guest agent config
-[   50.045267] dstack-prepare.sh[258]: 2025-09-09T00:31:39.542508Z  INFO dstack_util::system_setup: Setting up dstack-gateway
-[   51.629219] dstack-prepare.sh[258]: 2025-09-09T00:31:41.369868Z  INFO dstack_util::system_setup: Starting WireGuard
-[   51.735840] dstack-prepare.sh[258]: 2025-09-09T00:31:41.476747Z  INFO cmd_lib::child: Warning: `/etc/wireguard/wg0.conf' is world accessible
-[   51.754834] dstack-prepare.sh[258]: 2025-09-09T00:31:41.495958Z  INFO cmd_lib::child: [#] ip link add wg0 type wireguard
-[   51.770534] dstack-prepare.sh[258]: 2025-09-09T00:31:41.508748Z  INFO cmd_lib::child: [#] wg setconf wg0 /dev/fd/63
-[   51.781512] dstack-prepare.sh[258]: 2025-09-09T00:31:41.511064Z  INFO cmd_lib::child: [#] ip -4 address add 10.4.0.46/32 dev wg0
-[   51.796040] dstack-prepare.sh[258]: 2025-09-09T00:31:41.537192Z  INFO cmd_lib::child: [#] ip link set mtu 1420 up dev wg0
-[   51.814398] dstack-prepare.sh[258]: 2025-09-09T00:31:41.555543Z  INFO cmd_lib::child: [#] ip -4 route add 10.4.0.1/32 dev wg0
-[   51.823962] dstack-prepare.sh[258]: 2025-09-09T00:31:41.560195Z  INFO dstack_util::system_setup: Setting up docker registry
-[   51.831649] dstack-prepare.sh[258]: 2025-09-09T00:31:41.560212Z  INFO dstack_util::system_setup: Setting up docker account
+[   42.808446] dstack-prepare.sh[257]: {
+[   42.813908] dstack-prepare.sh[257]:   "app_id": "2a4be0fa1f5f9e69a729cb5b4303fad74d6ae2d4",
+[   42.823606] dstack-prepare.sh[257]:   "compose_hash": "11a688696e264a51231987f1bd3178aaf6709285251c80dee05271cf7360bcc1",
+[   42.835081] dstack-prepare.sh[257]:   "instance_id": "3615b5b31450845b74d0344e9063612344e97cb0",
+[   42.843510] dstack-prepare.sh[257]:   "device_id": "e5a0c70bb6503de2d31c11d85914fe3776ed5b33a078ed856327c371a60fe0fd",
+[   42.852469] dstack-prepare.sh[257]:   "mrtd": "f06dfda6dce1cf904d4e2bab1dc370634cf95cefa2ceb2de2eee127c9382698090d7a4a13e14c536ec6c9c3c8fa87077",
+[   42.862587] dstack-prepare.sh[257]:   "rtmr0": "f8438db36b96f85d8752ff7f24a89ec05c79ec9eda2ba732c897fb970ca429365b7471b1c054cb84f17b1c2b23ba6640",
+[   42.871797] dstack-prepare.sh[257]:   "rtmr1": "19d16ecd33220ee15965b4fb28a0661e85ec4cad0a20d920bf4028f58ad014b262af3c9b0530f283e7d032e7bdca6308",
+[   42.880441] dstack-prepare.sh[257]:   "rtmr2": "05ac95f479e23db627217ce58b2587483c9ee4f374a7d8ebee3b812b8cfd8fd8fca04696369c33bd5279590d83e713c0",
+[   42.888715] dstack-prepare.sh[257]:   "rtmr3": "5721e66c4eeca83f3350bd4909e46ee99835e66151153b0c72aa3cf6bd4556a07be0144eb1a61843f838e22e2f6f9a36",
+[   42.896249] dstack-prepare.sh[257]:   "mr_system": "778887c7ed2aea07bb74c423ac99f58ae6e8f3f0d7f00f062488b095ff2fd6d0",
+[   42.902598] dstack-prepare.sh[257]:   "mr_aggregated": "b9fc3297aae036ffec45ad0e85becdca636a42ad9e26c7ee58cd3625664a34a7",
+[   42.908446] dstack-prepare.sh[257]:   "os_image_hash": "",
+[   42.911314] dstack-prepare.sh[257]:   "key_provider_info": ""
+[   42.914778] dstack-prepare.sh[257]: }
+[   42.917003] dstack-prepare.sh[257]: 2025-09-09T00:53:51.674165Z  INFO dstack_util::system_setup: Requesting app keys from KMS: https://kms.dstack-pha-prod7.phala.network/prpc
+[   42.925093] dstack-prepare.sh[257]: 2025-09-09T00:53:51.674202Z  INFO dstack_util::system_setup: Getting temp ca cert
+[   44.518303] dstack-prepare.sh[257]: 2025-09-09T00:53:53.363541Z  INFO dstack_util::system_setup::config_id_verifier: mr_config_id: 0111a688696e264a51231987f1bd3178aaf6709285251c80dee05271cf7360bcc1000000000000000000000000000000
+[   44.546133] dstack-prepare.sh[257]: 2025-09-09T00:53:53.363638Z  INFO dstack_util::system_setup: Key provider info: KeyProviderInfo { name: "kms", id: "3059301306072a8648ce3d020106082a8648ce3d030107034200048844eb42ccdf8c52fd4f174f362fcb9bbd19c45fd48f1edec2d8f1ca23536ec1a74021b4cee610c074f8294d431b2b7fee2c39e5333fdaf0a4522d43fb159d9f" }
+[   44.576892] dstack-prepare.sh[257]: 2025-09-09T00:53:53.367375Z  INFO dstack_util::system_setup: Setting up disk encryption
+[   44.588069] dstack-prepare.sh[257]: 2025-09-09T00:53:53.367987Z  INFO cmd_lib::builtins: Formatting encrypted disk
+[   44.598396] dstack-prepare.sh[257]: 2025-09-09T00:53:53.429219Z  INFO cmd_lib::child: Option --key-file takes precedence over specified key file argument.
+[   47.923176] dstack-prepare.sh[257]: 2025-09-09T00:53:56.766974Z  INFO cmd_lib::builtins: Opening the device
+[   50.575151] zfs: module license 'CDDL' taints kernel.
+[   50.577175] Disabling lock debugging due to kernel taint
+[   50.579191] zfs: module license taints kernel.
+[   51.022478] ZFS: Loaded module v2.2.5-1, ZFS pool version 5000, ZFS filesystem version 5
+[   50.859103] dstack-prepare.sh[257]: 2025-09-09T00:53:59.703947Z  INFO dstack_util::system_setup: Processing encrypted env
+[   50.874238] dstack-prepare.sh[257]: 2025-09-09T00:53:59.719567Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: PHALA_API_KEY
+[   50.889808] dstack-prepare.sh[257]: 2025-09-09T00:53:59.719645Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: PHALA_ENDPOINT
+[   50.903241] dstack-prepare.sh[257]: 2025-09-09T00:53:59.719659Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: PHALA_CLUSTER_ID
+[   50.915430] dstack-prepare.sh[257]: 2025-09-09T00:53:59.719665Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: PHALA_CONTRACT_ID
+[   50.930706] dstack-prepare.sh[257]: 2025-09-09T00:53:59.719671Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: NEXT_PUBLIC_PHALA_ENDPOINT
+[   50.950286] dstack-prepare.sh[257]: 2025-09-09T00:53:59.719678Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: NEXT_PUBLIC_APP_NAME
+[   50.969726] dstack-prepare.sh[257]: 2025-09-09T00:53:59.719684Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: NEXT_PUBLIC_DEVELOPER
+[   50.987126] dstack-prepare.sh[257]: 2025-09-09T00:53:59.719690Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: NEXT_PUBLIC_ORGANIZATION
+[   51.001953] dstack-prepare.sh[257]: 2025-09-09T00:53:59.719696Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: APP_NAME
+[   51.014394] dstack-prepare.sh[257]: 2025-09-09T00:53:59.719702Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: APP_VERSION
+[   51.025730] dstack-prepare.sh[257]: 2025-09-09T00:53:59.719707Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: DEVELOPER_NAME
+[   51.035967] dstack-prepare.sh[257]: 2025-09-09T00:53:59.719713Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: DEVELOPER_ROLE
+[   51.045461] dstack-prepare.sh[257]: 2025-09-09T00:53:59.719719Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: ORGANIZATION
+[   51.054104] dstack-prepare.sh[257]: 2025-09-09T00:53:59.719725Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: ORGANIZATION_URL
+[   51.062388] dstack-prepare.sh[257]: 2025-09-09T00:53:59.719732Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: ATTESTATION_SEED
+[   51.070301] dstack-prepare.sh[257]: 2025-09-09T00:53:59.719738Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: ATTESTATION_SALT
+[   51.077428] dstack-prepare.sh[257]: 2025-09-09T00:53:59.735296Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: ATTESTATION_ALGORITHM
+[   51.084431] dstack-prepare.sh[257]: 2025-09-09T00:53:59.735305Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: ATTESTATION_VERSION
+[   51.091271] dstack-prepare.sh[257]: 2025-09-09T00:53:59.748703Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: NODE_ENV
+[   51.097009] dstack-prepare.sh[257]: 2025-09-09T00:53:59.748710Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: PORT
+[   51.102491] dstack-prepare.sh[257]: 2025-09-09T00:53:59.748716Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: API_PORT
+[   51.107813] dstack-prepare.sh[257]: 2025-09-09T00:53:59.748721Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: BUN_PORT
+[   51.113051] dstack-prepare.sh[257]: 2025-09-09T00:53:59.748725Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: ENABLE_MOCK_MODE
+[   51.118080] dstack-prepare.sh[257]: 2025-09-09T00:53:59.748730Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: REQUIRE_ATTESTATION
+[   51.123180] dstack-prepare.sh[257]: 2025-09-09T00:53:59.748734Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: TEE_ENVIRONMENT
+[   51.128185] dstack-prepare.sh[257]: 2025-09-09T00:53:59.748738Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: ATTESTATION_LEVEL
+[   51.133037] dstack-prepare.sh[257]: 2025-09-09T00:53:59.748742Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: VERIFY_SIGNATURES
+[   51.138105] dstack-prepare.sh[257]: 2025-09-09T00:53:59.748747Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: ENFORCE_HTTPS
+[   51.142855] dstack-prepare.sh[257]: 2025-09-09T00:53:59.760894Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: CORS_ORIGIN
+[   51.147514] dstack-prepare.sh[257]: 2025-09-09T00:53:59.760901Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: ALLOWED_HOSTS
+[   51.152268] dstack-prepare.sh[257]: 2025-09-09T00:53:59.760907Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: LOG_LEVEL
+[   51.156900] dstack-prepare.sh[257]: 2025-09-09T00:53:59.760911Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: LOG_FORMAT
+[   51.161526] dstack-prepare.sh[257]: 2025-09-09T00:53:59.760915Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: ENABLE_AUDIT_LOG
+[   51.166365] dstack-prepare.sh[257]: 2025-09-09T00:53:59.760923Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: AUDIT_LOG_PATH
+[   51.171137] dstack-prepare.sh[257]: 2025-09-09T00:53:59.760929Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: HEALTH_CHECK_ENABLED
+[   51.176029] dstack-prepare.sh[257]: 2025-09-09T00:53:59.760934Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: HEALTH_CHECK_INTERVAL
+[   51.180954] dstack-prepare.sh[257]: 2025-09-09T00:53:59.760938Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: GIT_COMMIT_HASH
+[   51.185782] dstack-prepare.sh[257]: 2025-09-09T00:53:59.760943Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: GIT_BRANCH
+[   51.190474] dstack-prepare.sh[257]: 2025-09-09T00:53:59.776153Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: BUILD_TIMESTAMP
+[   51.195276] dstack-prepare.sh[257]: 2025-09-09T00:53:59.776175Z  WARN dstack_util::parse_env_file: Skipping unauthorized environment variable: BUILD_NUMBER
+[   51.200087] dstack-prepare.sh[257]: 2025-09-09T00:53:59.776203Z  INFO dstack_util::system_setup: Writing env
+[   51.203789] dstack-prepare.sh[257]: 2025-09-09T00:53:59.945887Z  INFO dstack_util::system_setup: Setting up guest agent config
+[   51.207859] dstack-prepare.sh[257]: 2025-09-09T00:53:59.948671Z  INFO dstack_util::system_setup: Setting up dstack-gateway
+[   53.012314] dstack-prepare.sh[257]: 2025-09-09T00:54:01.856464Z  INFO dstack_util::system_setup: Starting WireGuard
+[   53.060343] dstack-prepare.sh[257]: 2025-09-09T00:54:01.905540Z  INFO cmd_lib::child: Warning: `/etc/wireguard/wg0.conf' is world accessible
+[   53.081705] dstack-prepare.sh[257]: 2025-09-09T00:54:01.926915Z  INFO cmd_lib::child: [#] ip link add wg0 type wireguard
+[   53.097768] dstack-prepare.sh[257]: 2025-09-09T00:54:01.941776Z  INFO cmd_lib::child: [#] wg setconf wg0 /dev/fd/63
+[   53.108462] dstack-prepare.sh[257]: 2025-09-09T00:54:01.953746Z  INFO cmd_lib::child: [#] ip -4 address add 10.4.0.58/32 dev wg0
+[   53.127206] dstack-prepare.sh[257]: 2025-09-09T00:54:01.972510Z  INFO cmd_lib::child: [#] ip link set mtu 1420 up dev wg0
+[   53.143812] dstack-prepare.sh[257]: 2025-09-09T00:54:01.989177Z  INFO cmd_lib::child: [#] ip -4 route add 10.4.0.1/32 dev wg0
+[   53.154827] dstack-prepare.sh[257]: 2025-09-09T00:54:02.000164Z  INFO dstack_util::system_setup: Setting up docker registry
+[   53.161082] dstack-prepare.sh[257]: 2025-09-09T00:54:02.000182Z  INFO dstack_util::system_setup: Setting up docker account
+[   53.168514] dstack-prepare.sh[238]: Mounting docker dirs to persistent storage
 [  OK  ] Finished DStack Guest Preparation Service.
 
-[   51.841582] dstack-prepare.sh[242]: Mounting docker dirs to persistent storage
          Starting Dstack Guest Agent Service...
 
 [  OK  ] Started Dstack Guest Agent Service.
 
          Starting Docker Application Container Engine...
 
-[   55.464532] bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
-[   55.749753] br-b3aa219603b2: port 1(vethe4041e1) entered blocking state
-[   55.753060] br-b3aa219603b2: port 1(vethe4041e1) entered disabled state
-[   55.755230] vethe4041e1: entered allmulticast mode
-[   55.756902] vethe4041e1: entered promiscuous mode
-[   56.066523] br-b3aa219603b2: port 1(vethe4041e1) entered disabled state
-[   56.071646] vethe4041e1 (unregistering): left allmulticast mode
-[   56.074848] vethe4041e1 (unregistering): left promiscuous mode
-[   56.078114] br-b3aa219603b2: port 1(vethe4041e1) entered disabled state
+[   56.827567] bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
 [  OK  ] Started Docker Application Container Engine.
 
          Starting App Compose Service...
 
-[   56.134710] app-compose.sh[729]: Running pre-launch script
-[   56.157947] app-compose.sh[729]: ----------------------------------------------
-[   56.162960] app-compose.sh[729]: Running Phala Cloud Pre-Launch Script v0.0.7
-[   56.167780] app-compose.sh[729]: ----------------------------------------------
-[   56.172560] app-compose.sh[729]: Starting login process...
-[   56.176155] app-compose.sh[729]: Pruning unused images
-[   56.562049] app-compose.sh[737]: Total reclaimed space: 0B
-[   56.568851] app-compose.sh[729]: Pruning unused volumes
-[   56.601784] app-compose.sh[743]: Total reclaimed space: 0B
-[   56.690947] app-compose.sh[729]: ----------------------------------------------
-[   56.697398] app-compose.sh[729]: Script execution completed
-[   56.701663] app-compose.sh[729]: ----------------------------------------------
-[   56.709774] app-compose.sh[729]: Starting containers
+[   56.858188] app-compose.sh[561]: Running pre-launch script
+[   56.892325] app-compose.sh[561]: ----------------------------------------------
+[   56.900866] app-compose.sh[561]: Running Phala Cloud Pre-Launch Script v0.0.7
+[   56.908413] app-compose.sh[561]: ----------------------------------------------
+[   56.915913] app-compose.sh[561]: Starting login process...
+[   56.921275] app-compose.sh[561]: Pruning unused images
+[   57.346395] app-compose.sh[569]: Total reclaimed space: 0B
+[   57.349143] app-compose.sh[561]: Pruning unused volumes
+[   57.365776] app-compose.sh[574]: Total reclaimed space: 0B
+[   57.412518] app-compose.sh[561]: ----------------------------------------------
+[   57.414887] app-compose.sh[561]: Script execution completed
+[   57.416595] app-compose.sh[561]: ----------------------------------------------
+[   57.421682] app-compose.sh[561]: Starting containers
+[   57.434279] app-compose.sh[592]: Error: Failed to parse docker-compose.yaml
+[   57.436582] app-compose.sh[592]: Caused by:
+[   57.438144] app-compose.sh[592]:     missing field `services`
          Stopping Docker Application Container Engine...
 
 [  OK  ] Stopped Docker Application Container Engine.
 
          Starting Docker Application Container Engine...
 
-[   57.237012] br-b3aa219603b2: port 1(veth649bd14) entered blocking state
-[   57.239471] br-b3aa219603b2: port 1(veth649bd14) entered disabled state
-[   57.241167] veth649bd14: entered allmulticast mode
-[   57.242356] veth649bd14: entered promiscuous mode
-[   57.429975] eth0: renamed from vethb95c661
-[   57.431675] br-b3aa219603b2: port 1(veth649bd14) entered blocking state
-[   57.433504] br-b3aa219603b2: port 1(veth649bd14) entered forwarding state
 [  OK  ] Started Docker Application Container Engine.
 
-[   57.978169] app-compose.sh[1057]: time="2025-09-09T00:31:47Z" level=warning msg="The \"DEVELOPER_NAME\" variable is not set. Defaulting to a blank string."
-[   57.982418] app-compose.sh[1057]: time="2025-09-09T00:31:47Z" level=warning msg="The \"ATTESTATION_SEED\" variable is not set. Defaulting to a blank string."
-[   57.994796] app-compose.sh[1057]: time="2025-09-09T00:31:47Z" level=warning msg="The \"PHALA_API_KEY\" variable is not set. Defaulting to a blank string."
-[   57.999118] app-compose.sh[1057]: time="2025-09-09T00:31:47Z" level=warning msg="The \"PHALA_CONTRACT_ID\" variable is not set. Defaulting to a blank string."
-[   58.008765] app-compose.sh[1057]: time="2025-09-09T00:31:47Z" level=warning msg="The \"APP_NAME\" variable is not set. Defaulting to a blank string."
-[   58.012384] app-compose.sh[1057]: time="2025-09-09T00:31:47Z" level=warning msg="The \"ATTESTATION_SALT\" variable is not set. Defaulting to a blank string."
-[   58.015964] app-compose.sh[1057]: time="2025-09-09T00:31:47Z" level=warning msg="The \"DEVELOPER_ROLE\" variable is not set. Defaulting to a blank string."
-[   58.019571] app-compose.sh[1057]: time="2025-09-09T00:31:47Z" level=warning msg="The \"ORGANIZATION\" variable is not set. Defaulting to a blank string."
-[   58.025802] app-compose.sh[1057]: time="2025-09-09T00:31:47Z" level=warning msg="The \"PHALA_ENDPOINT\" variable is not set. Defaulting to a blank string."
-[   58.030773] app-compose.sh[1057]: time="2025-09-09T00:31:47Z" level=warning msg="The \"PHALA_CLUSTER_ID\" variable is not set. Defaulting to a blank string."
-[   58.036648] app-compose.sh[1057]: time="2025-09-09T00:31:47Z" level=warning msg="/dstack/docker-compose.yaml: `version` is obsolete"
-[   58.041360] app-compose.sh[1057]:  Container tee-trust-validator  Recreate
-[   68.414758] br-b3aa219603b2: port 1(veth649bd14) entered disabled state
-[   68.418070] vethb95c661: renamed from eth0
-[   68.447219] br-b3aa219603b2: port 1(veth649bd14) entered disabled state
-[   68.450388] veth649bd14 (unregistering): left allmulticast mode
-[   68.452837] veth649bd14 (unregistering): left promiscuous mode
-[   68.454625] br-b3aa219603b2: port 1(veth649bd14) entered disabled state
-[   68.394528] app-compose.sh[1057]:  Container tee-trust-validator  Recreated
-[   68.399228] app-compose.sh[1057]:  Container tee-trust-validator  Starting
-[   68.548467] br-b3aa219603b2: port 1(vethf2d7c7c) entered blocking state
-[   68.552020] br-b3aa219603b2: port 1(vethf2d7c7c) entered disabled state
-[   68.554376] vethf2d7c7c: entered allmulticast mode
-[   68.556287] vethf2d7c7c: entered promiscuous mode
-[   68.819024] eth0: renamed from veth6113b95
-[   68.821182] br-b3aa219603b2: port 1(vethf2d7c7c) entered blocking state
-[   68.823276] br-b3aa219603b2: port 1(vethf2d7c7c) entered forwarding state
-[   68.746922] app-compose.sh[1057]:  Container tee-trust-validator  Started
-[   68.759888] app-compose.sh[729]: Pruning unused images
-[   68.784153] app-compose.sh[1286]: Total reclaimed space: 0B
-[   68.787689] app-compose.sh[729]: Pruning unused volumes
-[   68.805771] app-compose.sh[1291]: Total reclaimed space: 0B
-[  OK  ] Finished App Compose Service.
+[   58.361514] app-compose.sh[754]: time="2025-09-09T00:54:07Z" level=warning msg="The \"PHALA_API_KEY\" variable is not set. Defaulting to a blank string."
+[   58.365992] app-compose.sh[754]: time="2025-09-09T00:54:07Z" level=warning msg="The \"PHALA_ENDPOINT\" variable is not set. Defaulting to a blank string."
+[   58.370103] app-compose.sh[754]: time="2025-09-09T00:54:07Z" level=warning msg="The \"PHALA_CLUSTER_ID\" variable is not set. Defaulting to a blank string."
+[   58.374234] app-compose.sh[754]: time="2025-09-09T00:54:07Z" level=warning msg="The \"PHALA_CONTRACT_ID\" variable is not set. Defaulting to a blank string."
+[   58.378468] app-compose.sh[754]: time="2025-09-09T00:54:07Z" level=warning msg="The \"APP_NAME\" variable is not set. Defaulting to a blank string."
+[   58.382375] app-compose.sh[754]: time="2025-09-09T00:54:07Z" level=warning msg="The \"DEVELOPER_NAME\" variable is not set. Defaulting to a blank string."
+[FAILED] Failed to start App Compose Service.
 
+See 'systemctl status app-compose.service' for details.
+
+[   58.389585] app-compose.sh[754]: time="2025-09-09T00:54:07Z" level=warning msg="The \"DEVELOPER_ROLE\" variable is not set. Defaulting to a blank string."
 [  OK  ] Reached target Multi-User System.
 
+[   58.395199] app-compose.sh[754]: time="2025-09-09T00:54:07Z" level=warning msg="The \"ORGANIZATION\" variable is not set. Defaulting to a blank string."
+[   58.399084] app-compose.sh[754]: time="2025-09-09T00:54:07Z" level=warning msg="The \"ATTESTATION_SEED\" variable is not set. Defaulting to a blank string."
+[   58.403178] app-compose.sh[754]: time="2025-09-09T00:54:07Z" level=warning msg="The \"ATTESTATION_SALT\" variable is not set. Defaulting to a blank string."
+[   58.407049] app-compose.sh[754]: validating /dstack/docker-compose.yaml: (root) Additional property docker_compose_file is not allowed
          Starting Record Runlevel Change in UTMP...
 
 [  OK  ] Finished Record Runlevel Change in UTMP.
