@@ -1,0 +1,18 @@
+# Ultra simple Dockerfile for Phala TEE
+FROM python:3.11-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Copy the ultra simple API
+COPY ultra-simple-api.py .
+
+# Expose port
+EXPOSE 3000
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+ENV PORT=3000
+
+# Run the ultra simple API
+CMD ["python3", "ultra-simple-api.py"]
