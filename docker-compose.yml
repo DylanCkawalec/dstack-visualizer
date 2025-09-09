@@ -2,21 +2,31 @@ version: '3.8'
 
 services:
   tee-trust-validator:
-    image: dylanckawalec/tee-trust-validator:tested
+    image: dylanckawalec/tee-trust-validator:latest
     container_name: tee-trust-validator
     ports:
-      - "3000:3000"
-      - "8000:8000"
+      - "3000:3000"  # Frontend Dashboard
+      - "8000:8000"  # Backend API
     environment:
       - NODE_ENV=production
       - PORT=8000
+      - PHALA_API_KEY=${PHALA_API_KEY}
+      - DSTACK_API_KEY=${DSTACK_API_KEY}
+      - DEVELOPER_NAME=${DEVELOPER_NAME:-TEE Developer}
+      - ORGANIZATION=${ORGANIZATION:-Phala Network}
     volumes:
+      # TEE Socket mounts (read-only for security)
       - /var/run/dstack.sock:/var/run/dstack.sock:ro
       - /var/run/tappd.sock:/var/run/tappd.sock:ro
     networks:
       - tee-network
-    user: root
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
 
 networks:
   tee-network:

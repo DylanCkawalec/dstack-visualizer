@@ -1,0 +1,76 @@
+{
+  "id": "tee-trust-validator",
+  "name": "TEE Trust Validator",
+  "description": "Production-ready remote attestation dashboard with Zero Trust architecture for Phala Network TEE",
+  "category": "Security & Attestation",
+  "author": {
+    "name": "Dylan Kawalec",
+    "role": "Developer Relations at Phala Network",
+    "github": "DylanCkawalec"
+  },
+  "repository": {
+    "url": "https://github.com/DylanCkawalec/awesome-phala-cloud",
+    "branch": "main",
+    "path": "templates/tee-trust-validator"
+  },
+  "deployment": {
+    "docker_image": "dylanckawalec/tee-trust-validator:latest",
+    "ports": [3000, 8000],
+    "environment_variables": [
+      {
+        "name": "PHALA_API_KEY",
+        "description": "Phala Network API key",
+        "required": true
+      },
+      {
+        "name": "DSTACK_API_KEY",
+        "description": "dStack API key",
+        "required": true
+      },
+      {
+        "name": "NODE_ENV",
+        "description": "Node environment",
+        "required": false,
+        "default": "production"
+      }
+    ],
+    "volumes": [
+      "/var/run/dstack.sock:/var/run/dstack.sock:ro",
+      "/var/run/tappd.sock:/var/run/tappd.sock:ro"
+    ]
+  },
+  "features": [
+    "Intel TDX TEE Integration",
+    "Hardware Attestation",
+    "Zero Trust Architecture",
+    "Real-time Monitoring",
+    "Comprehensive API Testing",
+    "dStack SDK 0.5.1",
+    "Production Ready"
+  ],
+  "tags": [
+    "tee",
+    "attestation",
+    "security",
+    "zero-trust",
+    "intel-tdx",
+    "dstack",
+    "dashboard",
+    "monitoring"
+  ],
+  "demo": {
+    "dashboard": "https://55531fcff1d542372a3fb0627f1fc12721f2fa24-3000.dstack-pha-prod7.phala.network/",
+    "api": "https://55531fcff1d542372a3fb0627f1fc12721f2fa24-8000.dstack-pha-prod7.phala.network/",
+    "screenshot": "example-1.png"
+  },
+  "requirements": {
+    "docker": "20.10+",
+    "nodejs": "18+",
+    "python": "3.8+",
+    "memory": "2GB",
+    "disk": "10GB"
+  },
+  "license": "MIT",
+  "version": "1.0.0",
+  "last_updated": "2025-09-09"
+}
