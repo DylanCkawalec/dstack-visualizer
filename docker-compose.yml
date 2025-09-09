@@ -11,12 +11,11 @@ services:
       - "8000:8000"  # Python API with real TEE data
       - "8001:8001"  # Bun Server for high-performance dStack ops
     
-    # Critical TEE volume mounts (following DI project pattern)
+    # Critical TEE volume mounts (fixed for Phala environment)
     volumes:
       - /var/run/dstack.sock:/var/run/dstack.sock   # dStack 0.5.x socket
       - /var/run/tappd.sock:/var/run/tappd.sock     # dStack < 0.5.x compatibility
       - ./logs:/app/logs
-      - ./.env:/app/.env:ro                         # Environment file mounted
     
     # Environment variables (injected by Phala CLI)
     environment:
