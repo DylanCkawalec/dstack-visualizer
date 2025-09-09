@@ -42,7 +42,7 @@ services:
       - tee-network
     
     # Run as nextjs user (matching Python dependencies installation)
-    user: nextjs
+    user: root
     
     # Use default CMD from Dockerfile (supervisord)
     
