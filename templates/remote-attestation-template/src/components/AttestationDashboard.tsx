@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { DstackClient } from '@phala/dstack-sdk';
 
 interface AttestationDashboardProps {
   onVisualize: (data: any) => void;
@@ -12,42 +11,33 @@ export function AttestationDashboard({ onVisualize }: AttestationDashboardProps)
   const [result, setResult] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
 
-  // Use real dStack SDK client (connects to /var/run/dstack.sock)
-  const sdk = new DstackClient();
+  // Use API calls to Python backend
+  const API_BASE = 'https://55531fcff1d542372a3fb0627f1fc12721f2fa24-8000.dstack-pha-prod7.phala.network';
 
   const handleGenerateAttestation = async () => {
     setLoading(true);
     setError(null);
     try {
-      // Use real dStack SDK methods
-      const info = await sdk.info();
-      const testData = `attestation-test-${Date.now()}`;
-      const quote = await sdk.getQuote(testData.slice(0, 64)); // Max 64 bytes
+      // Call Python API backend
+      const response = await fetch(`${API_BASE}/api/attestation/generate`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          data: `test-${Date.now()}`,
+          nonce: Date.now().toString()
+        })
+      });
       
-      const attestation = {
-        attestation_id: `real-tee-${Date.now()}`,
-        app_id: info.app_id,
-        instance_id: info.instance_id,
-        device_id: info.device_id,
-        quote: quote.quote,
-        event_log: quote.event_log,
-        rtmrs: quote.replayRtmrs(),
-        tcb_info: info.tcb_info,
-        data: testData,
-        timestamp: new Date().toISOString(),
-        real_tee: true,
-        source: "Real dStack SDK"
-      };
-      
+      const attestation = await response.json();
       setResult(attestation);
       onVisualize({
-        type: 'real-attestation-generation',
+        type: 'backend-attestation',
         data: attestation,
         timestamp: new Date().toISOString()
       });
     } catch (err: any) {
-      setError(err.message || 'Failed to generate real attestation');
-      console.error('Real attestation error:', err);
+      setError(err.message || 'Failed to call backend API');
+      console.error('Backend API error:', err);
     } finally {
       setLoading(false);
     }
@@ -57,18 +47,25 @@ export function AttestationDashboard({ onVisualize }: AttestationDashboardProps)
     setLoading(true);
     setError(null);
     try {
-      const verification = await sdk.verifyAttestation({
-        attestation: 'sample-attestation-id',
-        expectedData: 'test-data'
+      // Call Python API backend
+      const response = await fetch(`${API_BASE}/api/attestation/verify`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          attestation_id: 'sample-attestation',
+          expected_data: 'test-data'
+        })
       });
+      
+      const verification = await response.json();
       setResult(verification);
       onVisualize({
-        type: 'attestation-verification',
+        type: 'backend-verification',
         data: verification,
         timestamp: new Date().toISOString()
       });
     } catch (err: any) {
-      setError(err.message || 'Failed to verify attestation');
+      setError(err.message || 'Failed to verify via backend');
     } finally {
       setLoading(false);
     }
@@ -78,18 +75,17 @@ export function AttestationDashboard({ onVisualize }: AttestationDashboardProps)
     setLoading(true);
     setError(null);
     try {
-      const remoteAttestation = await sdk.createRemoteAttestation({
-        targetTEE: 'target-tee-' + Date.now(),
-        challenge: 'challenge-' + Date.now()
-      });
-      setResult(remoteAttestation);
+      // Call Python API backend for TEE info
+      const response = await fetch(`${API_BASE}/api/tee/info`);
+      const teeInfo = await response.json();
+      setResult(teeInfo);
       onVisualize({
-        type: 'remote-attestation',
-        data: remoteAttestation,
+        type: 'backend-tee-info',
+        data: teeInfo,
         timestamp: new Date().toISOString()
       });
     } catch (err: any) {
-      setError(err.message || 'Failed to create remote attestation');
+      setError(err.message || 'Failed to get TEE info from backend');
     } finally {
       setLoading(false);
     }

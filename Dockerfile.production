@@ -131,5 +131,5 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
 # Entry point
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 
-# Default command - use simple direct startup
-CMD ["/usr/local/bin/simple-start.sh"]
+# Default command - start Python API directly alongside NextJS
+CMD ["sh", "-c", "cd /app/templates/remote-attestation-template && npm start & cd /app/templates/remote-attestation-template/api && python3 main.py & wait"]
