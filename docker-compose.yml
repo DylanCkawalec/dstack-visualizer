@@ -44,8 +44,7 @@ services:
     # Run as nextjs user (matching Python dependencies installation)
     user: nextjs
     
-    # Enhanced startup command (following DI pattern)
-    command: ["/usr/local/bin/start-all-services.sh"]
+    # Use default CMD from Dockerfile (supervisord)
     
     # Production restart policy
     restart: unless-stopped

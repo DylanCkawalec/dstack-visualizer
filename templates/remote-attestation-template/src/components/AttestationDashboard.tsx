@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { DStackSDK } from '@/lib/dstack-client';
+import { DstackClient } from '@phala/dstack-sdk';
 
 interface AttestationDashboardProps {
   onVisualize: (data: any) => void;
@@ -12,27 +12,42 @@ export function AttestationDashboard({ onVisualize }: AttestationDashboardProps)
   const [result, setResult] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const sdk = new DStackSDK({
-    apiKey: process.env.NEXT_PUBLIC_DSTACK_API_KEY || 'test-key',
-    endpoint: process.env.NEXT_PUBLIC_DSTACK_ENDPOINT || 'https://api.dstack.network'
-  });
+  // Use real dStack SDK client (connects to /var/run/dstack.sock)
+  const sdk = new DstackClient();
 
   const handleGenerateAttestation = async () => {
     setLoading(true);
     setError(null);
     try {
-      const attestation = await sdk.generateAttestation({
-        data: 'test-data-' + Date.now(),
-        nonce: Date.now().toString()
-      });
+      // Use real dStack SDK methods
+      const info = await sdk.info();
+      const testData = `attestation-test-${Date.now()}`;
+      const quote = await sdk.getQuote(testData.slice(0, 64)); // Max 64 bytes
+      
+      const attestation = {
+        attestation_id: `real-tee-${Date.now()}`,
+        app_id: info.app_id,
+        instance_id: info.instance_id,
+        device_id: info.device_id,
+        quote: quote.quote,
+        event_log: quote.event_log,
+        rtmrs: quote.replayRtmrs(),
+        tcb_info: info.tcb_info,
+        data: testData,
+        timestamp: new Date().toISOString(),
+        real_tee: true,
+        source: "Real dStack SDK"
+      };
+      
       setResult(attestation);
       onVisualize({
-        type: 'attestation-generation',
+        type: 'real-attestation-generation',
         data: attestation,
         timestamp: new Date().toISOString()
       });
     } catch (err: any) {
-      setError(err.message || 'Failed to generate attestation');
+      setError(err.message || 'Failed to generate real attestation');
+      console.error('Real attestation error:', err);
     } finally {
       setLoading(false);
     }

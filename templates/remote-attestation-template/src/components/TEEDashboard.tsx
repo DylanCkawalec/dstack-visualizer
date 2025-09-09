@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { DStackSDK } from '@/lib/dstack-client';
+import { DstackClient } from '@phala/dstack-sdk';
 
 interface TEEDashboardProps {
   onVisualize: (data: any) => void;
@@ -12,24 +12,24 @@ export function TEEDashboard({ onVisualize }: TEEDashboardProps) {
   const [result, setResult] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const sdk = new DStackSDK({
-    apiKey: process.env.NEXT_PUBLIC_DSTACK_API_KEY || 'test-key',
-    endpoint: process.env.NEXT_PUBLIC_DSTACK_ENDPOINT || 'https://api.dstack.network'
-  });
+  // Use real dStack SDK client
+  const sdk = new DstackClient();
 
   const handleGetTEEInfo = async () => {
     setLoading(true);
     setError(null);
     try {
-      const info = await sdk.getTEEInfo();
+      // Use real dStack SDK info method
+      const info = await sdk.info();
       setResult(info);
       onVisualize({
-        type: 'tee-info',
+        type: 'real-tee-info',
         data: info,
         timestamp: new Date().toISOString()
       });
     } catch (err: any) {
-      setError(err.message || 'Failed to get TEE info');
+      setError(err.message || 'Failed to get real TEE info');
+      console.error('Real TEE info error:', err);
     } finally {
       setLoading(false);
     }
@@ -39,15 +39,18 @@ export function TEEDashboard({ onVisualize }: TEEDashboardProps) {
     setLoading(true);
     setError(null);
     try {
-      const measurements = await sdk.getMeasurements();
-      setResult(measurements);
+      // Generate quote to get measurements
+      const testData = `measurements-${Date.now()}`;
+      const quote = await sdk.getQuote(testData.slice(0, 64));
+      const rtmrs = quote.replayRtmrs();
+      setResult({ quote: quote.quote, rtmrs, event_log: quote.event_log });
       onVisualize({
-        type: 'tee-measurements',
-        data: measurements,
+        type: 'real-tee-measurements',
+        data: { rtmrs, quote: quote.quote },
         timestamp: new Date().toISOString()
       });
     } catch (err: any) {
-      setError(err.message || 'Failed to get measurements');
+      setError(err.message || 'Failed to get real measurements');
     } finally {
       setLoading(false);
     }
@@ -57,18 +60,16 @@ export function TEEDashboard({ onVisualize }: TEEDashboardProps) {
     setLoading(true);
     setError(null);
     try {
-      const result = await sdk.executeInTEE({
-        function: 'hash',
-        params: { data: 'test-input-' + Date.now() }
-      });
-      setResult(result);
+      // Use real dStack key derivation
+      const keyResult = await sdk.getKey('test-execution', 'demo');
+      setResult({ key: keyResult.key, signature_chain: keyResult.signature_chain });
       onVisualize({
-        type: 'tee-execution',
-        data: result,
+        type: 'real-tee-key-derivation',
+        data: keyResult,
         timestamp: new Date().toISOString()
       });
     } catch (err: any) {
-      setError(err.message || 'Failed to execute in TEE');
+      setError(err.message || 'Failed to derive key in TEE');
     } finally {
       setLoading(false);
     }
